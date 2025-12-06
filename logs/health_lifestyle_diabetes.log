@@ -1,0 +1,808 @@
+2025-12-05 15:00:30 | INFO     | __main__ | __main__:<module>:5 - Début du training...
+2025-12-05 15:00:30 | WARNING  | __main__ | __main__:<module>:6 - Attention, dataset incomplet.
+2025-12-05 15:00:30 | ERROR    | __main__ | __main__:<module>:7 - Erreur critique !
+2025-12-05 15:15:57 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:53 - Chargement du dataset CSV : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 15:16:07 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:53 - Chargement du dataset CSV : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 15:17:56 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:53 - Chargement du dataset CSV : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 15:17:57 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:55 - Dataset chargé avec 97297 lignes et 31 colonnes.
+2025-12-05 15:21:31 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:53 - Chargement du dataset CSV : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 15:21:31 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:55 - Dataset chargé avec 97297 lignes et 31 colonnes.
+2025-12-05 15:25:14 | ERROR    | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:59 - Erreur lors du chargement du CSV 'data/input/diabetes_health_indicators.csv' : 'str' object has no attribute 'exists'
+2025-12-05 15:25:36 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:53 - Chargement du dataset CSV : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 15:25:37 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:55 - Dataset chargé avec 97297 lignes et 31 colonnes.
+2025-12-05 15:32:59 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:53 - Chargement du dataset CSV : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 15:33:00 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:55 - Dataset chargé avec 97297 lignes et 31 colonnes.
+2025-12-05 18:07:31 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:56 - Chargement du dataset depuis /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 18:07:57 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:56 - Chargement du dataset depuis /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 18:08:05 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:56 - Chargement du dataset depuis /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 18:08:05 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:53 - Chargement du dataset CSV : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 18:08:05 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:55 - Dataset chargé avec 97297 lignes et 31 colonnes.
+2025-12-05 18:08:05 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:77 - Sauvegarde des datasets divisés.
+2025-12-05 18:10:07 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:57 - Chargement du dataset depuis /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 18:10:07 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:53 - Chargement du dataset CSV : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 18:10:07 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:55 - Dataset chargé avec 97297 lignes et 31 colonnes.
+2025-12-05 18:10:07 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:78 - Sauvegarde des datasets divisés.
+2025-12-05 18:10:44 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:57 - Chargement du dataset depuis /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 18:10:55 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:57 - Chargement du dataset depuis /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 18:10:55 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:53 - Chargement du dataset CSV : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 18:10:55 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader | health_lifestyle_diabetes.infrastructure.data_sources.csv_loader:load_csv:55 - Dataset chargé avec 97297 lignes et 31 colonnes.
+2025-12-05 18:10:55 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:78 - Sauvegarde des datasets divisés.
+2025-12-05 18:12:17 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:57 - Chargement du dataset depuis /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 22:25:49 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 22:25:49 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-05 22:35:19 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 22:35:19 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-05 22:39:41 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 22:39:41 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-05 22:40:32 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 22:40:32 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-05 22:41:29 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 22:41:29 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-05 22:43:21 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 22:43:21 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-05 22:44:08 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 22:44:09 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-05 22:45:16 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 22:45:16 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-05 22:46:15 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-05 22:46:42 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-05 22:46:48 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 22:46:48 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-05 22:46:49 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-05 22:46:49 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 22:46:49 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-05 22:46:50 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-05 22:46:50 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-05 22:46:50 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-05 22:46:50 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-05 22:46:50 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-05 22:46:50 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-05 22:47:29 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-05 22:47:29 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 22:47:29 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-05 22:47:29 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-05 22:47:29 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-05 22:47:29 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-05 22:47:29 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-05 22:47:29 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-05 22:47:29 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-05 22:49:14 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-05 22:49:14 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 22:49:14 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-05 22:49:14 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-05 22:49:14 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-05 22:49:14 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-05 22:49:14 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-05 22:49:15 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-05 22:49:15 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-05 22:53:06 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-05 22:53:06 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 05:23:43 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 05:23:43 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 05:23:43 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 05:23:43 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 05:23:45 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-06 05:23:45 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 05:23:45 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 05:23:45 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-06 05:23:45 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 05:23:45 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 05:23:45 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 05:23:46 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 05:23:46 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-06 05:24:05 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 05:24:05 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 05:24:33 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 05:24:34 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 05:24:34 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 05:25:00 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 05:25:00 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 05:25:00 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 05:27:48 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 05:27:48 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 05:27:48 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 05:28:53 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 05:28:53 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 05:28:53 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 05:34:50 | INFO     | eda.target_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_target_distribution:14 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 05:36:21 | INFO     | eda.target_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_target_distribution:14 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 05:36:32 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 05:36:33 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 05:36:33 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-06 05:36:33 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 05:36:34 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 05:36:34 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-06 05:36:34 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 05:36:34 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 05:36:34 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 05:36:34 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 05:36:34 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-06 05:36:34 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 05:36:34 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 05:36:34 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 05:37:43 | INFO     | eda.target_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_target_distribution:14 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 05:38:00 | INFO     | eda.target_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_target_distribution:14 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 05:42:21 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 05:42:21 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 05:42:21 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 05:42:21 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 05:42:22 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-06 05:42:22 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 05:42:22 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 05:42:22 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-06 05:42:22 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 05:42:23 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 05:42:23 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 05:42:23 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 05:42:23 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-06 05:42:23 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 05:42:23 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 05:42:23 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 05:42:23 | INFO     | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_target_distribution:22 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 05:43:28 | INFO     | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_target_distribution:22 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 05:43:55 | INFO     | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_target_distribution:22 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 05:43:55 | INFO     | eda.cumulative_dist | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_cumulative_distribution:89 - Fréquence cumulée de 'diagnosed_diabetes'.
+2025-12-06 05:44:20 | INFO     | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_target_distribution:22 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 05:44:20 | INFO     | eda.cumulative_dist | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_cumulative_distribution:89 - Fréquence cumulée de 'diabetes_stage'.
+2025-12-06 05:47:27 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:41 - Analyse de distribution du score de risque.
+2025-12-06 05:47:27 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:44 - Lignes analysées : 97297
+2025-12-06 05:48:00 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:41 - Analyse de distribution du score de risque.
+2025-12-06 05:48:01 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:44 - Lignes analysées : 97297
+2025-12-06 05:48:01 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:86 - Analyse du score de risque.
+2025-12-06 05:48:01 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:99 - Score sur une échelle 0–100.
+2025-12-06 05:48:46 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:41 - Analyse de distribution du score de risque.
+2025-12-06 05:48:46 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:44 - Lignes analysées : 97297
+2025-12-06 05:48:46 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:86 - Analyse du score de risque.
+2025-12-06 05:48:46 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:99 - Score sur une échelle 0–100.
+2025-12-06 05:49:54 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:41 - Analyse de distribution du score de risque.
+2025-12-06 05:49:54 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:44 - Lignes analysées : 97297
+2025-12-06 05:49:54 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:86 - Analyse du score de risque.
+2025-12-06 05:49:54 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:99 - Score sur une échelle 0–100.
+2025-12-06 05:49:54 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de diagnosed_diabetes vs diagnosed_diabetes.
+2025-12-06 05:50:49 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:41 - Analyse de distribution du score de risque.
+2025-12-06 05:50:49 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:44 - Lignes analysées : 97297
+2025-12-06 05:50:49 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:86 - Analyse du score de risque.
+2025-12-06 05:50:49 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:99 - Score sur une échelle 0–100.
+2025-12-06 05:50:49 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de diagnosed_diabetes vs diagnosed_diabetes.
+2025-12-06 05:51:06 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:41 - Analyse de distribution du score de risque.
+2025-12-06 05:51:06 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:44 - Lignes analysées : 97297
+2025-12-06 05:51:06 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:86 - Analyse du score de risque.
+2025-12-06 05:51:07 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:99 - Score sur une échelle 0–100.
+2025-12-06 05:51:07 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de diagnosed_diabetes vs diagnosed_diabetes.
+2025-12-06 05:51:07 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de Age
+2025-12-06 05:52:23 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:41 - Analyse de distribution du score de risque.
+2025-12-06 05:52:23 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:44 - Lignes analysées : 97297
+2025-12-06 05:52:23 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:86 - Analyse du score de risque.
+2025-12-06 05:52:24 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:99 - Score sur une échelle 0–100.
+2025-12-06 05:52:24 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de diagnosed_diabetes vs diagnosed_diabetes.
+2025-12-06 05:52:24 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de diagnosed_diabetes vs diagnosed_diabetes.
+2025-12-06 05:52:24 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de diagnosed_diabetes vs diagnosed_diabetes.
+2025-12-06 05:52:24 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de Age
+2025-12-06 05:52:24 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de alcohol_consumption_per_week
+2025-12-06 05:52:24 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de physical_activity_minutes_per_week
+2025-12-06 05:53:29 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:41 - Analyse de distribution du score de risque.
+2025-12-06 05:53:29 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:44 - Lignes analysées : 97297
+2025-12-06 05:53:29 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:86 - Analyse du score de risque.
+2025-12-06 05:53:29 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:99 - Score sur une échelle 0–100.
+2025-12-06 05:53:29 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de diagnosed_diabetes vs diagnosed_diabetes.
+2025-12-06 05:53:29 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de diagnosed_diabetes vs diagnosed_diabetes.
+2025-12-06 05:53:29 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de diagnosed_diabetes vs diagnosed_diabetes.
+2025-12-06 05:53:30 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de Age
+2025-12-06 05:53:30 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de alcohol_consumption_per_week
+2025-12-06 05:53:30 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de physical_activity_minutes_per_week
+2025-12-06 05:54:28 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:41 - Analyse de distribution du score de risque.
+2025-12-06 05:54:28 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:44 - Lignes analysées : 97297
+2025-12-06 05:54:28 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:86 - Analyse du score de risque.
+2025-12-06 05:54:28 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:99 - Score sur une échelle 0–100.
+2025-12-06 05:54:28 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de diagnosed_diabetes vs diagnosed_diabetes.
+2025-12-06 05:54:28 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de diagnosed_diabetes vs diagnosed_diabetes.
+2025-12-06 05:54:28 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de diagnosed_diabetes vs diagnosed_diabetes.
+2025-12-06 05:54:28 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de Age
+2025-12-06 05:54:28 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de alcohol_consumption_per_week
+2025-12-06 05:54:28 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de physical_activity_minutes_per_week
+2025-12-06 05:55:05 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:41 - Analyse de distribution du score de risque.
+2025-12-06 05:55:05 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:44 - Lignes analysées : 97297
+2025-12-06 05:55:05 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:86 - Analyse du score de risque.
+2025-12-06 05:55:05 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:99 - Score sur une échelle 0–100.
+2025-12-06 05:55:05 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de Age vs diagnosed_diabetes.
+2025-12-06 05:55:05 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de alcohol_consumption_per_week vs diagnosed_diabetes.
+2025-12-06 05:55:05 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de physical_activity_minutes_per_week vs diagnosed_diabetes.
+2025-12-06 05:55:06 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de Age
+2025-12-06 05:55:06 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de alcohol_consumption_per_week
+2025-12-06 05:55:06 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de physical_activity_minutes_per_week
+2025-12-06 05:55:55 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:41 - Analyse de distribution du score de risque.
+2025-12-06 05:55:55 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:44 - Lignes analysées : 97297
+2025-12-06 05:55:55 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:86 - Analyse du score de risque.
+2025-12-06 05:55:55 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:99 - Score sur une échelle 0–100.
+2025-12-06 05:55:55 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de Age vs diagnosed_diabetes.
+2025-12-06 05:55:55 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de alcohol_consumption_per_week vs diagnosed_diabetes.
+2025-12-06 05:55:56 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de physical_activity_minutes_per_week vs diagnosed_diabetes.
+2025-12-06 05:56:20 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:41 - Analyse de distribution du score de risque.
+2025-12-06 05:56:20 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:44 - Lignes analysées : 97297
+2025-12-06 05:56:20 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:86 - Analyse du score de risque.
+2025-12-06 05:56:21 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:99 - Score sur une échelle 0–100.
+2025-12-06 05:56:21 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de Age vs diagnosed_diabetes.
+2025-12-06 05:56:21 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de alcohol_consumption_per_week vs diagnosed_diabetes.
+2025-12-06 05:56:21 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de physical_activity_minutes_per_week vs diagnosed_diabetes.
+2025-12-06 05:56:42 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:41 - Analyse de distribution du score de risque.
+2025-12-06 05:56:42 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:44 - Lignes analysées : 97297
+2025-12-06 05:56:42 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:86 - Analyse du score de risque.
+2025-12-06 05:56:43 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:99 - Score sur une échelle 0–100.
+2025-12-06 05:56:43 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de Age vs diagnosed_diabetes.
+2025-12-06 05:56:44 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de alcohol_consumption_per_week vs diagnosed_diabetes.
+2025-12-06 05:56:44 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de physical_activity_minutes_per_week vs diagnosed_diabetes.
+2025-12-06 05:56:44 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de Age
+2025-12-06 05:56:44 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de alcohol_consumption_per_week
+2025-12-06 05:56:44 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de physical_activity_minutes_per_week
+2025-12-06 06:14:04 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:14:04 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:14:04 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:14:05 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:14:05 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-06 06:14:05 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:14:05 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:14:05 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-06 06:14:05 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 06:14:05 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 06:14:05 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 06:14:06 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 06:14:06 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-06 06:14:06 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 06:14:06 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 06:14:06 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 06:14:06 | INFO     | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_target_distribution:22 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 06:14:06 | INFO     | eda.cumulative_dist | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_cumulative_distribution:89 - Fréquence cumulée de 'diabetes_stage'.
+2025-12-06 06:14:06 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:43 - Analyse de distribution du score de risque.
+2025-12-06 06:14:06 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:46 - Lignes analysées : 97297
+2025-12-06 06:14:06 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:88 - Analyse du score de risque.
+2025-12-06 06:14:07 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:101 - Score sur une échelle 0–100.
+2025-12-06 06:14:07 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:115 - Analyse de Age vs diagnosed_diabetes.
+2025-12-06 06:14:07 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:115 - Analyse de alcohol_consumption_per_week vs diagnosed_diabetes.
+2025-12-06 06:14:07 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:115 - Analyse de physical_activity_minutes_per_week vs diagnosed_diabetes.
+2025-12-06 06:14:07 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:140 - Distribution de Age
+2025-12-06 06:14:07 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:140 - Distribution de alcohol_consumption_per_week
+2025-12-06 06:14:07 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:140 - Distribution de physical_activity_minutes_per_week
+2025-12-06 06:14:25 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_categorical_proportions:183 - Proportions pour la colonne '%s' (en %%) :
+%s
+2025-12-06 06:14:25 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_categorical_proportions:205 - Visualisation de la variable catégorielle '%s' terminée.
+
+2025-12-06 06:14:38 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_categorical_proportions:183 - Proportions pour la colonne '%s' (en %%) :
+%s
+2025-12-06 06:14:38 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_categorical_proportions:205 - Visualisation de la variable catégorielle '%s' terminée.
+
+2025-12-06 06:15:18 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:15:18 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:15:18 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:15:19 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:15:19 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-06 06:15:19 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:15:20 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:15:20 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-06 06:15:20 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 06:15:20 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 06:15:20 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 06:15:20 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 06:15:20 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-06 06:15:20 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 06:15:20 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 06:15:20 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 06:15:20 | INFO     | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_target_distribution:22 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 06:15:21 | INFO     | eda.cumulative_dist | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_cumulative_distribution:89 - Fréquence cumulée de 'diabetes_stage'.
+2025-12-06 06:15:21 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:43 - Analyse de distribution du score de risque.
+2025-12-06 06:15:21 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:46 - Lignes analysées : 97297
+2025-12-06 06:15:21 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:88 - Analyse du score de risque.
+2025-12-06 06:15:21 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:101 - Score sur une échelle 0–100.
+2025-12-06 06:15:21 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:115 - Analyse de Age vs diagnosed_diabetes.
+2025-12-06 06:15:21 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:115 - Analyse de alcohol_consumption_per_week vs diagnosed_diabetes.
+2025-12-06 06:15:21 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:115 - Analyse de physical_activity_minutes_per_week vs diagnosed_diabetes.
+2025-12-06 06:15:21 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:140 - Distribution de Age
+2025-12-06 06:15:21 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:140 - Distribution de alcohol_consumption_per_week
+2025-12-06 06:15:22 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:140 - Distribution de physical_activity_minutes_per_week
+2025-12-06 06:15:22 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_categorical_proportions:183 - Proportions pour la colonne '%s' (en %%) :
+%s
+2025-12-06 06:15:22 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_categorical_proportions:205 - Visualisation de la variable catégorielle '%s' terminée.
+
+2025-12-06 06:21:58 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:21:59 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:21:59 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:21:59 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:22:00 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-06 06:22:00 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:22:00 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:22:00 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-06 06:22:00 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 06:22:00 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 06:22:00 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 06:22:00 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 06:22:00 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-06 06:22:01 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 06:22:01 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 06:22:01 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 06:23:38 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:23:38 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:23:38 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:23:38 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:23:39 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-06 06:23:39 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:23:39 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:23:39 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-06 06:23:39 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 06:23:40 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 06:23:40 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 06:23:40 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 06:23:40 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-06 06:23:40 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 06:23:40 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 06:23:40 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 06:23:48 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:25:32 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:25:32 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:25:33 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:25:33 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:25:33 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:25:33 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:25:33 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:26:22 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:26:22 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:26:22 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:26:22 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:26:22 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:26:22 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:26:22 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:27:10 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:46 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:33:38 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:33:38 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:33:38 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:33:38 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:33:39 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-06 06:33:39 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:33:39 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:33:39 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-06 06:33:39 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 06:33:39 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 06:33:39 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 06:33:40 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 06:33:40 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-06 06:33:40 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 06:33:40 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 06:33:40 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 06:33:40 | INFO     | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_target_distribution:22 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 06:33:40 | INFO     | eda.cumulative_dist | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_cumulative_distribution:89 - Fréquence cumulée de 'diabetes_stage'.
+2025-12-06 06:33:40 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:33:41 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:33:41 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:33:41 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:33:41 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:33:41 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:33:41 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:33:41 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:33:41 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:97 - Analyse cat vs target : '%s' vs '%s'
+2025-12-06 06:36:10 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:36:10 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:36:10 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:36:10 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:36:11 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-06 06:36:11 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 06:36:11 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 06:36:11 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-06 06:36:11 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 06:36:11 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 06:36:11 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 06:36:11 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 06:36:11 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-06 06:36:11 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 06:36:12 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 06:36:12 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 06:36:12 | INFO     | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_target_distribution:22 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 06:36:12 | INFO     | eda.cumulative_dist | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_cumulative_distribution:89 - Fréquence cumulée de 'diabetes_stage'.
+2025-12-06 06:36:12 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:36:12 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:36:12 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:36:12 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:36:12 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:36:12 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:36:13 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:36:13 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 06:36:15 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:97 - Analyse cat vs target : '%s' vs '%s'
+2025-12-06 06:36:15 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:113 - Table croisée proportionnelle (%%) :
+%s
+2025-12-06 06:36:15 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:97 - Analyse cat vs target : '%s' vs '%s'
+2025-12-06 06:36:15 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:113 - Table croisée proportionnelle (%%) :
+%s
+2025-12-06 06:36:15 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:97 - Analyse cat vs target : '%s' vs '%s'
+2025-12-06 06:36:16 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:113 - Table croisée proportionnelle (%%) :
+%s
+2025-12-06 06:36:16 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:97 - Analyse cat vs target : '%s' vs '%s'
+2025-12-06 06:36:16 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:113 - Table croisée proportionnelle (%%) :
+%s
+2025-12-06 06:36:16 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:97 - Analyse cat vs target : '%s' vs '%s'
+2025-12-06 06:36:16 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:113 - Table croisée proportionnelle (%%) :
+%s
+2025-12-06 06:36:16 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:97 - Analyse cat vs target : '%s' vs '%s'
+2025-12-06 06:36:16 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:113 - Table croisée proportionnelle (%%) :
+%s
+2025-12-06 06:36:16 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:97 - Analyse cat vs target : '%s' vs '%s'
+2025-12-06 06:36:16 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:113 - Table croisée proportionnelle (%%) :
+%s
+2025-12-06 06:37:55 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:97 - Analyse cat vs target : '%s' vs '%s'
+2025-12-06 06:37:55 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:113 - Table croisée proportionnelle (%%) :
+%s
+2025-12-06 06:37:55 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:97 - Analyse cat vs target : '%s' vs '%s'
+2025-12-06 06:37:55 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:113 - Table croisée proportionnelle (%%) :
+%s
+2025-12-06 06:37:55 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:97 - Analyse cat vs target : '%s' vs '%s'
+2025-12-06 06:37:55 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:113 - Table croisée proportionnelle (%%) :
+%s
+2025-12-06 06:37:55 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:97 - Analyse cat vs target : '%s' vs '%s'
+2025-12-06 06:37:55 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:113 - Table croisée proportionnelle (%%) :
+%s
+2025-12-06 06:37:55 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:97 - Analyse cat vs target : '%s' vs '%s'
+2025-12-06 06:37:55 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:113 - Table croisée proportionnelle (%%) :
+%s
+2025-12-06 06:37:55 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:97 - Analyse cat vs target : '%s' vs '%s'
+2025-12-06 06:37:55 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:113 - Table croisée proportionnelle (%%) :
+%s
+2025-12-06 06:37:55 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:97 - Analyse cat vs target : '%s' vs '%s'
+2025-12-06 06:37:55 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_vs_target:113 - Table croisée proportionnelle (%%) :
+%s
+2025-12-06 06:38:09 | INFO     | __main__ | __main__:plot_target_distribution_within_category:16 - Analyse cat -> target : %s → %s
+2025-12-06 06:38:09 | INFO     | __main__ | __main__:plot_target_distribution_within_category:16 - Analyse cat -> target : %s → %s
+2025-12-06 06:38:09 | INFO     | __main__ | __main__:plot_target_distribution_within_category:16 - Analyse cat -> target : %s → %s
+2025-12-06 06:38:09 | INFO     | __main__ | __main__:plot_target_distribution_within_category:16 - Analyse cat -> target : %s → %s
+2025-12-06 06:38:09 | INFO     | __main__ | __main__:plot_target_distribution_within_category:16 - Analyse cat -> target : %s → %s
+2025-12-06 06:38:10 | INFO     | __main__ | __main__:plot_target_distribution_within_category:16 - Analyse cat -> target : %s → %s
+2025-12-06 06:38:10 | INFO     | __main__ | __main__:plot_target_distribution_within_category:16 - Analyse cat -> target : %s → %s
+2025-12-06 06:39:25 | INFO     | __main__ | __main__:plot_target_distribution_within_category:61 - Analyse cat -> target avec facettes : %s → %s
+2025-12-06 06:39:25 | INFO     | __main__ | __main__:plot_target_distribution_within_category:61 - Analyse cat -> target avec facettes : %s → %s
+2025-12-06 06:39:25 | INFO     | __main__ | __main__:plot_target_distribution_within_category:61 - Analyse cat -> target avec facettes : %s → %s
+2025-12-06 06:39:26 | INFO     | __main__ | __main__:plot_target_distribution_within_category:61 - Analyse cat -> target avec facettes : %s → %s
+2025-12-06 06:39:26 | INFO     | __main__ | __main__:plot_target_distribution_within_category:61 - Analyse cat -> target avec facettes : %s → %s
+2025-12-06 06:39:26 | INFO     | __main__ | __main__:plot_target_distribution_within_category:61 - Analyse cat -> target avec facettes : %s → %s
+2025-12-06 06:39:26 | INFO     | __main__ | __main__:plot_target_distribution_within_category:61 - Analyse cat -> target avec facettes : %s → %s
+2025-12-06 06:41:43 | INFO     | __main__ | __main__:plot_target_distribution_within_category:61 - Analyse cat -> target avec facettes : gender → diagnosed_diabetes
+2025-12-06 06:41:43 | INFO     | __main__ | __main__:plot_target_distribution_within_category:61 - Analyse cat -> target avec facettes : ethnicity → diagnosed_diabetes
+2025-12-06 06:41:43 | INFO     | __main__ | __main__:plot_target_distribution_within_category:61 - Analyse cat -> target avec facettes : education_level → diagnosed_diabetes
+2025-12-06 06:41:43 | INFO     | __main__ | __main__:plot_target_distribution_within_category:61 - Analyse cat -> target avec facettes : income_level → diagnosed_diabetes
+2025-12-06 06:41:43 | INFO     | __main__ | __main__:plot_target_distribution_within_category:61 - Analyse cat -> target avec facettes : employment_status → diagnosed_diabetes
+2025-12-06 06:41:43 | INFO     | __main__ | __main__:plot_target_distribution_within_category:61 - Analyse cat -> target avec facettes : smoking_status → diagnosed_diabetes
+2025-12-06 06:41:43 | INFO     | __main__ | __main__:plot_target_distribution_within_category:61 - Analyse cat -> target avec facettes : diabetes_stage → diagnosed_diabetes
+2025-12-06 07:22:57 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 07:22:57 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 07:22:57 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 07:22:57 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 07:22:59 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-06 07:22:59 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 07:22:59 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 07:22:59 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-06 07:22:59 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 07:22:59 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 07:22:59 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 07:22:59 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 07:22:59 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-06 07:22:59 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 07:23:00 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 07:23:00 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 07:23:00 | INFO     | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_target_distribution:22 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 07:23:01 | INFO     | eda.cumulative_dist | health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis:plot_cumulative_distribution:89 - Fréquence cumulée de 'diabetes_stage'.
+2025-12-06 07:23:02 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 07:23:30 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 07:23:30 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 07:23:31 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 07:23:31 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 07:23:31 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 07:23:31 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 07:23:31 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:48 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 07:23:35 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:93 - Analyse cat -> target avec facettes : gender → diagnosed_diabetes
+2025-12-06 07:23:35 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:93 - Analyse cat -> target avec facettes : ethnicity → diagnosed_diabetes
+2025-12-06 07:23:35 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:93 - Analyse cat -> target avec facettes : education_level → diagnosed_diabetes
+2025-12-06 07:23:35 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:93 - Analyse cat -> target avec facettes : income_level → diagnosed_diabetes
+2025-12-06 07:23:35 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:93 - Analyse cat -> target avec facettes : employment_status → diagnosed_diabetes
+2025-12-06 07:23:35 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:93 - Analyse cat -> target avec facettes : smoking_status → diagnosed_diabetes
+2025-12-06 07:23:35 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:93 - Analyse cat -> target avec facettes : diabetes_stage → diagnosed_diabetes
+2025-12-06 07:36:50 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 07:36:50 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 07:36:50 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 07:36:50 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 07:36:51 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-06 07:36:51 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 07:36:51 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 07:36:51 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-06 07:36:51 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 07:36:51 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 07:36:51 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 07:36:52 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 07:36:52 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-06 07:36:52 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 07:36:52 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 07:36:52 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 07:37:06 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 07:37:06 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 07:37:06 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 07:37:06 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 07:37:08 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-06 07:37:08 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 07:37:08 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 07:37:08 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-06 07:37:08 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 07:37:08 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 07:37:08 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 07:37:09 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 07:37:09 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-06 07:37:09 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 07:37:09 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 07:37:09 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 07:37:26 | INFO     | eda.target_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution:140 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 07:37:27 | INFO     | eda.cumulative_dist | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_cumulative_distribution:207 - Fréquence cumulée de 'diabetes_stage'.
+2025-12-06 07:38:56 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour '%s' (%%) :
+%s
+2025-12-06 07:38:56 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle diabetes_stage terminée.
+
+2025-12-06 07:40:43 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 07:40:43 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 07:40:43 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 07:40:43 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 07:40:44 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-06 07:40:44 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 07:40:44 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 07:40:44 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-06 07:40:44 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 07:40:45 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 07:40:45 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 07:40:45 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 07:40:45 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-06 07:40:45 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 07:40:45 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 07:40:45 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 07:40:45 | INFO     | eda.target_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution:140 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 07:40:46 | INFO     | eda.cumulative_dist | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_cumulative_distribution:207 - Fréquence cumulée de 'diabetes_stage'.
+2025-12-06 07:41:33 | INFO     | eda.target_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution:140 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 07:41:33 | INFO     | eda.cumulative_dist | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_cumulative_distribution:207 - Fréquence cumulée de 'diabetes_stage'.
+2025-12-06 07:41:57 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour diabetes_stage (%%) :
+   diabetes_stage  proportion
+0         Type 2       59.78
+1   Pre-Diabetes       31.87
+2    No Diabetes        7.95
+3    Gestational        0.27
+4         Type 1        0.12
+2025-12-06 07:41:57 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle diabetes_stage terminée.
+
+2025-12-06 07:43:53 | INFO     | eda.target_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution:140 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 07:43:53 | INFO     | eda.cumulative_dist | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_cumulative_distribution:207 - Fréquence cumulée de 'diabetes_stage'.
+2025-12-06 07:43:57 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour diabetes_stage (%%) :
+   diabetes_stage  proportion
+0         Type 2       59.78
+1   Pre-Diabetes       31.87
+2    No Diabetes        7.95
+3    Gestational        0.27
+4         Type 1        0.12
+2025-12-06 07:43:57 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle diabetes_stage terminée.
+
+2025-12-06 07:44:16 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour gender (%%) :
+    gender  proportion
+0  Female       50.23
+1    Male       47.75
+2   Other        2.02
+2025-12-06 07:44:16 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle gender terminée.
+
+2025-12-06 07:44:16 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour ethnicity (%%) :
+   ethnicity  proportion
+0     White       45.01
+1  Hispanic       20.10
+2     Black       17.99
+3     Asian       11.85
+4     Other        5.05
+2025-12-06 07:44:17 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle ethnicity terminée.
+
+2025-12-06 07:44:17 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour education_level (%%) :
+   education_level  proportion
+0      Highschool       44.86
+1        Graduate       35.04
+2    Postgraduate       14.96
+3       No formal        5.14
+2025-12-06 07:44:17 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle education_level terminée.
+
+2025-12-06 07:44:17 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour income_level (%%) :
+    income_level  proportion
+0        Middle       35.16
+1  Lower-Middle       25.15
+2  Upper-Middle       19.87
+3           Low       14.82
+4          High        5.00
+2025-12-06 07:44:17 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle income_level terminée.
+
+2025-12-06 07:44:17 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour employment_status (%%) :
+   employment_status  proportion
+0          Employed       60.21
+1           Retired       21.73
+2        Unemployed       11.92
+3           Student        6.14
+2025-12-06 07:44:17 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle employment_status terminée.
+
+2025-12-06 07:44:17 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour smoking_status (%%) :
+   smoking_status  proportion
+0          Never       59.84
+1        Current       20.14
+2         Former       20.03
+2025-12-06 07:44:17 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle smoking_status terminée.
+
+2025-12-06 07:44:17 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour diabetes_stage (%%) :
+   diabetes_stage  proportion
+0         Type 2       59.78
+1   Pre-Diabetes       31.87
+2    No Diabetes        7.95
+3    Gestational        0.27
+4         Type 1        0.12
+2025-12-06 07:44:17 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle diabetes_stage terminée.
+
+2025-12-06 07:44:20 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:96 - Analyse cat -> target avec facettes : gender → diagnosed_diabetes
+2025-12-06 07:44:20 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:96 - Analyse cat -> target avec facettes : ethnicity → diagnosed_diabetes
+2025-12-06 07:44:20 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:96 - Analyse cat -> target avec facettes : education_level → diagnosed_diabetes
+2025-12-06 07:44:20 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:96 - Analyse cat -> target avec facettes : income_level → diagnosed_diabetes
+2025-12-06 07:44:20 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:96 - Analyse cat -> target avec facettes : employment_status → diagnosed_diabetes
+2025-12-06 07:44:20 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:96 - Analyse cat -> target avec facettes : smoking_status → diagnosed_diabetes
+2025-12-06 07:44:20 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:96 - Analyse cat -> target avec facettes : diabetes_stage → diagnosed_diabetes
+2025-12-06 07:45:21 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:41 - Analyse de distribution du score de risque.
+2025-12-06 07:45:21 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:44 - Lignes analysées : 97297
+2025-12-06 07:45:21 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:86 - Analyse du score de risque.
+2025-12-06 07:45:21 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:99 - Score sur une échelle 0–100.
+2025-12-06 07:45:21 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de Age vs diagnosed_diabetes.
+2025-12-06 07:45:21 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de alcohol_consumption_per_week vs diagnosed_diabetes.
+2025-12-06 07:45:21 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:113 - Analyse de physical_activity_minutes_per_week vs diagnosed_diabetes.
+2025-12-06 07:45:21 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de Age
+2025-12-06 07:45:21 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de alcohol_consumption_per_week
+2025-12-06 07:45:21 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:138 - Distribution de physical_activity_minutes_per_week
+2025-12-06 07:48:38 | INFO     | __main__ | __main__:plot_numeric_scatter_with_target:35 - Visualisation scatter 2D : X=%s, Y=%s, Target=%s
+2025-12-06 07:53:05 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 07:53:05 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 07:53:05 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 07:53:05 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 07:53:06 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:60 - Chargement du dataset depuis la source.
+2025-12-06 07:53:06 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:35 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/input/diabetes_health_indicators.csv
+2025-12-06 07:53:06 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:load_csv:42 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-06 07:53:06 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:81 - Sauvegarde des datasets divisés.
+2025-12-06 07:53:06 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 07:53:07 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/train.csv
+2025-12-06 07:53:07 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:53 - Sauvegarde du dataset dans : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 07:53:07 | INFO     | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository | health_lifestyle_diabetes.infrastructure.data_sources.csv_dataset_repository:save_csv:58 - Dataset sauvegardé avec succès : /Users/surelmanda/Downloads/ml-projects/health_lifestyle_diabetes/data/output/test.csv
+2025-12-06 07:53:07 | INFO     | health_lifestyle_diabetes.application.use_cases.split_dataset_uc | health_lifestyle_diabetes.application.use_cases.split_dataset_uc:execute:85 - Dataset divisé en : train (68107 lignes) - (31 colonnes), test (29190 lignes) - (31 colonnes).
+2025-12-06 07:53:07 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:26 - Résumé du dataset : 97297 lignes, 31 colonnes.
+2025-12-06 07:53:07 | INFO     | eda.dataset_summary | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:summarize_dataset:59 - Résumé généré avec succès.
+2025-12-06 07:53:07 | INFO     | eda.feature_identifier | health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary:identify_feature_types:74 - Types identifiés : 24 numériques, 7 catégorielles.
+2025-12-06 07:53:07 | INFO     | eda.target_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution:140 - Distribution de la cible 'diagnosed_diabetes'.
+2025-12-06 07:53:08 | INFO     | eda.cumulative_dist | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_cumulative_distribution:207 - Fréquence cumulée de 'diabetes_stage'.
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour diabetes_stage (%%) :
+   diabetes_stage  proportion
+0         Type 2       59.78
+1   Pre-Diabetes       31.87
+2    No Diabetes        7.95
+3    Gestational        0.27
+4         Type 1        0.12
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle diabetes_stage terminée.
+
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour gender (%%) :
+    gender  proportion
+0  Female       50.23
+1    Male       47.75
+2   Other        2.02
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle gender terminée.
+
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour ethnicity (%%) :
+   ethnicity  proportion
+0     White       45.01
+1  Hispanic       20.10
+2     Black       17.99
+3     Asian       11.85
+4     Other        5.05
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle ethnicity terminée.
+
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour education_level (%%) :
+   education_level  proportion
+0      Highschool       44.86
+1        Graduate       35.04
+2    Postgraduate       14.96
+3       No formal        5.14
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle education_level terminée.
+
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour income_level (%%) :
+    income_level  proportion
+0        Middle       35.16
+1  Lower-Middle       25.15
+2  Upper-Middle       19.87
+3           Low       14.82
+4          High        5.00
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle income_level terminée.
+
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour employment_status (%%) :
+   employment_status  proportion
+0          Employed       60.21
+1           Retired       21.73
+2        Unemployed       11.92
+3           Student        6.14
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle employment_status terminée.
+
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour smoking_status (%%) :
+   smoking_status  proportion
+0          Never       59.84
+1        Current       20.14
+2         Former       20.03
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle smoking_status terminée.
+
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:50 - Proportions pour diabetes_stage (%%) :
+   diabetes_stage  proportion
+0         Type 2       59.78
+1   Pre-Diabetes       31.87
+2    No Diabetes        7.95
+3    Gestational        0.27
+4         Type 1        0.12
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_categorical_proportions:69 - Visualisation de la variable catégorielle diabetes_stage terminée.
+
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:96 - Analyse cat -> target avec facettes : gender → diagnosed_diabetes
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:96 - Analyse cat -> target avec facettes : ethnicity → diagnosed_diabetes
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:96 - Analyse cat -> target avec facettes : education_level → diagnosed_diabetes
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:96 - Analyse cat -> target avec facettes : income_level → diagnosed_diabetes
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:96 - Analyse cat -> target avec facettes : employment_status → diagnosed_diabetes
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:96 - Analyse cat -> target avec facettes : smoking_status → diagnosed_diabetes
+2025-12-06 07:53:08 | INFO     | eda.cat_proportions_target | health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis:plot_target_distribution_within_category:96 - Analyse cat -> target avec facettes : diabetes_stage → diagnosed_diabetes
+2025-12-06 07:53:09 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:42 - Analyse de distribution du score de risque.
+2025-12-06 07:53:09 | INFO     | eda.risk_distribution | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_distribution:45 - Lignes analysées : 97297
+2025-12-06 07:53:09 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:87 - Analyse du score de risque.
+2025-12-06 07:53:09 | INFO     | eda.risk_score | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:analyze_risk_score:100 - Score sur une échelle 0–100.
+2025-12-06 07:53:09 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:114 - Analyse de Age vs diagnosed_diabetes.
+2025-12-06 07:53:09 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:114 - Analyse de alcohol_consumption_per_week vs diagnosed_diabetes.
+2025-12-06 07:53:09 | INFO     | eda.numeric_vs_target | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_vs_target:114 - Analyse de physical_activity_minutes_per_week vs diagnosed_diabetes.
+2025-12-06 07:53:09 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:139 - Distribution de Age
+2025-12-06 07:53:09 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:139 - Distribution de alcohol_consumption_per_week
+2025-12-06 07:53:10 | INFO     | eda.numeric_feature_dist | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_feature_distribution:139 - Distribution de physical_activity_minutes_per_week
+2025-12-06 07:53:13 | INFO     | eda.numeric_scatter | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_scatter_with_target:184 - Visualisation scatter 2D : X=%s, Y=%s, Target=%s
+2025-12-06 07:54:38 | INFO     | eda.numeric_scatter | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_scatter_with_target:184 - Visualisation scatter 2D : X=%s, Y=%s, Target=%s
+2025-12-06 07:54:39 | INFO     | eda.numeric_scatter | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_scatter_with_target:184 - Visualisation scatter 2D : X=%s, Y=%s, Target=%s
+2025-12-06 07:54:39 | INFO     | eda.numeric_scatter | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_scatter_with_target:184 - Visualisation scatter 2D : X=%s, Y=%s, Target=%s
+2025-12-06 07:54:59 | INFO     | eda.numeric_scatter | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_scatter_with_target:184 - Visualisation scatter 2D : X=%s, Y=%s, Target=%s
+2025-12-06 07:54:59 | INFO     | eda.numeric_scatter | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_scatter_with_target:184 - Visualisation scatter 2D : X=%s, Y=%s, Target=%s
+2025-12-06 07:54:59 | INFO     | eda.numeric_scatter | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_scatter_with_target:184 - Visualisation scatter 2D : X=%s, Y=%s, Target=%s
+2025-12-06 08:02:31 | INFO     | eda.numeric_scatter | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_scatter_with_target:184 - Visualisation scatter 2D : X=%s, Y=%s, Target=%s
+2025-12-06 08:02:31 | INFO     | eda.numeric_scatter | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_scatter_with_target:184 - Visualisation scatter 2D : X=%s, Y=%s, Target=%s
+2025-12-06 08:02:31 | INFO     | eda.numeric_scatter | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_scatter_with_target:184 - Visualisation scatter 2D : X=%s, Y=%s, Target=%s
+2025-12-06 08:02:56 | INFO     | eda.numeric_scatter | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_scatter_with_target:184 - Visualisation scatter 2D : X=%s, Y=%s, Target=%s
+2025-12-06 08:02:56 | INFO     | eda.numeric_scatter | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_scatter_with_target:184 - Visualisation scatter 2D : X=%s, Y=%s, Target=%s
+2025-12-06 08:02:56 | INFO     | eda.numeric_scatter | health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis:plot_numeric_scatter_with_target:184 - Visualisation scatter 2D : X=%s, Y=%s, Target=%s

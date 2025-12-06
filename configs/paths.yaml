@@ -1,0 +1,27 @@
+# paths.yaml
+# Centralisation de tous les chemins utilisés dans le projet.
+
+data:
+  root: "data/"
+
+  input:
+    raw_dataset: "data/input/diabetes_health_indicators.csv"
+
+  processed:
+    cleaned_dataset: "data/processed/cleaned_diabetes.csv"
+    features_dataset: "data/processed/features_diabetes.csv"
+
+  output:
+    train_dataset: "data/output/train.csv"
+    test_dataset: "data/output/test.csv"
+
+    model: "data/output/model.pkl"
+    pipeline: "data/output/pipeline.pkl"
+
+    reports:
+      eda_report: "data/output/eda_reports/eda_report.html"
+      metrics_report: "data/output/metrics/metrics.json"
+
+logs:
+  folder: "logs/"
+  main_log: "logs/app.log"

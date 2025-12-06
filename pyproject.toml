@@ -1,0 +1,58 @@
+[tool.poetry]
+name = "health-lifestyle-diabetes"
+version = "0.1.0"
+description = "Clean architecture project for diabetes prediction using health & lifestyle data."
+authors = ["Manda Surel <s239150.eps@gmail.com>"]
+readme = "README.md"
+
+# Indique où se trouve le code source
+packages = [
+    { include = "health_lifestyle_diabetes", from = "src" },
+]
+
+# -------------------------------------------
+#   Dépendances principales (production)
+# -------------------------------------------
+[tool.poetry.dependencies]
+python = "^3.10"
+
+# Core scientific stack
+pandas = "^2.2.0"
+numpy = "^1.26.0"
+scikit-learn = "^1.4.0"
+
+# Machine Learning models
+xgboost = "^2.0.0"
+catboost = "^1.2.0"
+
+# Configuration & validation
+pyyaml = "^6.0.0"
+pydantic = "^2.7.0"
+
+# CLI & API
+click = "^8.1.0"
+fastapi = "^0.111.0"
+uvicorn = { extras = ["standard"], version = "^0.30.0" }
+
+# Dashboard / UI
+streamlit = "^1.37.0"
+
+# ---- Logging ----
+loguru = "^0.7.0"
+
+# -------------------------------------------
+#   Dépendances développement
+# -------------------------------------------
+nbformat = "^5.10.4"
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+black = "^24.0.0"
+ruff = "^0.5.0"
+mypy = "^1.10.0"
+
+# -------------------------------------------
+#   Build system
+# -------------------------------------------
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

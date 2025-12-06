@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+
+# Virtualenv Poetry
+.venv/
+
+# VSCode / IDE
+.vscode/
+.idea/
+
+# Data dérivées
+data/output/
+!data/output/.gitkeep
+data/processed
+dev
+data
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Pytest
+.pytest_cache/
+.htmlcov/
+.coverage
+
+# poetry
+poetry.lock
+
+# note book
+dev
