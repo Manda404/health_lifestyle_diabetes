@@ -1,0 +1,2 @@
+feature_engineering:
+  age_group_strategy: "coarse"

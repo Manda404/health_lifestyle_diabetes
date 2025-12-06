@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
 from health_lifestyle_diabetes.infrastructure.utils.config_loader import ConfigLoader
-from health_lifestyle_diabetes.domain.ports.dataset_repository import (
+from health_lifestyle_diabetes.domain.ports.dataset_repository_port import (
     DatasetRepositoryPort,
 )
 from health_lifestyle_diabetes.infrastructure.utils.exceptions import (

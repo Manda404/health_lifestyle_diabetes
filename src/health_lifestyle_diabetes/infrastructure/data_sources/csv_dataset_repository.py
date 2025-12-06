@@ -1,6 +1,6 @@
 import pandas as pd
 from pathlib import Path
-from health_lifestyle_diabetes.domain.ports.dataset_repository import (
+from health_lifestyle_diabetes.domain.ports.dataset_repository_port import (
     DatasetRepositoryPort,
 )
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
