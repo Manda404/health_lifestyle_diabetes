@@ -1,13 +1,13 @@
-
 import pandas as pd
 from pathlib import Path
-from health_lifestyle_diabetes.domain.ports.dataset_repository import DatasetRepositoryPort
+from health_lifestyle_diabetes.domain.ports.dataset_repository import (
+    DatasetRepositoryPort,
+)
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from health_lifestyle_diabetes.infrastructure.utils.exceptions import (
     DatasetLoadingError,
     DatasetSavingError,
 )
-
 
 
 logger = get_logger(__name__)
@@ -39,7 +39,9 @@ class CSVDatasetRepository(DatasetRepositoryPort):
                 raise DatasetLoadingError(f"Fichier introuvable : {self.source_path}")
 
             df = pd.read_csv(self.source_path)
-            logger.info(f"Dataset chargé avec succès ({df.shape[0]} lignes, {df.shape[1]} colonnes).")
+            logger.info(
+                f"Dataset chargé avec succès ({df.shape[0]} lignes, {df.shape[1]} colonnes)."
+            )
             return df
 
         except Exception as e:

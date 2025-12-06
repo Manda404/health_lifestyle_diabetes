@@ -26,8 +26,8 @@ logger = get_logger("usecase.perform_eda")
 class PerformEDAUseCase:
     """
     Cas d’usage : Orchestration complète de l’EDA.
-    
-    ⚠️ IMPORTANT :
+
+    IMPORTANT :
     Ce use case NE contient AUCUNE logique EDA.
     Il se contente de coordonner les services EDA situés
     dans l’infrastructure et de renvoyer des données utiles.
@@ -69,7 +69,9 @@ class PerformEDAUseCase:
         if self.risk_score_col in df.columns and self.diabetes_stage_col in df.columns:
             logger.info("Analyse du score de risque...")
             analyze_risk_distribution(df, self.risk_score_col, self.diabetes_stage_col)
-            analyze_risk_score(df, self.risk_score_col, self.diabetes_stage_col, self.target_col)
+            analyze_risk_score(
+                df, self.risk_score_col, self.diabetes_stage_col, self.target_col
+            )
         else:
             logger.warning("Colonnes score/stage absentes : analyse du risque ignorée.")
 

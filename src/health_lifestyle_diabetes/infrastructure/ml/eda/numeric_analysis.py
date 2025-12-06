@@ -14,6 +14,7 @@ logger_numeric_vs_target = get_logger("eda.numeric_vs_target")
 logger_numeric_feature = get_logger("eda.numeric_feature_dist")
 logger_scatter = get_logger("eda.numeric_scatter")
 
+
 # -------------------------
 # Helpers internes
 # -------------------------
@@ -34,7 +35,7 @@ def _ensure_numeric(df: DataFrame, col: str):
 def analyze_risk_distribution(
     df: DataFrame,
     score_col: str = "diabetes_risk_score",
-    stage_col: str = "diabetes_stage"
+    stage_col: str = "diabetes_stage",
 ):
     _ensure_columns(df, [score_col, stage_col])
 
@@ -45,10 +46,8 @@ def analyze_risk_distribution(
     logger.info(f"Lignes analysées : {len(df_clean)}")
 
     # Statistiques
-    stats = (
-        df_clean
-        .groupby(stage_col)[score_col]
-        .agg(["count", "mean", "std", "min", "max"])
+    stats = df_clean.groupby(stage_col)[score_col].agg(
+        ["count", "mean", "std", "min", "max"]
     )
     logger.debug(f"Statistiques :\n{stats}")
 
@@ -59,14 +58,17 @@ def analyze_risk_distribution(
         color=stage_col,
         nbins=50,
         histnorm="probability density",
-        barmode="overlay"
+        barmode="overlay",
     )
 
     x = np.linspace(df_clean[score_col].min(), df_clean[score_col].max(), 200)
     for stage, subset in df_clean.groupby(stage_col):
         mu, sigma = subset[score_col].mean(), subset[score_col].std()
-        fig.add_trace(go.Scatter(x=x, y=norm.pdf(x, mu, sigma), mode="lines",
-                                 name=f"Norm {stage}"))
+        fig.add_trace(
+            go.Scatter(
+                x=x, y=norm.pdf(x, mu, sigma), mode="lines", name=f"Norm {stage}"
+            )
+        )
 
     fig.update_layout(title=f"Distribution de {score_col} par {stage_col}")
     fig.show()
@@ -79,7 +81,7 @@ def analyze_risk_score(
     df: DataFrame,
     score_col: str = "diabetes_risk_score",
     stage_col: str = "diabetes_stage",
-    diag_col: str = "diagnosed_diabetes"
+    diag_col: str = "diagnosed_diabetes",
 ):
     _ensure_columns(df, [score_col, stage_col, diag_col])
 
@@ -151,10 +153,13 @@ def plot_numeric_feature_distribution(df: DataFrame, numeric_col: str):
 
 
 # -------------------------
-# 5. 
+# 5.
 # -------------------------
 
-def plot_numeric_scatter_with_target(df: pd.DataFrame, x_col: str, y_col: str, target_col: str):
+
+def plot_numeric_scatter_with_target(
+    df: pd.DataFrame, x_col: str, y_col: str, target_col: str
+):
     """
     Scatter plot 2D entre deux features numériques,
     avec coloration par la cible (classification).
@@ -182,8 +187,7 @@ def plot_numeric_scatter_with_target(df: pd.DataFrame, x_col: str, y_col: str, t
             raise ValueError(f"La colonne '{col}' est introuvable dans le DataFrame.")
 
     logger_scatter.info(
-        "Visualisation scatter 2D : X=%s, Y=%s, Target=%s", 
-        x_col, y_col, target_col
+        "Visualisation scatter 2D : X=%s, Y=%s, Target=%s", x_col, y_col, target_col
     )
 
     fig = px.scatter(

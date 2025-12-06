@@ -45,10 +45,11 @@ loguru = "^0.7.0"
 # -------------------------------------------
 nbformat = "^5.10.4"
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.0.0"
-black = "^24.0.0"
-ruff = "^0.5.0"
-mypy = "^1.10.0"
+pytest = "^8.0.0"   # Framework de tests simple et puissant, utilisé pour valider le comportement du code, éviter les régressions et garantir la qualité du projet.
+black = "^24.0.0"   # Formateur automatique de code Python. Permet un style homogène, lisible et non-discutable dans toute la base de code.
+ruff = "^0.5.0"     # Linter ultra-rapide regroupant flake8, isort et d'autres règles de qualité. Détecte erreurs, imports inutiles, complexité excessive et problèmes de style.
+mypy = "^1.10.0"    # Vérificateur statique de types. Sécurise les signatures, détecte les incohérences de typage avant exécution, et améliore la robustesse globale du code.
+
 
 # -------------------------------------------
 #   Build system

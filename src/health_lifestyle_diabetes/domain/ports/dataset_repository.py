@@ -4,6 +4,7 @@ from typing import Protocol
 from pandas import DataFrame
 from pathlib import Path
 
+
 class DatasetRepositoryPort(Protocol):
     """
     Port (interface) décrivant ce que le domaine attend d'un repository
@@ -23,7 +24,6 @@ class DatasetRepositoryPort(Protocol):
             Le dataset sous forme de DataFrame.
         """
         ...
-
 
     def save_csv(self, data: DataFrame, path: Path) -> None:
         """

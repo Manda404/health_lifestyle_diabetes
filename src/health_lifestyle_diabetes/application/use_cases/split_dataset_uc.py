@@ -1,11 +1,12 @@
 import pandas as pd
-from pathlib import Path
 from typing import Tuple
 from sklearn.model_selection import train_test_split
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
 from health_lifestyle_diabetes.infrastructure.utils.config_loader import ConfigLoader
-from health_lifestyle_diabetes.domain.ports.dataset_repository import DatasetRepositoryPort
+from health_lifestyle_diabetes.domain.ports.dataset_repository import (
+    DatasetRepositoryPort,
+)
 from health_lifestyle_diabetes.infrastructure.utils.exceptions import (
     DatasetValidationError,
 )
@@ -57,7 +58,7 @@ class SplitDatasetUseCase:
             )
 
         # Charger le dataset complet
-        logger.info(f"Chargement du dataset depuis la source.")
+        logger.info("Chargement du dataset depuis la source.")
         dataset = self.dataset_repo.load_csv()
 
         # Diviser en train et temp (val + test)
@@ -66,7 +67,7 @@ class SplitDatasetUseCase:
             train_size=train_size,
             random_state=random_state,
             shuffle=True,
-            stratify=dataset[target_column]
+            stratify=dataset[target_column],
         )
 
         if not is_save:
