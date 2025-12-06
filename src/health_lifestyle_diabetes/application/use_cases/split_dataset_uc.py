@@ -1,23 +1,18 @@
 import pandas as pd
 from typing import Tuple
 from sklearn.model_selection import train_test_split
+
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
-from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
-from health_lifestyle_diabetes.infrastructure.utils.config_loader import ConfigLoader
-from health_lifestyle_diabetes.domain.ports.dataset_repository_port import (
-    DatasetRepositoryPort,
-)
-from health_lifestyle_diabetes.infrastructure.utils.exceptions import (
-    DatasetValidationError,
-)
+from health_lifestyle_diabetes.domain.ports.dataset_repository_port import DatasetRepositoryPort
+from health_lifestyle_diabetes.infrastructure.utils.exceptions import DatasetValidationError
 
 logger = get_logger(__name__)
 
 
 class SplitDatasetUseCase:
     """
-    Cas d'utilisation pour diviser un dataset en ensembles
-    d'entraînement, de validation et de test.
+    Use case responsable de diviser le dataset en un ensemble d'entraînement
+    et un ensemble de test, avec stratification.
     """
 
     def __init__(self, dataset_repo: DatasetRepositoryPort):
@@ -25,44 +20,44 @@ class SplitDatasetUseCase:
 
     def execute(
         self,
-        train_size: float = 0.7,
-        test_size: float = 0.3,
+        train_size: float = 0.8,
         random_state: int = 42,
         target_column: str = "diagnosed_diabetes",
-        is_save: bool = False,
+        save_paths: Tuple[str, str] | None = None,
     ) -> Tuple[pd.DataFrame, pd.DataFrame]:
         """
-        Divise le dataset en train et test avec stratification.
+        Exécute la division du dataset en train/test.
 
         Parameters
         ----------
-        data_path : Path
-            Chemin du dataset source.
         train_size : float
             Proportion de l'ensemble d'entraînement.
-        test_size : float
-            Proportion de l'ensemble de test.
+        random_state : int
         target_column : str
-            Colonne cible pour la stratification.
-        is_save : bool
-            Si False, sauvegarde automatiquement les splits.
+        save_paths : tuple or None
+            Si fourni → (train_path, test_path)
 
         Returns
         -------
         (train_df, test_df)
-            Deux DataFrames résultants.
         """
-        if not abs(train_size + test_size - 1.0) < 1e-6:
-            raise DatasetValidationError(
-                "La somme des proportions train_size, val_size et test_size doit être égale à 1."
-            )
+        # --------------------------
+        # Validation
+        # --------------------------
+        if not 0 < train_size < 1:
+            raise DatasetValidationError("train_size doit être compris entre 0 et 1.")
 
-        # Charger le dataset complet
-        logger.info("Chargement du dataset depuis la source.")
+        # --------------------------
+        # Charger dataset
+        # --------------------------
+        logger.info("Chargement du dataset via le repository.")
         dataset = self.dataset_repo.load_csv()
 
-        # Diviser en train et temp (val + test)
-        train_data, test_data = train_test_split(
+        # --------------------------
+        # Split
+        # --------------------------
+        logger.info("Split du dataset avec stratification.")
+        train_df, test_df = train_test_split(
             dataset,
             train_size=train_size,
             random_state=random_state,
@@ -70,22 +65,23 @@ class SplitDatasetUseCase:
             stratify=dataset[target_column],
         )
 
-        if not is_save:
-            root = get_repository_root()
+        # --------------------------
+        # Sauvegarde éventuelle
+        # --------------------------
+        if save_paths is not None:
+            train_path, test_path = save_paths
 
-            paths = ConfigLoader.load_config(root / "configs/paths.yaml")
+            logger.info(f"Sauvegarde du train → {train_path}")
+            self.dataset_repo.save_csv(train_df, train_path)
 
-            full_train_path = root / paths["data"]["output"]["train_dataset"]
-            full_test_path = root / paths["data"]["output"]["test_dataset"]
+            logger.info(f"Sauvegarde du test → {test_path}")
+            self.dataset_repo.save_csv(test_df, test_path)
 
-            # Sauvegarder les datasets divisés
-            logger.info("Sauvegarde des datasets divisés.")
-            self.dataset_repo.save_csv(train_data, full_train_path)
-            self.dataset_repo.save_csv(test_data, full_test_path)
-
+        # --------------------------
+        # Logging final
+        # --------------------------
         logger.info(
-            f"Dataset divisé en : "
-            f"train ({train_data.shape[0]} lignes) - ({train_data.shape[1]} colonnes), "
-            f"test ({test_data.shape[0]} lignes) - ({test_data.shape[1]} colonnes)."
+            f"Split terminé : train = {train_df.shape}, test = {test_df.shape}"
         )
-        return train_data, test_data
+
+        return train_df, test_df

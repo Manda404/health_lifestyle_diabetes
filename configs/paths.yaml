@@ -18,9 +18,11 @@ data:
     model: "data/output/model.pkl"
     pipeline: "data/output/pipeline.pkl"
 
-    reports:
-      eda_report: "data/output/eda_reports/eda_report.html"
-      metrics_report: "data/output/metrics/metrics.json"
+reports:
+  eda_report: "reports/eda_reports"
+  metrics_report: "reports/metrics"
+  curves_reports: "reports/figures"
+  cm_reports: "reports/cm"
 
 logs:
   folder: "logs/"
