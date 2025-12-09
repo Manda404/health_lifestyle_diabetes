@@ -45,6 +45,7 @@ loguru = "^0.7.0"
 # -------------------------------------------
 nbformat = "^5.10.4"
 kaleido = "^1.2.0"
+mlflow = "^3.7.0"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"   # Framework de tests simple et puissant, utilisé pour valider le comportement du code, éviter les régressions et garantir la qualité du projet.
 black = "^24.0.0"   # Formateur automatique de code Python. Permet un style homogène, lisible et non-discutable dans toute la base de code.
