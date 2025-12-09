@@ -35,3 +35,4 @@ poetry.lock
 # note book
 dev
 reports
+logs
