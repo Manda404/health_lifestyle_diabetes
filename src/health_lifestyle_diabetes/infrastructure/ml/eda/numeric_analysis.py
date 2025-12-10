@@ -1,12 +1,11 @@
 import numpy as np
 import pandas as pd
 import plotly.express as px
-from pandas import DataFrame
-from scipy.stats import norm
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
-
+from pandas import DataFrame
+from plotly.subplots import make_subplots
+from scipy.stats import norm
 
 logger_risk_distribution = get_logger("eda.risk_distribution")
 logger_risk_score = get_logger("eda.risk_score")

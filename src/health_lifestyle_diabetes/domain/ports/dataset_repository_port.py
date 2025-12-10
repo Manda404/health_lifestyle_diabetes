@@ -1,8 +1,9 @@
 # src/health_lifestyle_diabetes/domain/ports/dataset_repository.py
 
-from typing import Protocol
-from pandas import DataFrame
 from pathlib import Path
+from typing import Protocol
+
+from pandas import DataFrame
 
 
 class DatasetRepositoryPort(Protocol):

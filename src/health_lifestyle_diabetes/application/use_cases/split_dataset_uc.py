@@ -1,10 +1,14 @@
-import pandas as pd
 from typing import Tuple
-from sklearn.model_selection import train_test_split
 
+import pandas as pd
+from health_lifestyle_diabetes.domain.ports.dataset_repository_port import (
+    DatasetRepositoryPort,
+)
+from health_lifestyle_diabetes.infrastructure.utils.exceptions import (
+    DatasetValidationError,
+)
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
-from health_lifestyle_diabetes.domain.ports.dataset_repository_port import DatasetRepositoryPort
-from health_lifestyle_diabetes.infrastructure.utils.exceptions import DatasetValidationError
+from sklearn.model_selection import train_test_split
 
 logger = get_logger(__name__)
 
@@ -80,8 +84,6 @@ class SplitDatasetUseCase:
         # --------------------------
         # Logging final
         # --------------------------
-        logger.info(
-            f"Split terminé : train = {train_df.shape}, test = {test_df.shape}"
-        )
+        logger.info(f"Split terminé : train = {train_df.shape}, test = {test_df.shape}")
 
         return train_df, test_df

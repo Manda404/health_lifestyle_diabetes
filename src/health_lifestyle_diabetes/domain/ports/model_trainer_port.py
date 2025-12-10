@@ -1,26 +1,23 @@
-from typing import Protocol, Any
-import pandas as pd
+# src/health_lifestyle_diabetes/domain/ports/model_trainer_port.py
+from typing import Any, Protocol
+
+from pandas import DataFrame, Series
 
 
 class ModelTrainerPort(Protocol):
     """
-    Port définissant ce que le domaine attend d’un service d'entraînement de modèle ML.
+    Port définissant ce que le domaine attend d’un service d'entraînement
+    et d'inférence pour un modèle ML.
     """
 
-    def train(self, X: pd.DataFrame, y: pd.Series) -> object:
+    def train(self, X: DataFrame, y: Series) -> Any:
         """
         Entraîne un modèle et retourne l'instance entraînée.
         """
         ...
 
-    def predict(self, model: Any, X: pd.DataFrame) -> pd.Series:
+    def predict_proba(self, model: Any, X: DataFrame) -> Series:
         """
-        Génère des prédictions à partir d'un modèle entraîné.
-        """
-        ...
-    
-    def evaluate(self,model: Any, y_true: pd.Series,):
-        """
-        Génère la matrix de confusion pour evaluer grafiquement les performance du model
+        Génère les probabilités prédites pour la classe positive.
         """
         ...

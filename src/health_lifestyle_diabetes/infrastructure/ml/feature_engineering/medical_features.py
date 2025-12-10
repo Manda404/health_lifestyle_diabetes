@@ -1,9 +1,10 @@
 import numpy as np
 import pandas as pd
-from pandas import DataFrame
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
+from pandas import DataFrame
 
 logger = get_logger("fe.MedicalFeatureEngineer")
+
 
 class MedicalFeatureEngineer:
     """
@@ -34,12 +35,12 @@ class MedicalFeatureEngineer:
         df["glucose_status"] = pd.cut(
             df["glucose_fasting"],
             bins=[0, 99, 125, np.inf],
-            labels=["Normal", "Pre-Diabetes", "Diabetes"]
+            labels=["Normal", "Pre-Diabetes", "Diabetes"],
         )
         df["hba1c_category"] = pd.cut(
             df["hba1c"],
             bins=[0, 5.7, 6.4, np.inf],
-            labels=["Normal", "Pre-Diabetes", "Diabetes"]
+            labels=["Normal", "Pre-Diabetes", "Diabetes"],
         )
         return df
 
@@ -52,13 +53,15 @@ class MedicalFeatureEngineer:
         df["bmi_category"] = pd.cut(
             df["bmi"],
             bins=[0, 18.5, 24.9, 29.9, np.inf],
-            labels=["Underweight", "Normal", "Overweight", "Obese"]
+            labels=["Underweight", "Normal", "Overweight", "Obese"],
         )
 
         def bp_cat(row):
             if row["systolic_bp"] < 120 and row["diastolic_bp"] < 80:
                 return "Normal"
-            elif (120 <= row["systolic_bp"] <= 139) or (80 <= row["diastolic_bp"] <= 89):
+            elif (120 <= row["systolic_bp"] <= 139) or (
+                80 <= row["diastolic_bp"] <= 89
+            ):
                 return "Pre-Hypertension"
             else:
                 return "Hypertension"
@@ -68,11 +71,14 @@ class MedicalFeatureEngineer:
 
     def _compute_metabolic_syndrome(self, df: DataFrame) -> DataFrame:
         df["metabolic_syndrome_flag"] = (
-            ((df["bmi"] >= 30).astype(int)
-             + (df["systolic_bp"] >= 130).astype(int)
-             + (df["triglycerides"] >= 150).astype(int)
-             + (df["hdl_cholesterol"] < 40).astype(int)
-             + (df["glucose_fasting"] >= 110).astype(int)) >= 3
+            (
+                (df["bmi"] >= 30).astype(int)
+                + (df["systolic_bp"] >= 130).astype(int)
+                + (df["triglycerides"] >= 150).astype(int)
+                + (df["hdl_cholesterol"] < 40).astype(int)
+                + (df["glucose_fasting"] >= 110).astype(int)
+            )
+            >= 3
         ).astype(int)
         return df
 

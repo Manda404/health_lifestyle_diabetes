@@ -1,7 +1,8 @@
-import pandas as pd
-from pandas import DataFrame
 from typing import List, Tuple
+
+import pandas as pd
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
+from pandas import DataFrame
 
 logger_summary = get_logger("eda.dataset_summary")
 logger_features = get_logger("eda.feature_identifier")

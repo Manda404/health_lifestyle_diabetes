@@ -1,23 +1,23 @@
 from dataclasses import dataclass
-from pandas import DataFrame
-
-from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 
 # Import des fonctions EDA (infrastructure)
 from health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary import (
-    summarize_dataset,
     identify_feature_types,
+    summarize_dataset,
 )
 from health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis import (
     analyze_risk_distribution,
     analyze_risk_score,
-    plot_numeric_vs_target,
     plot_numeric_feature_distribution,
+    plot_numeric_vs_target,
 )
-#from health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis import (
+from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
+from pandas import DataFrame
+
+# from health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis import (
 #    plot_target_distribution,
 #    plot_cumulative_distribution,
-#)
+# )
 
 logger = get_logger("usecase.perform_eda")
 
@@ -60,8 +60,8 @@ class PerformEDAUseCase:
         # 2) Analyse de la cible
         # -------------------------------------------------------------
         logger.info("Analyse de la variable cible...")
-        #plot_target_distribution(df, self.target_col)
-        #cumulative_df = plot_cumulative_distribution(df, self.target_col)
+        # plot_target_distribution(df, self.target_col)
+        # cumulative_df = plot_cumulative_distribution(df, self.target_col)
 
         # -------------------------------------------------------------
         # 3) Analyse score de risque (si présent)
@@ -96,5 +96,5 @@ class PerformEDAUseCase:
             "summary": summary_df,
             "numeric_columns": numeric_cols,
             "categorical_columns": categorical_cols,
-            #"cumulative_target_distribution": cumulative_df,
+            # "cumulative_target_distribution": cumulative_df,
         }

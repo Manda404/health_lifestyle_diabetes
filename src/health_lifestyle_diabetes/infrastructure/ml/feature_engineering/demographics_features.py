@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
-from pandas import DataFrame
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
+from pandas import DataFrame
 
 logger = get_logger("fe.DemographicsFeatureEngineer")
 

@@ -1,9 +1,7 @@
 import pandas as pd
-from xgboost import XGBClassifier
-
 from health_lifestyle_diabetes.domain.ports.model_trainer_port import ModelTrainerPort
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
-
+from xgboost import XGBClassifier
 
 logger = get_logger("trainer.XGBoostTrainer")
 
@@ -29,7 +27,7 @@ class XGBoostTrainer(ModelTrainerPort):
         model = XGBClassifier(
             **self.params,
             eval_metric="logloss",  # obligatoire pour éviter les warnings
-            tree_method="hist"      # très rapide si CPU récent
+            tree_method="hist",  # très rapide si CPU récent
         )
 
         model.fit(X, y)

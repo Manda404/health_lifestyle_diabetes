@@ -1,6 +1,7 @@
-from sklearn.ensemble import RandomForestClassifier
 import pandas as pd
 from health_lifestyle_diabetes.domain.ports.model_trainer_port import ModelTrainerPort
+from sklearn.ensemble import RandomForestClassifier
+
 
 class RandomForestTrainer(ModelTrainerPort):
 

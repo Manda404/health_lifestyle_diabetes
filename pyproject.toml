@@ -5,23 +5,23 @@ description = "Clean architecture project for diabetes prediction using health &
 authors = ["Manda Surel <s239150.eps@gmail.com>"]
 readme = "README.md"
 
-# Indique où se trouve le code source
+# Source directory
 packages = [
     { include = "health_lifestyle_diabetes", from = "src" },
 ]
 
-# -------------------------------------------
-#   Dépendances principales (production)
-# -------------------------------------------
+# ======================================================
+#               📦 DÉPENDANCES PRINCIPALES
+# ======================================================
 [tool.poetry.dependencies]
 python = "^3.10"
 
-# Core scientific stack
+# Scientific stack
 pandas = "^2.2.0"
 numpy = "^1.26.0"
 scikit-learn = "^1.4.0"
 
-# Machine Learning models
+# Machine Learning
 xgboost = "^2.0.0"
 catboost = "^1.2.0"
 
@@ -29,34 +29,92 @@ catboost = "^1.2.0"
 pyyaml = "^6.0.0"
 pydantic = "^2.7.0"
 
-# CLI & API
-click = "^8.1.0"
+# API & CLI
 fastapi = "^0.111.0"
 uvicorn = { extras = ["standard"], version = "^0.30.0" }
+click = "^8.1.0"
 
-# Dashboard / UI
+# UI / Dashboard
 streamlit = "^1.37.0"
 
-# ---- Logging ----
+# Logging
 loguru = "^0.7.0"
 
-# -------------------------------------------
-#   Dépendances développement
-# -------------------------------------------
-nbformat = "^5.10.4"
-kaleido = "^1.2.0"
+# Experiment tracking & tuning
 mlflow = "^3.7.0"
 optuna = "^4.6.0"
+
+# Visualization
+seaborn = "^0.13.2"
+kaleido = "^1.2.0"
+
+# Notebook
+nbformat = "^5.10.4"
+
+# ======================================================
+#               🛠️ DÉPENDANCES DEVELOPPEMENT
+# ======================================================
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.0.0"   # Framework de tests simple et puissant, utilisé pour valider le comportement du code, éviter les régressions et garantir la qualité du projet.
-black = "^24.0.0"   # Formateur automatique de code Python. Permet un style homogène, lisible et non-discutable dans toute la base de code.
-ruff = "^0.5.0"     # Linter ultra-rapide regroupant flake8, isort et d'autres règles de qualité. Détecte erreurs, imports inutiles, complexité excessive et problèmes de style.
-mypy = "^1.10.0"    # Vérificateur statique de types. Sécurise les signatures, détecte les incohérences de typage avant exécution, et améliore la robustesse globale du code.
+pytest = "^8.0.0"
+black = "^24.0.0"
+ruff = "^0.5.0"
+mypy = "^1.10.0"
+taskipy = "^1.14.1"
 
+# ======================================================
+#               🎨 CONFIG : BLACK
+# ======================================================
+[tool.black]
+line-length = 88
+target-version = ["py310"]
 
-# -------------------------------------------
-#   Build system
-# -------------------------------------------
+# ======================================================
+#               🧹 CONFIG : RUFF
+# ======================================================
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+select = ["E", "F", "W", "I"]   # Errors, Flake8, Warnings, import-sort
+ignore = ["E501"]                # Ignore long lines (Black s'en charge)
+
+# ======================================================
+#               🧠 CONFIG : MYPY
+# ======================================================
+[tool.mypy]
+python_version = "3.10"
+warn_unused_configs = true
+strict = true
+ignore_missing_imports = true
+
+# ======================================================
+#               🚀 COMMANDES POETRY (SCRIPTS)
+# ======================================================
+[tool.poetry.scripts]
+format = "black:main"
+
+# ======================================================
+#               🧰 TASKIPY : AUTOMATION
+# ======================================================
+[tool.taskipy.tasks]
+
+# 🔧 Formatage automatique (Black uniquement)
+format = "black ."
+
+# 🧹 Lint simple (Ruff check)
+lint = "ruff check ."
+
+# 🛠️ Auto-correction complète (Ruff --fix + Black)
+fix = "ruff check . --fix && black ."
+
+# 🔎 Analyse statique
+typecheck = "mypy src/"
+
+# 🎯 Pipeline qualité complète
+quality = "task fix && task lint && task typecheck"
+
+# ======================================================
+#               🏗️ BUILD SYSTEM
+# ======================================================
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

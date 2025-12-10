@@ -1,20 +1,32 @@
-import pandas as pd
-from pandas import DataFrame
-from health_lifestyle_diabetes.domain.ports.feature_engineering_port import FeatureEngineeringPort
-from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.base_preprocessing import clean_categorical_variables
-from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.demographics_features import DemographicsFeatureEngineer
-from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.medical_features import MedicalFeatureEngineer
-from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.lifestyle_features import LifestyleFeatureEngineer
-from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.clinical_features import ClinicalFeatureEngineer
-from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
+from health_lifestyle_diabetes.domain.ports.feature_engineering_port import (
+    FeatureEngineeringPort,
+)
+from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.base_preprocessing import (
+    clean_categorical_variables,
+)
+from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.clinical_features import (
+    ClinicalFeatureEngineer,
+)
+from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.demographics_features import (
+    DemographicsFeatureEngineer,
+)
+from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.lifestyle_features import (
+    LifestyleFeatureEngineer,
+)
+from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.medical_features import (
+    MedicalFeatureEngineer,
+)
 from health_lifestyle_diabetes.infrastructure.utils.config_loader import ConfigLoader
+from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
+from pandas import DataFrame
 
 root = get_repository_root()
 
 config = ConfigLoader.load_config(root / "configs/preprocessing.yaml")
 age_group_strategy = config["feature_engineering"]["age_group_strategy"]
 logger = get_logger("fe.FeatureEngineeringPipeline")
+
 
 class FeatureEngineeringPipeline(FeatureEngineeringPort):
     """
@@ -37,7 +49,9 @@ class FeatureEngineeringPipeline(FeatureEngineeringPort):
     """
 
     def __init__(self):
-        self.demographics = DemographicsFeatureEngineer(age_group_strategy=age_group_strategy)
+        self.demographics = DemographicsFeatureEngineer(
+            age_group_strategy=age_group_strategy
+        )
         self.medical = MedicalFeatureEngineer()
         self.clinical = ClinicalFeatureEngineer()
         self.lifestyle = LifestyleFeatureEngineer()
@@ -62,5 +76,7 @@ class FeatureEngineeringPipeline(FeatureEngineeringPort):
         # Étape 5 : Mode de vie
         df = self.lifestyle.transform(df)
 
-        self.logger.info(f"Pipeline complet exécuté avec succès. Colonnes totales : {len(df.columns)}")
+        self.logger.info(
+            f"Pipeline complet exécuté avec succès. Colonnes totales : {len(df.columns)}"
+        )
         return df

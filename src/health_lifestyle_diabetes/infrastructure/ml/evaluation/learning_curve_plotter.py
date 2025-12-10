@@ -1,13 +1,14 @@
-import numpy as np
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
+
 import matplotlib.pyplot as plt
+import numpy as np
 import plotly.graph_objects as go
-from matplotlib.figure import Figure
-from plotly.subplots import make_subplots
-from typing import Any, Tuple, List, Optional, Dict
 from health_lifestyle_diabetes.infrastructure.utils.config_loader import ConfigLoader
 from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
+from matplotlib.figure import Figure
+from plotly.subplots import make_subplots
 
 root = get_repository_root()
 paths = ConfigLoader.load_config(root / "configs/paths.yaml")
@@ -15,7 +16,9 @@ paths = ConfigLoader.load_config(root / "configs/paths.yaml")
 
 class LearningCurvePlotter:
 
-    def __get_training_metrics(self, model: Any, model_name:str ) -> Tuple[List[float], List[float], str]:
+    def __get_training_metrics(
+        self, model: Any, model_name: str
+    ) -> Tuple[List[float], List[float], str]:
         """
         Récupère les métriques d’entraînement et de validation pour chaque itération,
         en fonction du type de modèle utilisé (LightGBM, XGBoost ou CatBoost).
@@ -53,7 +56,9 @@ class LearningCurvePlotter:
             train_key, valid_key = "learn", "validation"
 
         else:
-            raise ValueError("Modèle non supporté : doit être LightGBM, XGBoost ou CatBoost.")
+            raise ValueError(
+                "Modèle non supporté : doit être LightGBM, XGBoost ou CatBoost."
+            )
 
         # Vérification des résultats d’évaluation
         if evals_result is None:
@@ -64,9 +69,9 @@ class LearningCurvePlotter:
 
         # Retour des valeurs itération par itération
         return (
-            evals_result[train_key][metric_name],   # scores entraînement
-            evals_result[valid_key][metric_name],   # scores validation
-            metric_name,                            # nom de la métrique
+            evals_result[train_key][metric_name],  # scores entraînement
+            evals_result[valid_key][metric_name],  # scores validation
+            metric_name,  # nom de la métrique
         )
 
     def __plot_learning_curves_interactive(
@@ -94,7 +99,7 @@ class LearningCurvePlotter:
                 "Gap Train - Validation (Overfitting)",
             ),
             column_widths=[0.6, 0.4],
-            horizontal_spacing=0.12
+            horizontal_spacing=0.12,
         )
 
         # --------------------------------------------------------
@@ -109,7 +114,8 @@ class LearningCurvePlotter:
                 line=dict(color="#2E86AB", width=3),
                 marker=dict(size=6),
             ),
-            row=1, col=1
+            row=1,
+            col=1,
         )
 
         fig.add_trace(
@@ -121,7 +127,8 @@ class LearningCurvePlotter:
                 line=dict(color="#A23B72", width=3),
                 marker=dict(size=6),
             ),
-            row=1, col=1
+            row=1,
+            col=1,
         )
 
         # Meilleure itération
@@ -130,12 +137,15 @@ class LearningCurvePlotter:
                 x=[best_iteration + 1],
                 y=[best_score],
                 mode="markers+text",
-                marker=dict(size=14, color="#06A77D", line=dict(color="white", width=2)),
+                marker=dict(
+                    size=14, color="#06A77D", line=dict(color="white", width=2)
+                ),
                 text=[f"Best<br>{best_score:.4f}"],
                 textposition="top center",
                 name="Meilleur score",
             ),
-            row=1, col=1
+            row=1,
+            col=1,
         )
 
         # --------------------------------------------------------
@@ -149,7 +159,8 @@ class LearningCurvePlotter:
                 marker_color="#E63946",
                 opacity=0.55,
             ),
-            row=1, col=2
+            row=1,
+            col=2,
         )
 
         fig.add_trace(
@@ -162,7 +173,8 @@ class LearningCurvePlotter:
                 textposition="top center",
                 name="Gap optimal",
             ),
-            row=1, col=2
+            row=1,
+            col=2,
         )
 
         # --------------------------------------------------------
@@ -172,7 +184,7 @@ class LearningCurvePlotter:
             title=dict(
                 text=f"Learning Curves – {model_name}",
                 x=0.5,
-                font=dict(size=22, color="#333", family="Arial Black")
+                font=dict(size=22, color="#333", family="Arial Black"),
             ),
             showlegend=True,
             height=600,
@@ -191,10 +203,16 @@ class LearningCurvePlotter:
 
         return fig
 
-    def __plot_learning_curves(self, train_scores: List[float], valid_scores: List[float], metric_name:str, model_name:str) -> Figure:
+    def __plot_learning_curves(
+        self,
+        train_scores: List[float],
+        valid_scores: List[float],
+        metric_name: str,
+        model_name: str,
+    ) -> Figure:
         """
         Visualise les courbes d'apprentissage et le gap train-validation.
-        
+
         Parameters:
         -----------
         train_scores : list or array
@@ -205,7 +223,7 @@ class LearningCurvePlotter:
             Nom de la métrique (ex: 'Log Loss', 'RMSE', 'Accuracy')
         model_name : str, optional
             Nom du modèle pour le titre (default: 'Model')
-        
+
         Returns:
         --------
         Figure
@@ -219,71 +237,137 @@ class LearningCurvePlotter:
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
 
         # Courbe d'apprentissage
-        ax1.plot(epochs, train_scores, label='Train', linewidth=2.5,
-                color='#2E86AB', marker='o', markersize=4,
-                markevery=max(1, len(epochs)//20), alpha=0.8)
+        ax1.plot(
+            epochs,
+            train_scores,
+            label="Train",
+            linewidth=2.5,
+            color="#2E86AB",
+            marker="o",
+            markersize=4,
+            markevery=max(1, len(epochs) // 20),
+            alpha=0.8,
+        )
 
-        ax1.plot(epochs, valid_scores, label='Validation', linewidth=2.5,
-                color='#A23B72', marker='s', markersize=4,
-                markevery=max(1, len(epochs)//20), alpha=0.8)
+        ax1.plot(
+            epochs,
+            valid_scores,
+            label="Validation",
+            linewidth=2.5,
+            color="#A23B72",
+            marker="s",
+            markersize=4,
+            markevery=max(1, len(epochs) // 20),
+            alpha=0.8,
+        )
 
-        ax1.axvline(x=best_iteration + 1, color='#06A77D', linestyle='--',
-                    linewidth=2, alpha=0.7, label=f'Meilleur modèle (iter {best_iteration+1})')
+        ax1.axvline(
+            x=best_iteration + 1,
+            color="#06A77D",
+            linestyle="--",
+            linewidth=2,
+            alpha=0.7,
+            label=f"Meilleur modèle (iter {best_iteration+1})",
+        )
 
-        ax1.scatter(best_iteration + 1, best_score, color='#06A77D',
-                    s=200, zorder=5, edgecolors='white', linewidth=2)
+        ax1.scatter(
+            best_iteration + 1,
+            best_score,
+            color="#06A77D",
+            s=200,
+            zorder=5,
+            edgecolors="white",
+            linewidth=2,
+        )
 
         if len(valid_scores) > best_iteration + 5:
-            ax1.axvspan(best_iteration + 1, len(epochs),
-                        alpha=0.15, color='red', label='Zone d\'overfitting potentiel')
+            ax1.axvspan(
+                best_iteration + 1,
+                len(epochs),
+                alpha=0.15,
+                color="red",
+                label="Zone d'overfitting potentiel",
+            )
 
-        ax1.set_xlabel('Itération (Boosting Round)', fontsize=13, fontweight='bold')
-        #ax1.set_ylabel('Log Loss', fontsize=13, fontweight='bold')
-        ax1.set_ylabel(f'{metric_name}', fontsize=13, fontweight='bold')
-        ax1.set_title(f'Courbe d\'Apprentissage {model_name}', fontsize=15, fontweight='bold', pad=20)
-        ax1.legend(loc='upper right', fontsize=11)
-        ax1.grid(True, alpha=0.3, linestyle='--')
+        ax1.set_xlabel("Itération (Boosting Round)", fontsize=13, fontweight="bold")
+        # ax1.set_ylabel('Log Loss', fontsize=13, fontweight='bold')
+        ax1.set_ylabel(f"{metric_name}", fontsize=13, fontweight="bold")
+        ax1.set_title(
+            f"Courbe d'Apprentissage {model_name}",
+            fontsize=15,
+            fontweight="bold",
+            pad=20,
+        )
+        ax1.legend(loc="upper right", fontsize=11)
+        ax1.grid(True, alpha=0.3, linestyle="--")
         ax1.tick_params(labelsize=11)
 
-        ax1.annotate(f'Meilleur: {best_score:.4f}',
-                    xy=(best_iteration+1, best_score),
-                    xytext=(best_iteration+1 + len(epochs)*0.15, best_score + 0.02),
-                    fontsize=11,
-                    bbox=dict(boxstyle='round,pad=0.5', facecolor='#06A77D', alpha=0.2),
-                    arrowprops=dict(arrowstyle='->', color='#06A77D', lw=2))
+        ax1.annotate(
+            f"Meilleur: {best_score:.4f}",
+            xy=(best_iteration + 1, best_score),
+            xytext=(best_iteration + 1 + len(epochs) * 0.15, best_score + 0.02),
+            fontsize=11,
+            bbox=dict(boxstyle="round,pad=0.5", facecolor="#06A77D", alpha=0.2),
+            arrowprops=dict(arrowstyle="->", color="#06A77D", lw=2),
+        )
 
         # Gap train-val
         gap = np.array(valid_scores) - np.array(train_scores)
 
-        ax2.fill_between(epochs, 0, gap, where=(gap >= 0),
-                        color='#E63946', alpha=0.3, label='Overfitting (Val > Train)')
+        ax2.fill_between(
+            epochs,
+            0,
+            gap,
+            where=(gap >= 0),
+            color="#E63946",
+            alpha=0.3,
+            label="Overfitting (Val > Train)",
+        )
 
-        ax2.plot(epochs, gap, linewidth=2.5, color='#E63946',
-                marker='o', markersize=3,
-                markevery=max(1, len(epochs)//20))
+        ax2.plot(
+            epochs,
+            gap,
+            linewidth=2.5,
+            color="#E63946",
+            marker="o",
+            markersize=3,
+            markevery=max(1, len(epochs) // 20),
+        )
 
-        ax2.axhline(y=0, color='black', linestyle='-', linewidth=1, alpha=0.3)
-        ax2.axvline(x=best_iteration + 1, color='#06A77D',
-                    linestyle='--', linewidth=2, alpha=0.7)
+        ax2.axhline(y=0, color="black", linestyle="-", linewidth=1, alpha=0.3)
+        ax2.axvline(
+            x=best_iteration + 1,
+            color="#06A77D",
+            linestyle="--",
+            linewidth=2,
+            alpha=0.7,
+        )
 
-        ax2.set_xlabel('Itération (Boosting Round)', fontsize=13, fontweight='bold')
-        ax2.set_ylabel('Écart (Validation - Train)', fontsize=13, fontweight='bold')
-        ax2.set_title('Gap Train-Validation (Détection Overfitting)', fontsize=15, fontweight='bold', pad=20)
-        ax2.legend(loc='upper left', fontsize=11)
-        ax2.grid(True, alpha=0.3, linestyle='--')
+        ax2.set_xlabel("Itération (Boosting Round)", fontsize=13, fontweight="bold")
+        ax2.set_ylabel("Écart (Validation - Train)", fontsize=13, fontweight="bold")
+        ax2.set_title(
+            "Gap Train-Validation (Détection Overfitting)",
+            fontsize=15,
+            fontweight="bold",
+            pad=20,
+        )
+        ax2.legend(loc="upper left", fontsize=11)
+        ax2.grid(True, alpha=0.3, linestyle="--")
         ax2.tick_params(labelsize=11)
 
         best_gap = gap[best_iteration]
-        ax2.annotate(f'Gap optimal: {best_gap:.4f}',
-                    xy=(best_iteration + 1, best_gap),
-                    xytext=(best_iteration + 1 + len(epochs)*0.15, best_gap + 0.005),
-                    fontsize=11,
-                    bbox=dict(boxstyle='round,pad=0.5', facecolor='yellow', alpha=0.3),
-                    arrowprops=dict(arrowstyle='->', color='#E63946', lw=2))
+        ax2.annotate(
+            f"Gap optimal: {best_gap:.4f}",
+            xy=(best_iteration + 1, best_gap),
+            xytext=(best_iteration + 1 + len(epochs) * 0.15, best_gap + 0.005),
+            fontsize=11,
+            bbox=dict(boxstyle="round,pad=0.5", facecolor="yellow", alpha=0.3),
+            arrowprops=dict(arrowstyle="->", color="#E63946", lw=2),
+        )
 
         plt.tight_layout()
         plt.show()
-        
+
         return fig
 
     def __save_plotly_figure(self, fig, model_name: str, metric_name: str) -> None:
@@ -295,8 +379,14 @@ class LearningCurvePlotter:
 
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-        png_path = save_dir / f"{timestamp}_{model_name.lower()}_{metric_name}_learning_curve.png"
-        html_path = save_dir / f"{timestamp}_{model_name.lower()}_{metric_name}_learning_curve.html"
+        png_path = (
+            save_dir
+            / f"{timestamp}_{model_name.lower()}_{metric_name}_learning_curve.png"
+        )
+        html_path = (
+            save_dir
+            / f"{timestamp}_{model_name.lower()}_{metric_name}_learning_curve.html"
+        )
 
         # --- Sauvegarde image PNG ---
         fig.write_image(str(png_path), format="png", scale=2)
@@ -313,29 +403,35 @@ class LearningCurvePlotter:
 
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-        png_path = save_dir / f"{timestamp}_{model_name.lower()}_{metric_name}_learning_curve.png"
+        png_path = (
+            save_dir
+            / f"{timestamp}_{model_name.lower()}_{metric_name}_learning_curve.png"
+        )
 
         # --- Sauvegarde image PNG ---
-        fig.savefig(png_path, format='png', dpi=300)
+        fig.savefig(png_path, format="png", dpi=300)
 
-
-    def plot_training_diagnostics(self, model, model_name: str, save_figure: bool = True):
+    def plot_training_diagnostics(
+        self, model, model_name: str, save_figure: bool = True
+    ):
         """
         Trace les courbes d'apprentissage provenant du modèle boosting.
         Compatible XGBoost, CatBoost, LightGBM.
         """
         # Extraire les informations de d'entrainement pour la visualisation
-        train_scores, valid_scores, metric_name = self.__get_training_metrics(model, model_name)
+        train_scores, valid_scores, metric_name = self.__get_training_metrics(
+            model, model_name
+        )
 
         # Visualise les courbes d'apprentissage et le gap train-validation.
-        fig = self.__plot_learning_curves(train_scores, valid_scores, metric_name, model_name)
+        fig = self.__plot_learning_curves(
+            train_scores, valid_scores, metric_name, model_name
+        )
 
         # ---------------------------------------------------
         # Sauvegarde locale
         # ---------------------------------------------------
         if save_figure:
             self.__save_plotlib_figure(fig, model_name, metric_name)
-        
+
         plt.close(fig)
-
-

@@ -10,9 +10,8 @@ Auteur : HealthLifestyleData Project
 
 import pandas as pd
 import plotly.express as px
-from plotly.subplots import make_subplots
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
-
+from plotly.subplots import make_subplots
 
 logger_proportions = get_logger("eda.cat_proportions")
 logger_proportions_target = get_logger("eda.cat_proportions_target")

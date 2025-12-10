@@ -1,12 +1,11 @@
-import numpy as np
-import pandas as pd
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
+
 import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix
+from health_lifestyle_diabetes.infrastructure.utils.config_loader import ConfigLoader
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
-from health_lifestyle_diabetes.infrastructure.utils.config_loader import ConfigLoader
+from sklearn.metrics import confusion_matrix
 
 logger = get_logger("evaluation.confusion_matrix")
 
@@ -64,8 +63,11 @@ class ConfusionMatrixPlotter:
         for i in range(len(labels)):
             for j in range(len(labels)):
                 ax.text(
-                    j, i, f"{cm[i,j]}\n({cmn[i,j]:.1f}%)",
-                    ha="center", va="center",
+                    j,
+                    i,
+                    f"{cm[i,j]}\n({cmn[i,j]:.1f}%)",
+                    ha="center",
+                    va="center",
                     fontsize=11,
                 )
 
@@ -76,7 +78,7 @@ class ConfusionMatrixPlotter:
     # ----------------------------
     def __save_figure(self, fig, model_name: str) -> None:
         """
-        Sauvegarde une figure matplotlib au format PNG 
+        Sauvegarde une figure matplotlib au format PNG
         dans le dossier reports/cm_reports.
         """
 
@@ -104,7 +106,7 @@ class ConfusionMatrixPlotter:
         X_valid=None,
         y_valid=None,
         save_figure: bool = False,
-        model_name: str = "model"
+        model_name: str = "model",
     ):
         """
         Affiche une ou deux matrices selon si un ensemble validation est fourni.

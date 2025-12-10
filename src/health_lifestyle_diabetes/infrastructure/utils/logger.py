@@ -22,9 +22,9 @@ logger.info("Training started.")
 
 import sys
 from pathlib import Path
-from loguru import logger
-from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
 
+from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
+from loguru import logger
 
 # -------------------------------------------------------------------
 # 1. Dossier de logs (créé automatiquement si absent)
@@ -110,7 +110,7 @@ def setup_logger(
 # -------------------------------------------------------------------
 # 3. Raccourci pratique : récupérer un logger configuré
 # -------------------------------------------------------------------
-def get_logger(logger_name: str = "app"):
+def get_logger(logger_name: str = "app") -> logger:
     """
     Récupère un logger configuré. Idéal pour tous les modules du projet.
 
