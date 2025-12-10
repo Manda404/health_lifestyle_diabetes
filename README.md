@@ -139,3 +139,10 @@ health_lifestyle_diabetes/
 * Appelle les use cases.
 
 ---
+
+## 📌 État actuel des mises à jour
+
+- Les ajustements de clean architecture autour du cas d’usage `PerformEDAUseCase` sont intégrés dans cette branche.
+- Des tests `pytest` (voir `tests/test_perform_eda_uc.py`) valident l’orchestration avec un service EDA factice.
+
+---

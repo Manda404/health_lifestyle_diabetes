@@ -1,18 +1,9 @@
 from dataclasses import dataclass
 
-# Import des fonctions EDA (infrastructure)
-from health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary import (
-    identify_feature_types,
-    summarize_dataset,
-)
-from health_lifestyle_diabetes.infrastructure.ml.eda.numeric_analysis import (
-    analyze_risk_distribution,
-    analyze_risk_score,
-    plot_numeric_feature_distribution,
-    plot_numeric_vs_target,
-)
-from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from pandas import DataFrame
+
+from health_lifestyle_diabetes.domain.ports.eda_service_port import EDAServicePort
+from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 
 # from health_lifestyle_diabetes.infrastructure.ml.eda.target_analysis import (
 #    plot_target_distribution,
@@ -33,6 +24,7 @@ class PerformEDAUseCase:
     dans l’infrastructure et de renvoyer des données utiles.
     """
 
+    eda_service: EDAServicePort
     target_col: str = "diagnosed_diabetes"
     risk_score_col: str = "diabetes_risk_score"
     diabetes_stage_col: str = "diabetes_stage"
@@ -52,8 +44,8 @@ class PerformEDAUseCase:
         # -------------------------------------------------------------
         # 1) Résumé global du dataset
         # -------------------------------------------------------------
-        summary_df = summarize_dataset(df)
-        numeric_cols, categorical_cols = identify_feature_types(df)
+        summary_df = self.eda_service.summarize_dataset(df)
+        numeric_cols, categorical_cols = self.eda_service.identify_feature_types(df)
         logger.info("Résumé dataset + détection types terminés.")
 
         # -------------------------------------------------------------
@@ -68,8 +60,10 @@ class PerformEDAUseCase:
         # -------------------------------------------------------------
         if self.risk_score_col in df.columns and self.diabetes_stage_col in df.columns:
             logger.info("Analyse du score de risque...")
-            analyze_risk_distribution(df, self.risk_score_col, self.diabetes_stage_col)
-            analyze_risk_score(
+            self.eda_service.analyze_risk_distribution(
+                df, self.risk_score_col, self.diabetes_stage_col
+            )
+            self.eda_service.analyze_risk_score(
                 df, self.risk_score_col, self.diabetes_stage_col, self.target_col
             )
         else:
@@ -84,8 +78,8 @@ class PerformEDAUseCase:
                 continue
 
             try:
-                plot_numeric_feature_distribution(df, col)
-                plot_numeric_vs_target(df, col)
+                self.eda_service.plot_numeric_feature_distribution(df, col)
+                self.eda_service.plot_numeric_vs_target(df, col)
             except Exception as e:
                 logger.warning(f"Impossible d'analyser '{col}' : {e}")
 
