@@ -1,26 +1,30 @@
 from typing import List, Tuple
 
-import pandas as pd
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from pandas import DataFrame
 
-logger_summary = get_logger("eda.dataset_summary")
-logger_features = get_logger("eda.feature_identifier")
+# ===========================================================
+# Logger unique pour le module dataset_summary
+# ===========================================================
+logger = get_logger("eda.dataset")
 
 
+# ===========================================================
+# Résumé général du dataset
+# ===========================================================
 def summarize_dataset(df: DataFrame, max_examples: int = 5) -> DataFrame:
     """
-    Fournit un résumé structuré du dataset :
-    - dtype
-    - nombre et % de valeurs manquantes
+    Produit un résumé structuré du dataset :
+    - type de chaque colonne
+    - nombre et pourcentage de valeurs manquantes
     - cardinalité
-    - échantillon de valeurs
+    - exemples de valeurs
 
-    Le but est d’obtenir une vue claire du dataset sans calculs coûteux.
+    Utile pour obtenir une vue claire du dataset sans calculs coûteux.
     """
     if df is None or df.empty:
-        logger_summary.warning("Dataset vide ou non fourni.")
-        return pd.DataFrame(
+        logger.warning("Dataset vide ou non fourni.")
+        return DataFrame(
             columns=[
                 "Column",
                 "Type",
@@ -31,57 +35,69 @@ def summarize_dataset(df: DataFrame, max_examples: int = 5) -> DataFrame:
             ]
         )
 
-    logger_summary.info(
-        f"Résumé du dataset : {df.shape[0]} lignes, {df.shape[1]} colonnes."
-    )
-
+    logger.info(f"Résumé du dataset : {df.shape[0]} lignes, {df.shape[1]} colonnes.")
     total_rows = len(df)
-    rows = []
 
-    # dtypes précalculés (accès O(1))
-    dtypes = df.dtypes.to_dict()
+    rows = []
+    dtypes = df.dtypes.to_dict()  # accès plus rapide dans la boucle
 
     for col in df.columns:
         series = df[col]
-        col_type = dtypes[col]
-
         missing = series.isna().sum()
         missing_pct = round((missing / total_rows) * 100, 2)
         cardinality = series.nunique(dropna=True)
 
-        # valeurs uniques limitées
-        examples = series.dropna().unique()[:max_examples]
-
-        rows.append(
-            [col, col_type, missing, missing_pct, cardinality, examples.tolist()]
+        # Exemple de valeurs (liste lisible)
+        examples = (
+            series.dropna().unique()[:max_examples].tolist()
+            if not series.dropna().empty
+            else []
         )
 
-    summary_df = pd.DataFrame(
+        rows.append(
+            [
+                col,
+                dtypes[col],
+                missing,
+                missing_pct,
+                cardinality,
+                examples,
+            ]
+        )
+
+    summary_df = DataFrame(
         rows,
         columns=["Column", "Type", "Missing", "% Missing", "Cardinality", "Examples"],
     ).sort_values(by="Missing", ascending=False)
 
-    logger_summary.info("Résumé généré avec succès.")
+    logger.info("Résumé généré avec succès.")
     return summary_df
 
 
+# ===========================================================
+# Identification des colonnes numériques et catégorielles
+# ===========================================================
 def identify_feature_types(df: DataFrame) -> Tuple[List[str], List[str]]:
     """
     Identifie rapidement les colonnes numériques et catégorielles.
+
+    La logique est volontairement simple :
+    - numériques : tout type numérique (entiers, floats, extension pandas)
+    - catégorielles : strings, category, boolean
     """
     if df is None or df.empty:
-        logger_features.warning("Dataset vide.")
+        logger.warning("Dataset vide.")
         return [], []
 
-    numeric_cols = df.select_dtypes(
-        include=["int", "float", "int64", "float64"]
-    ).columns.tolist()
+    numeric_cols = df.select_dtypes(include=["number"]).columns.tolist()
+
     categorical_cols = df.select_dtypes(
-        include=["object", "category", "bool"]
+        include=["object", "category", "bool", "string"]
     ).columns.tolist()
 
-    logger_features.info(
-        f"Types identifiés : {len(numeric_cols)} numériques, {len(categorical_cols)} catégorielles."
+    logger.info(
+        f"Types identifiés : {len(numeric_cols)} colonnes numériques, "
+        f"{len(categorical_cols)} colonnes catégorielles."
     )
 
     return numeric_cols, categorical_cols
