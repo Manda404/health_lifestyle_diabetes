@@ -3,8 +3,6 @@ import pandas as pd
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from pandas import DataFrame
 
-logger = get_logger("fe.DemographicsFeatureEngineer")
-
 
 class DemographicsFeatureEngineer:
     """
@@ -25,7 +23,7 @@ class DemographicsFeatureEngineer:
     aux sous-populations et d’analyser les disparités de santé.
     """
 
-    def __init__(self, age_group_strategy: str = "detailed"):
+    def __init__(self, age_group_strategy: str = "detailed") -> None:
         """
         Parameters
         ----------
@@ -35,7 +33,7 @@ class DemographicsFeatureEngineer:
             - "detailed" : <30, 30–39, ..., 80+
             - "coarse"   : Jeune, Adulte, Senior
         """
-        self.logger = logger
+        self.logger = get_logger("fe.DemographicsFeatureEngineer")
         self.age_group_strategy = age_group_strategy
 
     # ----------------------------------------------------------------------

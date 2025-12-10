@@ -21,12 +21,6 @@ from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
 from pandas import DataFrame
 
-root = get_repository_root()
-
-config = ConfigLoader.load_config(root / "configs/preprocessing.yaml")
-age_group_strategy = config["feature_engineering"]["age_group_strategy"]
-logger = get_logger("fe.FeatureEngineeringPipeline")
-
 
 class FeatureEngineeringPipeline(FeatureEngineeringPort):
     """
@@ -48,35 +42,40 @@ class FeatureEngineeringPipeline(FeatureEngineeringPort):
     pour la modélisation prédictive ou les tableaux de bord santé.
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
+
+        root = get_repository_root()
+        config = ConfigLoader.load_config(root / "configs/preprocessing.yaml")
+        age_group_strategy = config["feature_engineering"]["age_group_strategy"]
+
         self.demographics = DemographicsFeatureEngineer(
             age_group_strategy=age_group_strategy
         )
         self.medical = MedicalFeatureEngineer()
         self.clinical = ClinicalFeatureEngineer()
         self.lifestyle = LifestyleFeatureEngineer()
-        self.logger = logger
+        self.logger = get_logger("fe.FeatureEngineeringPipeline")
 
     def transform(self, df: DataFrame) -> DataFrame:
-        df = df.copy()
+        df_enrich = df.copy()
         self.logger.info("Démarrage du pipeline complet de Feature Engineering...")
 
         # Étape 1 : Nettoyage
-        df = clean_categorical_variables(df)
+        df_enrich = clean_categorical_variables(df_enrich)
 
         # Étape 2 : Démographie
-        df = self.demographics.transform(df)
+        df_enrich = self.demographics.transform(df_enrich)
 
         # Étape 3 : Médical
-        df = self.medical.transform(df)
+        df_enrich = self.medical.transform(df_enrich)
 
         # Étape 4 : Interactions physiologiques
-        df = self.clinical.transform(df)
+        df_enrich = self.clinical.transform(df_enrich)
 
         # Étape 5 : Mode de vie
-        df = self.lifestyle.transform(df)
+        df_enrich = self.lifestyle.transform(df_enrich)
 
         self.logger.info(
-            f"Pipeline complet exécuté avec succès. Colonnes totales : {len(df.columns)}"
+            f"Pipeline complet exécuté avec succès. Colonnes totales : {len(df_enrich.columns)}"
         )
-        return df
+        return df_enrich

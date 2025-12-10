@@ -11,7 +11,7 @@ class CatBoostTrainer(ModelTrainerPort):
     Implémentation du port ModelTrainerPort pour entraîner un modèle CatBoost.
     """
 
-    def __init__(self, params: Dict[str, Any]):
+    def __init__(self, params: Dict[str, Any]) -> None:
         self.params = params
         self.logger = get_logger("trainer.CatBoostTrainer")
         self.model_name = "catboost"
@@ -22,7 +22,7 @@ class CatBoostTrainer(ModelTrainerPort):
         y_train: Series,
         X_valid: DataFrame,
         y_valid: Series,
-    ) -> CatBoostClassifier:
+    ) -> Any:
         # --- Validation simple ---
         if X_train.empty or y_train.empty:
             raise ValueError("X_train ou y_train est vide.")

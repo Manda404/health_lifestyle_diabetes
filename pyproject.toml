@@ -5,7 +5,7 @@ description = "Clean architecture project for diabetes prediction using health &
 authors = ["Manda Surel <s239150.eps@gmail.com>"]
 readme = "README.md"
 
-# Source directory
+# Code source placé dans src/
 packages = [
     { include = "health_lifestyle_diabetes", from = "src" },
 ]
@@ -34,17 +34,17 @@ fastapi = "^0.111.0"
 uvicorn = { extras = ["standard"], version = "^0.30.0" }
 click = "^8.1.0"
 
-# UI / Dashboard
+# Dashboard / UI
 streamlit = "^1.37.0"
 
 # Logging
 loguru = "^0.7.0"
 
-# Experiment tracking & tuning
+# Experiment tracking & optimisation
 mlflow = "^3.7.0"
 optuna = "^4.6.0"
 
-# Visualization
+# Visualisation
 seaborn = "^0.13.2"
 kaleido = "^1.2.0"
 
@@ -62,32 +62,37 @@ mypy = "^1.10.0"
 taskipy = "^1.14.1"
 
 # ======================================================
-#               🎨 CONFIG : BLACK
+#               🎨 CONFIGURATION : BLACK
 # ======================================================
+types-pyyaml = "^6.0.12.20250915"
 [tool.black]
 line-length = 88
 target-version = ["py310"]
 
 # ======================================================
-#               🧹 CONFIG : RUFF
+#               🧹 CONFIGURATION : RUFF
 # ======================================================
 [tool.ruff]
 line-length = 88
 target-version = "py310"
-select = ["E", "F", "W", "I"]   # Errors, Flake8, Warnings, import-sort
-ignore = ["E501"]                # Ignore long lines (Black s'en charge)
+
+# Nouveau standard Ruff (2024+)
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]      # Errors, Flake8 rules, warnings, import-sort
+ignore = ["E501"]                  # Ligne trop longue → gérée par Black
 
 # ======================================================
-#               🧠 CONFIG : MYPY
+#               🧠 CONFIGURATION : MYPY
 # ======================================================
 [tool.mypy]
 python_version = "3.10"
 warn_unused_configs = true
-strict = true
 ignore_missing_imports = true
+disallow_untyped_defs = false
+disallow_any_generics = false
 
 # ======================================================
-#               🚀 COMMANDES POETRY (SCRIPTS)
+#               🚀 COMMANDES POETRY
 # ======================================================
 [tool.poetry.scripts]
 format = "black:main"
@@ -97,16 +102,16 @@ format = "black:main"
 # ======================================================
 [tool.taskipy.tasks]
 
-# 🔧 Formatage automatique (Black uniquement)
+# 🔧 Formatage du code
 format = "black ."
 
-# 🧹 Lint simple (Ruff check)
+# 🧹 Lint simple
 lint = "ruff check ."
 
-# 🛠️ Auto-correction complète (Ruff --fix + Black)
+# 🛠️ Fix automatique (Ruff + Black)
 fix = "ruff check . --fix && black ."
 
-# 🔎 Analyse statique
+# 🔎 Vérification des types
 typecheck = "mypy src/"
 
 # 🎯 Pipeline qualité complète

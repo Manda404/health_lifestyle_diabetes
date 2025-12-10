@@ -1,8 +1,6 @@
-import numpy as np
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
+from numpy import nan
 from pandas import DataFrame
-
-logger = get_logger("fe.ClinicalFeatureEngineer")  # feature_engineering.
 
 
 class ClinicalFeatureEngineer:
@@ -25,18 +23,18 @@ class ClinicalFeatureEngineer:
     utiles en prévention personnalisée.
     """
 
-    def __init__(self):
-        self.logger = logger
+    def __init__(self) -> None:
+        self.logger = get_logger("fe.ClinicalFeatureEngineer")  # feature_engineering.
 
     def transform(self, df: DataFrame) -> DataFrame:
         df = df.copy()
         self.logger.info("Calcul des ratios et interactions cliniques...")
         df["hdl_to_ldl_ratio"] = df["hdl_cholesterol"] / df["ldl_cholesterol"].replace(
-            0, np.nan
+            0, nan
         )
         df["cholesterol_ratio"] = df["cholesterol_total"] / df[
             "hdl_cholesterol"
-        ].replace(0, np.nan)
+        ].replace(0, nan)
         df["bmi_glucose_interaction"] = df["bmi"] * df["glucose_fasting"]
         df["glucose_diff"] = df["glucose_postprandial"] - df["glucose_fasting"]
         self.logger.info("Variables cliniques ajoutées avec succès.")

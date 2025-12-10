@@ -10,7 +10,13 @@ class ModelTrainerPort(Protocol):
     et d'inférence pour un modèle ML.
     """
 
-    def train(self, X: DataFrame, y: Series) -> Any:
+    def train(
+        self,
+        X_train: DataFrame,
+        y_train: Series,
+        X_valid: DataFrame,
+        y_valid: Series,
+    ) -> Any:
         """
         Entraîne un modèle et retourne l'instance entraînée.
         """

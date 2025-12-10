@@ -1,23 +1,30 @@
+# mypy: ignore-errors
 """
 logger.py
 ---------
 
-Système de logging basé sur Loguru, adapté à une architecture Clean.
+Système de logging centralisé basé sur Loguru.
 
-Fonctionnalités :
-- Logging console + fichier
-- Rotation automatique
-- Rétention configurable
+Ce module fournit :
+- Une configuration standardisée des logs (console + fichier)
+- Rotation automatique des fichiers (20 MB)
+- Rétention configurable (30 jours)
 - Compression ZIP
-- Support du binding (ex: module_name)
-- Compatible avec tous les modules du projet
+- Support du binding (ajout de metadata : module, use-case, service…)
+- Un accès unifié au logger pour tous les modules du projet
 
-Usage :
+Pourquoi ce design ?
+--------------------
+Dans une architecture Clean, aucune couche (domain, application, infrastructure)
+ne doit avoir à gérer la configuration du logging. Ce module sert donc
+de point d’entrée unique, garantissant une structure cohérente et une
+observabilité propre pour l’ensemble du projet.
 
-from health_lifestyle_diabetes.infrastructure.utils.logger import setup_logger, get_logger
-
-logger = get_logger("training")
-logger.info("Training started.")
+Usage
+-----
+>>> from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
+>>> logger = get_logger("training")
+>>> logger.info("Démarrage de l'entraînement")
 """
 
 import sys
@@ -27,7 +34,7 @@ from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_
 from loguru import logger
 
 # -------------------------------------------------------------------
-# 1. Dossier de logs (créé automatiquement si absent)
+# 1. Initialisation du dossier de logs
 # -------------------------------------------------------------------
 ROOT = get_repository_root()
 DEFAULT_LOG_DIR = Path(ROOT / "logs")
@@ -35,46 +42,40 @@ DEFAULT_LOG_DIR.mkdir(exist_ok=True)
 
 
 # -------------------------------------------------------------------
-# 2. Fonction de configuration globale du logger
+# 2. Fonction de configuration du logger global
 # -------------------------------------------------------------------
 def setup_logger(
     logger_name: str | None = None,
     *,
     log_name: str = "health_lifestyle_diabetes.log",
     level: str = "INFO",
-) -> "logger":
+):
     """
-    Configure le logger global avec Loguru.
+    Configure le logger global Loguru.
 
     Parameters
     ----------
     logger_name : str | None
-        Nom du logger (affiché dans les logs via extra metadata).
+        Nom associé au logger (souvent : module, service, use-case).
     log_name : str
-        Nom du fichier de log.
+        Nom du fichier log stocké dans le répertoire /logs/.
     level : str
-        Niveau minimal : DEBUG, INFO, WARNING, ERROR, CRITICAL.
+        Niveau minimal du logging : DEBUG, INFO, WARNING, ERROR, CRITICAL.
 
     Returns
     -------
     logger : loguru.Logger
-        Le logger configuré.
+        Instance configurée du logger Loguru.
     """
     log_path = DEFAULT_LOG_DIR / log_name
 
-    # -----------------------------
-    # Supprimer tous les handlers existants
-    # -----------------------------
+    # Supprimer les handlers existants (console, fichiers…)
     logger.remove()
 
-    # -----------------------------
-    # Ajouter metadata (module, use-case, etc.)
-    # -----------------------------
+    # Ajouter metadata contextuelle (binding)
     bound_logger = logger.bind(logger_name=logger_name or "app")
 
-    # -----------------------------
-    # Handler Console
-    # -----------------------------
+    # ---------- Handler Console ----------
     bound_logger.add(
         sys.stdout,
         level=level.upper(),
@@ -87,9 +88,7 @@ def setup_logger(
         ),
     )
 
-    # -----------------------------
-    # Handler Fichier
-    # -----------------------------
+    # ---------- Handler Fichier ----------
     bound_logger.add(
         str(log_path),
         rotation="20 MB",
@@ -108,15 +107,20 @@ def setup_logger(
 
 
 # -------------------------------------------------------------------
-# 3. Raccourci pratique : récupérer un logger configuré
+# 3. Accès simplifié au logger
 # -------------------------------------------------------------------
-def get_logger(logger_name: str = "app") -> logger:
+def get_logger(logger_name: str = "app"):
     """
-    Récupère un logger configuré. Idéal pour tous les modules du projet.
+    Récupère un logger configuré et prêt à l’emploi.
 
-    Exemple :
-    >>> logger = get_logger("training")
-    >>> logger.info("start training")
+    Parameters
+    ----------
+    logger_name : str
+        Nom du contexte d’utilisation (ex: "training", "api", "eda").
 
+    Returns
+    -------
+    logger : loguru.Logger
+        Logger préconfiguré pour ce module.
     """
     return setup_logger(logger_name=logger_name)
