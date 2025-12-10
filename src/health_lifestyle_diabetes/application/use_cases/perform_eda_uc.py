@@ -52,8 +52,7 @@ class PerformEDAUseCase:
         # 2) Analyse de la cible
         # -------------------------------------------------------------
         logger.info("Analyse de la variable cible...")
-        # plot_target_distribution(df, self.target_col)
-        # cumulative_df = plot_cumulative_distribution(df, self.target_col)
+        _, target_summary = self.eda_service.plot_target_distribution(df, self.target_col)
 
         # -------------------------------------------------------------
         # 3) Analyse score de risque (si présent)
@@ -83,6 +82,31 @@ class PerformEDAUseCase:
             except Exception as e:
                 logger.warning(f"Impossible d'analyser '{col}' : {e}")
 
+        # -------------------------------------------------------------
+        # 5) Analyse catégorielle : répartition et cible par catégorie
+        # -------------------------------------------------------------
+        logger.info("Analyse des variables catégorielles...")
+        categorical_analysis = []
+        for col in categorical_cols:
+            if col == self.target_col:
+                continue
+
+            try:
+                _, proportions = self.eda_service.plot_categorical_proportions(df, col)
+                _, target_cross = self.eda_service.plot_target_distribution_within_category(
+                    df, col, self.target_col
+                )
+
+                categorical_analysis.append(
+                    {
+                        "column": col,
+                        "proportions": proportions,
+                        "target_crosstab": target_cross,
+                    }
+                )
+            except Exception as e:
+                logger.warning(f"Impossible d'analyser '{col}' : {e}")
+
         logger.info("===== FIN DU USE CASE : EDA =====")
 
         # Ce use case renvoie des objets utiles pour inspection
@@ -90,5 +114,6 @@ class PerformEDAUseCase:
             "summary": summary_df,
             "numeric_columns": numeric_cols,
             "categorical_columns": categorical_cols,
-            # "cumulative_target_distribution": cumulative_df,
+            "target_distribution_summary": target_summary,
+            "categorical_analysis": categorical_analysis,
         }

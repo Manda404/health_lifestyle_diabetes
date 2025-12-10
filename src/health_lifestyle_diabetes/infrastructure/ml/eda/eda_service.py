@@ -1,6 +1,11 @@
 from pandas import DataFrame
 
 from health_lifestyle_diabetes.domain.ports.eda_service_port import EDAServicePort
+from health_lifestyle_diabetes.infrastructure.ml.eda.categorical_analysis import (
+    plot_categorical_proportions,
+    plot_target_distribution,
+    plot_target_distribution_within_category,
+)
 from health_lifestyle_diabetes.infrastructure.ml.eda.dataset_summary import (
     identify_feature_types,
     summarize_dataset,
@@ -41,3 +46,14 @@ class EDAService(EDAServicePort):
 
     def plot_numeric_vs_target(self, df: DataFrame, column: str) -> None:
         plot_numeric_vs_target(df, column)
+
+    def plot_target_distribution(self, df: DataFrame, target_col: str):
+        return plot_target_distribution(df, target_col)
+
+    def plot_categorical_proportions(self, df: DataFrame, column: str):
+        return plot_categorical_proportions(df, column)
+
+    def plot_target_distribution_within_category(
+        self, df: DataFrame, cat_col: str, target_col: str
+    ):
+        return plot_target_distribution_within_category(df, cat_col, target_col)

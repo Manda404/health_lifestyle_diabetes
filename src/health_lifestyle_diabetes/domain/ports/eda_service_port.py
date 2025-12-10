@@ -41,3 +41,17 @@ class EDAServicePort(Protocol):
     def plot_numeric_vs_target(self, df: DataFrame, column: str) -> None:
         """Trace la relation entre une variable numérique et la cible."""
         ...
+
+    def plot_target_distribution(self, df: DataFrame, target_col: str):
+        """Analyse la distribution globale de la cible."""
+        ...
+
+    def plot_categorical_proportions(self, df: DataFrame, column: str):
+        """Analyse la répartition d'une variable catégorielle."""
+        ...
+
+    def plot_target_distribution_within_category(
+        self, df: DataFrame, cat_col: str, target_col: str
+    ):
+        """Analyse la cible au sein de chaque catégorie."""
+        ...

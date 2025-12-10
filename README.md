@@ -144,5 +144,6 @@ health_lifestyle_diabetes/
 
 - Les ajustements de clean architecture autour du cas d’usage `PerformEDAUseCase` sont intégrés dans cette branche.
 - Des tests `pytest` (voir `tests/test_perform_eda_uc.py`) valident l’orchestration avec un service EDA factice.
+- L’EDA orchestre désormais l’analyse de la cible et des variables catégorielles via des ports dédiés, en plus des volets numériques et score de risque.
 
 ---
