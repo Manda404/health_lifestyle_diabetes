@@ -1,26 +1,29 @@
+from dataclasses import dataclass
 from typing import Tuple
 
 import pandas as pd
 from health_lifestyle_diabetes.domain.ports.dataset_repository_port import (
     DatasetRepositoryPort,
 )
+from health_lifestyle_diabetes.domain.ports.dataset_splitter_port import (
+    DatasetSplitterPort,
+)
+from health_lifestyle_diabetes.domain.ports.logger_port import LoggerPort
 from health_lifestyle_diabetes.infrastructure.utils.exceptions import (
     DatasetValidationError,
 )
-from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
-from sklearn.model_selection import train_test_split
-
-logger = get_logger(__name__)
 
 
+@dataclass
 class SplitDatasetUseCase:
     """
     Use case responsable de diviser le dataset en un ensemble d'entraînement
     et un ensemble de test, avec stratification.
     """
 
-    def __init__(self, dataset_repo: DatasetRepositoryPort):
-        self.dataset_repo = dataset_repo
+    dataset_repo: DatasetRepositoryPort
+    splitter: DatasetSplitterPort
+    logger: LoggerPort
 
     def execute(
         self,
@@ -54,19 +57,18 @@ class SplitDatasetUseCase:
         # --------------------------
         # Charger dataset
         # --------------------------
-        logger.info("Chargement du dataset via le repository.")
+        self.logger.info("Chargement du dataset via le repository.")
         dataset = self.dataset_repo.load_csv()
 
         # --------------------------
         # Split
         # --------------------------
-        logger.info("Split du dataset avec stratification.")
-        train_df, test_df = train_test_split(
-            dataset,
+        self.logger.info("Split du dataset avec stratification.")
+        train_df, test_df = self.splitter.split(
+            dataset=dataset,
+            target_column=target_column,
             train_size=train_size,
             random_state=random_state,
-            shuffle=True,
-            stratify=dataset[target_column],
         )
 
         # --------------------------
@@ -75,15 +77,17 @@ class SplitDatasetUseCase:
         if save_paths is not None:
             train_path, test_path = save_paths
 
-            logger.info(f"Sauvegarde du train → {train_path}")
+            self.logger.info(f"Sauvegarde du train → {train_path}")
             self.dataset_repo.save_csv(train_df, train_path)
 
-            logger.info(f"Sauvegarde du test → {test_path}")
+            self.logger.info(f"Sauvegarde du test → {test_path}")
             self.dataset_repo.save_csv(test_df, test_path)
 
         # --------------------------
         # Logging final
         # --------------------------
-        logger.info(f"Split terminé : train = {train_df.shape}, test = {test_df.shape}")
+        self.logger.info(
+            f"Split terminé : train = {train_df.shape}, test = {test_df.shape}"
+        )
 
         return train_df, test_df
