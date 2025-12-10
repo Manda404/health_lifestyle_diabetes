@@ -1,6 +1,7 @@
 import pandas as pd
 from health_lifestyle_diabetes.domain.ports.model_trainer_port import ModelTrainerPort
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
+from pandas import Series
 from xgboost import XGBClassifier
 
 logger = get_logger("trainer.XGBoostTrainer")
@@ -35,8 +36,7 @@ class XGBoostTrainer(ModelTrainerPort):
 
         return model
 
-    def predict(self, model, X: pd.DataFrame):
-        """
-        Retourne la probabilité de classe positive.
-        """
-        return model.predict_proba(X)[:, 1]
+    def predict_proba(self, model, X: pd.DataFrame) -> Series:
+        """Retourne la probabilité de classe positive."""
+
+        return Series(model.predict_proba(X)[:, 1], index=X.index, name="proba")

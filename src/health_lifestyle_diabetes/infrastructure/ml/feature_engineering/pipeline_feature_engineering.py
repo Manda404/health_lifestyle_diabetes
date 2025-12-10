@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from health_lifestyle_diabetes.domain.ports.feature_engineering_port import (
     FeatureEngineeringPort,
 )
@@ -21,12 +23,6 @@ from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
 from pandas import DataFrame
 
-root = get_repository_root()
-
-config = ConfigLoader.load_config(root / "configs/preprocessing.yaml")
-age_group_strategy = config["feature_engineering"]["age_group_strategy"]
-logger = get_logger("fe.FeatureEngineeringPipeline")
-
 
 class FeatureEngineeringPipeline(FeatureEngineeringPort):
     """
@@ -48,14 +44,24 @@ class FeatureEngineeringPipeline(FeatureEngineeringPort):
     pour la modélisation prédictive ou les tableaux de bord santé.
     """
 
-    def __init__(self):
+    def __init__(
+        self,
+        config_path: str | Path | None = None,
+        config: dict | None = None,
+        logger_name: str = "fe.FeatureEngineeringPipeline",
+    ):
+        root = get_repository_root()
+        resolved_path = Path(config_path) if config_path else root / "configs/preprocessing.yaml"
+        loaded_config = config or ConfigLoader.load_config(resolved_path)
+        age_group_strategy = loaded_config["feature_engineering"]["age_group_strategy"]
+
         self.demographics = DemographicsFeatureEngineer(
             age_group_strategy=age_group_strategy
         )
         self.medical = MedicalFeatureEngineer()
         self.clinical = ClinicalFeatureEngineer()
         self.lifestyle = LifestyleFeatureEngineer()
-        self.logger = logger
+        self.logger = get_logger(logger_name)
 
     def transform(self, df: DataFrame) -> DataFrame:
         df = df.copy()
