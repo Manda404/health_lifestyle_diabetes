@@ -2,9 +2,9 @@ name: CI - Health Lifestyle Diabetes Project
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main , code_quality_clean_arch]
   pull_request:
-    branches: [ main ]
+    branches: [ main , code_quality_clean_arch]
 
 jobs:
   build:
