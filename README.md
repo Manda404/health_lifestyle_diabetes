@@ -146,4 +146,32 @@ health_lifestyle_diabetes/
 - Des tests `pytest` (voir `tests/test_perform_eda_uc.py`) valident l’orchestration avec un service EDA factice.
 - L’EDA orchestre désormais l’analyse de la cible et des variables catégorielles via des ports dédiés, en plus des volets numériques et score de risque.
 
+## 🚧 Branche de travail
+
+Les travaux décrits ici sont désormais regroupés sur la branche `feature/eda-completion`. Pour vérifier localement :
+
+```bash
+git checkout feature/eda-completion
+pytest -q
+```
+
+## ▶️ Exemple d’utilisation rapide
+
+```python
+import pandas as pd
+from health_lifestyle_diabetes.application.use_cases.perform_eda_uc import PerformEDAUseCase
+from health_lifestyle_diabetes.infrastructure.ml.eda import EDAService
+
+
+df = pd.read_csv("/chemin/vers/votre_dataset.csv")
+use_case = PerformEDAUseCase(EDAService())
+result = use_case.execute(df)
+
+print(result["summary"].head())
+print("Colonnes numériques :", result["numeric_columns"])
+print("Colonnes catégorielles :", result["categorical_columns"])
+```
+
+L’exemple ci-dessus utilise le service EDA concret tout en conservant la séparation Clean Architecture via le port `EDAServicePort`.
+
 ---
