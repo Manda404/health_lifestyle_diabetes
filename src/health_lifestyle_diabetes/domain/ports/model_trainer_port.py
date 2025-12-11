@@ -15,9 +15,3 @@ class ModelTrainerPort(Protocol):
         Entraîne un modèle et retourne l'instance entraînée.
         """
         ...
-
-    def predict_proba(self, model: Any, X: DataFrame) -> Series:
-        """
-        Génère les probabilités prédites pour la classe positive.
-        """
-        ...
