@@ -139,3 +139,31 @@ health_lifestyle_diabetes/
 * Appelle les use cases.
 
 ---
+
+## 2️⃣ Structure finale proposée pour *health_lifestyle_diabetes*
+
+### 📁 Racine
+
+```text
+health_lifestyle_diabetes/
+├── pyproject.toml
+├── README.md
+├── .gitignore
+├── configs/
+│   ├── training.yaml
+│   ├── inference.yaml
+│   ├── preprocessing.yaml
+│   ├── logging.yaml
+│   └── paths.yaml
+├── tests/
+│   ├── domain/
+│   ├── application/
+│   ├── infrastructure/
+│   └── e2e/
+└── src/
+    └── health_lifestyle_diabetes/
+        ├── domain/
+        ├── application/
+        ├── infrastructure/
+        └── presentation/
+```

@@ -1,5 +1,7 @@
-from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
+# src/health_lifestyle_diabetes/infrastructure/ml/feature_engineering/base_preprocessing.py
 from pandas import DataFrame
+
+from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 
 logger = get_logger("fe.base_preprocessing")
 

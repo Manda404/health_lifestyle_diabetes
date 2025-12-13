@@ -1,7 +1,9 @@
+# src/health_lifestyle_diabetes/infrastructure/ml/feature_engineering/demographics_features.py
 import numpy as np
 import pandas as pd
-from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from pandas import DataFrame
+
+from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 
 logger = get_logger("fe.DemographicsFeatureEngineer")
 

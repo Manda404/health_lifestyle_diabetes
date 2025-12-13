@@ -1,5 +1,13 @@
+# src/health_lifestyle_diabetes/infrastructure/ml/feature_engineering/pipeline_feature_engineering.py
+from typing import Optional
+
+from pandas import DataFrame
+
 from health_lifestyle_diabetes.domain.ports.feature_engineering_port import (
     FeatureEngineeringPort,
+)
+from health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter import (
+    LoguruLoggerAdapter,
 )
 from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.base_preprocessing import (
     clean_categorical_variables,
@@ -17,15 +25,13 @@ from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.medical_fea
     MedicalFeatureEngineer,
 )
 from health_lifestyle_diabetes.infrastructure.utils.config_loader import ConfigLoader
-from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
-from pandas import DataFrame
 
 root = get_repository_root()
 
 config = ConfigLoader.load_config(root / "configs/preprocessing.yaml")
 age_group_strategy = config["feature_engineering"]["age_group_strategy"]
-logger = get_logger("fe.FeatureEngineeringPipeline")
+logger = LoguruLoggerAdapter("fe.FeatureEngineeringPipeline")
 
 
 class FeatureEngineeringPipeline(FeatureEngineeringPort):
@@ -48,14 +54,18 @@ class FeatureEngineeringPipeline(FeatureEngineeringPort):
     pour la modélisation prédictive ou les tableaux de bord santé.
     """
 
-    def __init__(self):
+    def __init__(self, logger: Optional[LoguruLoggerAdapter] = None):
         self.demographics = DemographicsFeatureEngineer(
             age_group_strategy=age_group_strategy
         )
         self.medical = MedicalFeatureEngineer()
         self.clinical = ClinicalFeatureEngineer()
         self.lifestyle = LifestyleFeatureEngineer()
-        self.logger = logger
+        self.logger = self.logger = (
+            logger
+            if logger is not None
+            else LoguruLoggerAdapter("fe.FeatureEngineeringPipeline")
+        )
 
     def transform(self, df: DataFrame) -> DataFrame:
         df = df.copy()

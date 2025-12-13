@@ -23,8 +23,9 @@ logger.info("Training started.")
 import sys
 from pathlib import Path
 
-from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
 from loguru import logger
+
+from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
 
 # -------------------------------------------------------------------
 # 1. Dossier de logs (créé automatiquement si absent)

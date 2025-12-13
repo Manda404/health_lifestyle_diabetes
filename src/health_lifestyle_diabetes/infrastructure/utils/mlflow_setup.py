@@ -1,8 +1,9 @@
 import os
 
 import mlflow
-from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from mlflow.tracking import MlflowClient
+
+from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 
 logger = get_logger("mlflow.setup_mlflow")
 DEFAULT_EXPERIMENT = "health_lifestyle_diabetes"
