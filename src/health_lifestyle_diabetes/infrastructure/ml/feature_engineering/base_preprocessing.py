@@ -1,9 +1,8 @@
 # src/health_lifestyle_diabetes/infrastructure/ml/feature_engineering/base_preprocessing.py
 from pandas import DataFrame
-
-from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
-
-logger = get_logger("fe.base_preprocessing")
+from health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter import (
+    LoguruLoggerAdapter,
+)
 
 
 def clean_categorical_variables(df: DataFrame) -> DataFrame:
@@ -25,6 +24,7 @@ def clean_categorical_variables(df: DataFrame) -> DataFrame:
     Garantit la fiabilité des analyses descriptives et la robustesse des modèles
     supervisés en réduisant la variabilité sémantique.
     """
+    logger = LoguruLoggerAdapter("fe.base_preprocessing")
     logger.info("Nettoyage des variables catégorielles...")
     df = df.copy()
     df["gender"] = df["gender"].replace({"Other": "Unknown"})

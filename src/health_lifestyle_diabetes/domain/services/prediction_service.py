@@ -1,37 +1,22 @@
-# src/health_lifestyle_diabetes/domain/services/prediction_service.py
 """
 Service métier de prédiction.
 
 Rôle :
 ------
-- demander au modèle ML une probabilité
-- appliquer un seuil métier
-- générer un objet DiabetesPrediction interprétable
-- définir un niveau de risque basé sur la probabilité
-
-Contraintes :
--------------
-- aucune dépendance technique (pandas, sklearn, CatBoost, etc.)
-- uniquement du métier
+- demander au modèle une probabilité de diabète,
+- appliquer la logique de seuil,
+- produire un objet DiabetesPrediction interprétable pour le métier.
 
 Le modèle est typé de manière "duck-typed" :
-il doit exposer :
-    predict_proba(patient: PatientProfile) -> float
+il doit simplement exposer une méthode `predict_proba(patient: PatientProfile) -> float`.
 """
 
 from dataclasses import dataclass
-from typing import Protocol
+from typing import Protocol, Any
 
-from ..entities.diabetes_prediction import DiabetesPrediction
 from ..entities.patient_profile import PatientProfile
+from ..entities.diabetes_prediction import DiabetesPrediction
 
-
-class _SupportsPredictProba(Protocol):
-    """
-    Protocole interne décrivant ce que le service attend du modèle de prédiction.
-    """
-
-    def predict_proba(self, patient: PatientProfile) -> float: ...
 
 
 @dataclass
@@ -40,7 +25,7 @@ class PredictionService:
     Service d'orchestration métier autour de la prédiction patient.
     """
 
-    model: _SupportsPredictProba
+    model: Any = None
     threshold: float = 0.5
 
     def _risk_level(self, p: float) -> str:
@@ -58,6 +43,13 @@ class PredictionService:
     def predict(self, patient: PatientProfile) -> DiabetesPrediction:
         """
         Produit une prédiction interprétée pour un patient donné.
+
+        Étapes :
+        --------
+        1. Probabilité brute via le modèle.
+        2. Application du seuil pour le label.
+        3. Détermination du niveau de risque.
+        4. Construction de l'entité DiabetesPrediction.
         """
         prob = self.model.predict_proba(patient)
         label = int(prob >= self.threshold)

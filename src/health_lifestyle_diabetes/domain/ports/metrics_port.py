@@ -47,7 +47,7 @@ class MetricsPort(Protocol):
 
         Retour
         ------
-        dict
+        Dict[str, float]
             Exemple :
             {
                 "accuracy": 0.89,
@@ -57,6 +57,8 @@ class MetricsPort(Protocol):
                 "auc_roc": 0.92,
                 "auc_pr": 0.88,
                 "kappa": 0.61,
+                "fnr": 0.12,
+                "fpr": 0.05,
                 ...
             }
 

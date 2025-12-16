@@ -1,9 +1,9 @@
 # src/health_lifestyle_diabetes/infrastructure/ml/feature_engineering/lifestyle_features.py
 from pandas import DataFrame
 
-from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
-
-logger = get_logger("fe.LifestyleFeatureEngineer")
+from health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter import (
+    LoguruLoggerAdapter,
+)
 
 
 class LifestyleFeatureEngineer:
@@ -27,7 +27,7 @@ class LifestyleFeatureEngineer:
     """
 
     def __init__(self):
-        self.logger = logger
+        self.logger = LoguruLoggerAdapter("fe.LifestyleFeatureEngineer")
 
     def _compute_lifestyle_score(self, df: DataFrame) -> DataFrame:
         def lifestyle(row):

@@ -11,7 +11,7 @@ from health_lifestyle_diabetes.domain.ports.dataset_repository_port import (
 from health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter import (
     LoguruLoggerAdapter,
 )
-from health_lifestyle_diabetes.infrastructure.utils.config_loader import ConfigLoader
+from health_lifestyle_diabetes.infrastructure.utils.config_loader import YamlConfigLoader
 
 from health_lifestyle_diabetes.infrastructure.utils.exceptions import (
     DatasetLoadingError,
@@ -24,10 +24,10 @@ from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_
 root = get_repository_root()
 
 # Charge le fichier de configuration 'paths.yaml' pour connaître les emplacements des données.
-paths = ConfigLoader.load_config(root / "configs/paths.yaml")
-raw_path = paths["data"]["input"][
-    "raw_dataset"
-]  # Extrait le chemin relatif du dataset brut.
+paths = YamlConfigLoader.load_config(root / "configs/paths.yaml")
+raw_path = paths["data"]["input"]["raw_dataset"]
+  
+# Extrait le chemin relatif du dataset brut.
 INPUT_DATA_PATH = root / raw_path  # Construit le chemin complet du fichier CSV.
 
 

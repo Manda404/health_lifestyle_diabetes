@@ -15,7 +15,7 @@ class LoguruLoggerAdapter(LoggerPort):
     à travers le port LoggerPort.
     """
 
-    def __init__(self, logger_name: str = "app"):
+    def __init__(self, logger_name: str = "app") -> None:
         """
         Parameters
         ----------

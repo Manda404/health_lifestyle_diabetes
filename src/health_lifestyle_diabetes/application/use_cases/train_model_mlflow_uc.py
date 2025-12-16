@@ -16,7 +16,7 @@ from health_lifestyle_diabetes.domain.ports.model_repository_port import (
     ModelRepositoryPort,
 )
 from health_lifestyle_diabetes.domain.ports.model_trainer_port import ModelTrainerPort
-from health_lifestyle_diabetes.domain.services.experiment_tracking_service import (
+from src.health_lifestyle_diabetes.infrastructure.services.experiment_tracking_service import (
     ExperimentTrackingService,
 )
 
