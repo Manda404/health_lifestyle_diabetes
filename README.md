@@ -76,7 +76,7 @@ La Clean Architecture permet d’éviter ces écueils en imposant :
 👉 **C’est ici que tu peux insérer l’image de la Clean Architecture** :
 
 ```md
-![Schéma de la Clean Architecture](note/Clean-Architecture.png)
+![Schéma de la Clean Architecture](note/clean-architecture.png)
 ```
 
 > Ce schéma illustre comment les principes de la Clean Architecture sont appliqués pour structurer un système de Machine Learning.
