@@ -1,9 +1,9 @@
+# src/health_lifestyle_diabetes/infrastructure/ml/feature_engineering/clinical_features.py
 import numpy as np
-from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from pandas import DataFrame
-
-logger = get_logger("fe.ClinicalFeatureEngineer")  # feature_engineering.
-
+from health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter import (
+    LoguruLoggerAdapter,
+)
 
 class ClinicalFeatureEngineer:
     """
@@ -26,7 +26,7 @@ class ClinicalFeatureEngineer:
     """
 
     def __init__(self):
-        self.logger = logger
+        self.logger = LoguruLoggerAdapter("fe.ClinicalFeatureEngineer")
 
     def transform(self, df: DataFrame) -> DataFrame:
         df = df.copy()

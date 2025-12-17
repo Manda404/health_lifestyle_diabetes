@@ -1,5 +1,12 @@
+# src/health_lifestyle_diabetes/infrastructure/ml/feature_engineering/pipeline_feature_engineering.py
+
+from pandas import DataFrame
+
 from health_lifestyle_diabetes.domain.ports.feature_engineering_port import (
     FeatureEngineeringPort,
+)
+from health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter import (
+    LoguruLoggerAdapter,
 )
 from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.base_preprocessing import (
     clean_categorical_variables,
@@ -16,67 +23,101 @@ from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.lifestyle_f
 from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.medical_features import (
     MedicalFeatureEngineer,
 )
-from health_lifestyle_diabetes.infrastructure.utils.config_loader import ConfigLoader
-from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
+from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.metabolic_features import (
+    MetabolicFeatureEngineer,
+)
+from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.behavioral_features import (
+    BehavioralFeatureEngineer,
+)
+from health_lifestyle_diabetes.infrastructure.ml.feature_engineering.exclusion import (
+    drop_leakage_columns,
+)
+from health_lifestyle_diabetes.infrastructure.utils.config_loader import YamlConfigLoader
 from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
-from pandas import DataFrame
 
+# ---------------------------------------------------------------------
+# Configuration
+# ---------------------------------------------------------------------
 root = get_repository_root()
-
-config = ConfigLoader.load_config(root / "configs/preprocessing.yaml")
+config = YamlConfigLoader.load_config(root / "configs/preprocessing.yaml")
 age_group_strategy = config["feature_engineering"]["age_group_strategy"]
-logger = get_logger("fe.FeatureEngineeringPipeline")
 
 
 class FeatureEngineeringPipeline(FeatureEngineeringPort):
     """
-    Pipeline complet de Feature Engineering médical et comportemental.
+    Pipeline complet de Feature Engineering médical, métabolique
+    et comportemental pour l’évaluation du risque diabétique.
 
     Objectif :
     ----------
-    Orchestrer l’ensemble des transformations en suivant la logique
-    physiopathologique du risque diabétique.
+    Orchestrer l’ensemble des transformations de manière cohérente,
+    explicable et sans fuite d’information.
 
     Justification médicale :
     ------------------------
-    Les transformations suivent le continuum santé :
-    Démographie → Physiologie → Métabolisme → Comportement.
+    Les transformations suivent le continuum physiopathologique :
+    Démographie → Clinique → Métabolisme → Comportement.
 
     Pertinence métier :
     -------------------
-    Fournit un dataset enrichi, explicable et cohérent
-    pour la modélisation prédictive ou les tableaux de bord santé.
+    Produit un dataset enrichi, traçable et exploitable
+    pour la modélisation prédictive et l’analyse de risque.
     """
 
     def __init__(self):
+        self.logger = LoguruLoggerAdapter("fe.FeatureEngineeringPipeline")
+
+        # Feature engineering blocks
         self.demographics = DemographicsFeatureEngineer(
             age_group_strategy=age_group_strategy
         )
         self.medical = MedicalFeatureEngineer()
         self.clinical = ClinicalFeatureEngineer()
+        self.metabolic = MetabolicFeatureEngineer()
+        self.behavioral = BehavioralFeatureEngineer()
         self.lifestyle = LifestyleFeatureEngineer()
-        self.logger = logger
 
     def transform(self, df: DataFrame) -> DataFrame:
-        df = df.copy()
+        df_enriched = df.copy(deep=True)
         self.logger.info("Démarrage du pipeline complet de Feature Engineering...")
 
-        # Étape 1 : Nettoyage
-        df = clean_categorical_variables(df)
+        # --------------------------------------------------------------
+        # Étape 0 : Suppression du data leakage
+        # --------------------------------------------------------------
+        df_enriched = drop_leakage_columns(df_enriched)
 
-        # Étape 2 : Démographie
-        df = self.demographics.transform(df)
+        # --------------------------------------------------------------
+        # Étape 1 : Nettoyage des variables catégorielles
+        # --------------------------------------------------------------
+        df_enriched = clean_categorical_variables(df_enriched)
 
-        # Étape 3 : Médical
-        df = self.medical.transform(df)
+        # --------------------------------------------------------------
+        # Étape 2 : Variables démographiques
+        # --------------------------------------------------------------
+        df_enriched = self.demographics.transform(df_enriched)
 
+        # --------------------------------------------------------------
+        # Étape 3 : Variables médicales cliniques
+        # --------------------------------------------------------------
+        df_enriched = self.medical.transform(df_enriched)
+
+        # --------------------------------------------------------------
         # Étape 4 : Interactions physiologiques
-        df = self.clinical.transform(df)
+        # --------------------------------------------------------------
+        df_enriched = self.clinical.transform(df_enriched)
 
-        # Étape 5 : Mode de vie
-        df = self.lifestyle.transform(df)
+        # --------------------------------------------------------------
+        # Étape 5 : Métabolisme avancé
+        # --------------------------------------------------------------
+        df_enriched = self.metabolic.transform(df_enriched)
+
+        # --------------------------------------------------------------
+        # Étape 6 : Comportement & mode de vie
+        # --------------------------------------------------------------
+        df_enriched = self.behavioral.transform(df_enriched)
+        df_enriched = self.lifestyle.transform(df_enriched)
 
         self.logger.info(
-            f"Pipeline complet exécuté avec succès. Colonnes totales : {len(df.columns)}"
+            f"Pipeline exécuté avec succès. Nombre total de colonnes : {len(df_enriched.columns)}"
         )
-        return df
+        return df_enriched

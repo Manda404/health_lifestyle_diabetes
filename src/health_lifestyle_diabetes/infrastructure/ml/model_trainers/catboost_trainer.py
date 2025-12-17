@@ -1,10 +1,10 @@
-from typing import Any, Dict
+# src/health_lifestyle_diabetes/infrastructure/ml/model_trainers/catboost_trainer.py
 
+from typing import Any, Dict
+from pandas import DataFrame, Series
 from catboost import CatBoostClassifier
 from health_lifestyle_diabetes.domain.ports.model_trainer_port import ModelTrainerPort
-from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
-from pandas import DataFrame, Series
-
+from health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter import LoguruLoggerAdapter
 
 class CatBoostTrainer(ModelTrainerPort):
     """
@@ -13,7 +13,7 @@ class CatBoostTrainer(ModelTrainerPort):
 
     def __init__(self, params: Dict[str, Any]):
         self.params = params
-        self.logger = get_logger("trainer.CatBoostTrainer")
+        self.logger = LoguruLoggerAdapter("trainer.CatBoostTrainer")
         self.model_name = "catboost"
 
     def train(
@@ -51,6 +51,3 @@ class CatBoostTrainer(ModelTrainerPort):
         self.logger.info("Entraînement CatBoost terminé.")
 
         return model
-
-    def predict_proba(self, model: Any, X: DataFrame) -> Series:
-        return Series(model.predict_proba(X)[:, 1], index=X.index, name="proba")

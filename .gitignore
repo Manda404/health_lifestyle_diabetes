@@ -36,3 +36,5 @@ poetry.lock
 dev
 reports
 logs
+.mypy_cache
+.ruff_cache

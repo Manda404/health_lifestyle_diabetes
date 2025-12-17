@@ -5,7 +5,7 @@ data:
   root: "data/"
 
   input:
-    raw_dataset: "data/input/diabetes_health_indicators.csv"
+    raw_dataset: "data/raw/diabetes_health_indicators.csv"
 
   processed:
     cleaned_dataset: "data/processed/cleaned_diabetes.csv"

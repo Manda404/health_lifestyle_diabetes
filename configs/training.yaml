@@ -1,0 +1,16 @@
+experiment:
+  name: health_lifestyle_diabetes
+  run_name_prefix: LR_Run
+
+model:
+  name: LogisticRegression
+  params:
+    solver: liblinear
+    C: 1.0
+    max_iter: 200
+    random_state: 42
+
+dataset:
+  target_column: diagnosed_diabetes
+  train_size: 0.8
+  random_state: 42

@@ -1,9 +1,11 @@
+# src/health_lifestyle_diabetes/infrastructure/ml/feature_engineering/medical_features.py
 import numpy as np
 import pandas as pd
-from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from pandas import DataFrame
 
-logger = get_logger("fe.MedicalFeatureEngineer")
+from health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter import (
+    LoguruLoggerAdapter,
+)
 
 
 class MedicalFeatureEngineer:
@@ -29,7 +31,7 @@ class MedicalFeatureEngineer:
     """
 
     def __init__(self):
-        self.logger = logger
+        self.logger = LoguruLoggerAdapter("fe.MedicalFeatureEngineer")
 
     def _compute_glucose_status(self, df: DataFrame) -> DataFrame:
         df["glucose_status"] = pd.cut(

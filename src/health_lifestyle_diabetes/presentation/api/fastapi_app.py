@@ -1,6 +1,7 @@
 # src/health_lifestyle_diabetes/presentation/api/fastapi_app.py
 
 from fastapi import FastAPI
+
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 from health_lifestyle_diabetes.presentation.api.config.cors import add_cors
 from health_lifestyle_diabetes.presentation.api.middlewares.logging_middleware import (

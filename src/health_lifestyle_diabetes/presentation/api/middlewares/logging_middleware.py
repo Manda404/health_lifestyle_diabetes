@@ -3,6 +3,7 @@
 import time
 
 from fastapi import FastAPI, Request
+
 from health_lifestyle_diabetes.infrastructure.utils.logger import get_logger
 
 logger = get_logger("api.middleware FastAPI")

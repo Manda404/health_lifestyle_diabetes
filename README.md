@@ -1,141 +1,273 @@
-# 📁 **Structure finale du projet avec commentaires**
-
-```
-health_lifestyle_diabetes/
-│
-├── pyproject.toml                 # Configurations du package (Poetry ou autre)
-├── README.md                      # Documentation générale du projet
-├── .gitignore                     # Gestion des fichiers à ignorer par Git
-│
-├── configs/                       # Fichiers de configuration (YAML)
-│   ├── training.yaml              # Config d'entraînement ML
-│   ├── inference.yaml             # Config d'inférence
-│   └── logging.yaml               # Config du système de logs
-│
-├── tests/                         # Tests unitaires + end-to-end (E2E)
-│   ├── domain/                    # Tests du domaine (entités, services, ports)
-│   ├── application/               # Tests des use cases
-│   ├── infrastructure/            # Tests des implémentations techniques
-│   └── e2e/                       # Tests bout-à-bout simulant un workflow complet
-│
-└── src/
-    └── health_lifestyle_diabetes/
-        │
-        ├── domain/                   # 1️⃣ Domaine = logique métier pure
-        │   │                         # Aucune dépendance vers Pandas, Sklearn, Plotly, etc.
-        │   │
-        │   ├── entities/             # Objets métier = modèles du domaine
-        │   │   ├── patient_profile.py       # Représentation stricte du profil patient
-        │   │   ├── diabetes_prediction.py   # Sortie métier d’une prédiction
-        │   │   └── features_schema.py       # Schéma métier des features attendues
-        │   │
-        │   ├── interfaces/           # Ports = contrats que l’infrastructure doit respecter
-        │   │   ├── dataset_repository.py    # Interface générique pour charger/sauver un dataset
-        │   │   └── model_repository.py      # Interface pour persister des modèles ML
-        │   │
-        │   └── services/             # Logique métier pure (sans dépendances externes)
-        │       ├── feature_service.py       # Validation, normalisation métier des features
-        │       └── prediction_service.py    # Règles métier de prédiction (hors ML)
-        │
-        ├── application/              # 2️⃣ Application = orchestration des cas d’usage
-        │   │                         # Ne contient jamais de logique métier profonde
-        │   │                         # Ne dépend que vers "domain" et "infrastructure"
-        │   │
-        │   ├── use_cases/            # Cas d’usage (actions du système)
-        │   │   ├── perform_eda.py           # Cas d’usage : réaliser l’analyse EDA complète
-        │   │   ├── train_model.py           # Cas d’usage : orchestrer l’entraînement modèle ML
-        │   │   ├── evaluate_model.py        # Cas d’usage : orchestrer les évaluations du modèle
-        │   │   ├── predict_patient.py       # Cas d’usage : prédiction sur un patient
-        │   │   └── preprocess_dataset.py    # Cas d’usage : prétraitement des données brutes
-        │   │
-        │   └── dto/                  # DTO = structures d’entrée / sortie pour les use cases
-        │       ├── training_config.py       # Paramètres d’entraînement (lr, depth, etc.)
-        │       ├── prediction_request.py    # Format d’entrée pour la prédiction
-        │       └── prediction_response.py   # Format de réponse pour la prédiction
-        │
-        ├── infrastructure/           # 3️⃣ Infrastructure = implémentations techniques
-        │   │                         # Dépendances externes : Pandas, Sklearn, XGBoost, Plotly…
-        │   │                         # ⚠️ Cette couche implémente les ports définis dans domain/interfaces
-        │   │
-        │   ├── data_sources/         # Sources de données physiques
-        │   │   ├── csv_loader.py         # Chargement CSV brut → DataFrame
-        │   │   └── local_storage.py      # Sauvegarde locale de fichiers (CSV, pickle…)
-        │   │
-        │   ├── repositories/         # Implémentations concrètes des ports
-        │   │   ├── dataset_repository_impl.py   # Utilise csv_loader/local_storage
-        │   │   └── model_repository_impl.py     # Sauvegarde / chargement des modèles ML
-        │   │
-        │   ├── ml/                   # Tout ce qui concerne le Machine Learning & Data Science
-        │   │   │
-        │   │   ├── preprocessors/           # Outils de preprocessing ML (encoders, scalers…)
-        │   │   │   └── (OneHotEncoder, Scaler, etc.)
-        │   │   │
-        │   │   ├── eda/                    # 🔍 Exploratory Data Analysis (EDA)
-        │   │   │   ├── dataset_summary.py      # Résumé dataset (manquants, cardinalité, types…)
-        │   │   │   ├── numeric_analysis.py     # Analyse des variables numériques
-        │   │   │   │                                # - distribution du risque
-        │   │   │   │                                # - comparaison num vs target
-        │   │   │   │                                # - analyse score de risque
-        │   │   │   └── target_analysis.py       # Analyse de la variable cible
-        │   │   │                                    # - distribution cible
-        │   │   │                                    # - fréquences cumulées
-        │   │   │
-        │   │   ├── models/                  # Modèles ML concrets (XGBoost, CatBoost, LogReg…)
-        │   │   │   ├── xgboost_model.py
-        │   │   │   ├── catboost_model.py
-        │   │   │   └── baseline_logreg.py
-        │   │   │
-        │   │   ├── pipelines/               # Pipelines ML complets (préprocess + modèle)
-        │   │   │   └── diabetes_pipeline.py
-        │   │   │
-        │   │   └── metrics/                 # Métriques & évaluation des modèles
-        │   │       └── evaluate_metrics.py  # AUC, F1, précision, rappel…
-        │   │
-        │   ├── utils/                       # Outils techniques généraux
-        │   │   ├── logger.py                # Système de log unifié basé sur Loguru
-        │   │   ├── config_loader.py         # Chargement des fichiers YAML
-        │   │   └── exceptions.py            # Exceptions custom (DatasetError, ModelSavingError…)
-        │
-        ├── presentation/               # 4️⃣ Présentation = interfaces utilisateur
-        │   ├── cli/                    # Command-line interface (scripts)
-        │   │   ├── train.py            # Permet d’entraîner le modèle en CLI
-        │   │   ├── evaluate.py         # Permet d’évaluer un modèle
-        │   │   └── predict.py          # Permet de faire une prédiction via CLI
-        │   │
-        │   ├── api/                    # Application FastAPI (optionnel)
-        │   │   └── fastapi_app.py      # Endpoints /predict, /train, etc.
-        │   │
-        │   └── streamlit/              # UI interactive pour la data science
-        │       └── dashboard.py        # Dashboard complet : EDA + prédiction + visualisations
-        │
-        └── __init__.py
-```
 
 ---
 
-# 🧠 **Résumé des responsabilités par couche**
+# ⚕️ Health & Lifestyle Diabetes Prediction
 
-### **1️⃣ Domaine : Le cœur du métier**
+**Un projet Machine Learning pédagogique basé sur la Clean Architecture et les bonnes pratiques MLOps**
 
-* Pas de dépendance vers Pandas, Sklearn, XGBoost…
-* Définit *ce que le système fait*, pas *comment*.
-* Ports = interfaces que l'infrastructure doit implémenter.
+---
 
-### **2️⃣ Application : Orchestration**
+## 📌 Présentation du projet
 
-* Coordonne les services du domaine + infrastructure.
-* Contient les **use cases**.
-* Utilise DTO pour échanger les données.
+Ce projet est un **système de Machine Learning dédié à la prédiction du diabète**, construit avec une forte orientation **Clean Architecture appliquée aux projets de Data Science**.
 
-### **3️⃣ Infrastructure : Technologies**
+L’objectif de ce dépôt **n’est pas** de proposer un simple projet de modélisation ou un notebook expérimental, mais de montrer **comment concevoir, structurer et organiser un projet de Machine Learning de manière professionnelle**, en respectant des principes d’architecture logicielle utilisés en entreprise.
 
-* Code dépendant de libraries externes.
-* Implémente les ports du domaine.
-* Contient les modèles ML et pipelines.
+Le projet s’appuie sur un jeu de données **santé & mode de vie**, mais la **véritable valeur ajoutée** réside dans la **structure du code**, la **séparation des responsabilités**, et la **vision MLOps** adoptée tout au long du projet.
 
-### **4️⃣ Présentation : Interfaces utilisateur**
+---
 
-* CLI, API, Streamlit.
-* Appelle les use cases.
+## 🎯 Objectifs pédagogiques
+
+Les objectifs principaux de ce projet sont les suivants :
+
+* ✅ Appliquer les **principes de la Clean Architecture** à un projet de Data Science
+* ✅ Montrer comment structurer un projet ML de manière claire et maintenable
+* ✅ Séparer proprement :
+
+  * la logique métier
+  * la logique Machine Learning
+  * les aspects techniques et d’infrastructure
+* ✅ Illustrer un **workflow de Machine Learning Engineer** proche des standards industriels
+* ✅ Mettre en œuvre les **bonnes pratiques MLOps** (CI/CD, tracking, configuration, API)
+
+D’un point de vue modélisation, le projet traite :
+
+* la **classification binaire** (diabète / non-diabète)
+* la **classification multi-classes** (stades du diabète)
+* l’**estimation de risque** à partir d’indicateurs de santé et de mode de vie
+
+---
+
+## 🏗️ Approche architecturale
+
+Ce projet est structuré selon les principes de la **Clean Architecture**, adaptés aux **projets de Data Science et de Machine Learning**.
+
+L’idée centrale est de **séparer clairement ce que fait le système** de **la manière dont il est implémenté**, afin de construire un code :
+
+* plus lisible
+* plus testable
+* plus évolutif
+* plus proche des exigences de la production
+
+### Pourquoi appliquer la Clean Architecture en Data Science ?
+
+Dans de nombreux projets ML, on observe rapidement les problèmes suivants :
+
+* les notebooks deviennent difficiles à maintenir
+* le chargement des données, le preprocessing, les modèles et les API sont mélangés
+* changer de modèle ou de source de données casse une grande partie du code
+
+La Clean Architecture permet d’éviter ces écueils en imposant :
+
+* une **séparation forte des responsabilités**
+* une **inversion des dépendances**
+* une distinction claire entre :
+
+  * le cœur métier
+  * les cas d’usage
+  * l’infrastructure technique
+  * les interfaces d’exposition
+
+---
+
+### 🧱 Vue d’ensemble de la Clean Architecture
+
+👉 **C’est ici que tu peux insérer l’image de la Clean Architecture** :
+
+
+![Schéma de la Clean Architecture](note/clean_architecture.png)
+
+
+> Ce schéma illustre comment les principes de la Clean Architecture sont appliqués pour structurer un système de Machine Learning.
+
+---
+
+### 🧠 Architecture logique (simplifiée)
+
+```
+presentation  →  application  →  domain
+        ↑                ↑
+        └──── infrastructure ─┘
+```
+
+Chaque couche a un rôle bien défini :
+
+* **Domain**
+  Contient les concepts métier et les interfaces.
+  Cette couche ne dépend d’aucune technologie (pas de pandas, pas de modèles ML).
+
+* **Application**
+  Définit les cas d’usage : entraînement, évaluation, prédiction.
+  Elle orchestre le workflow sans connaître les détails techniques.
+
+* **Infrastructure**
+  Contient les implémentations concrètes :
+
+  * chargement des données
+  * preprocessing
+  * modèles de Machine Learning
+  * tracking des expériences
+  * outils techniques
+
+* **Presentation**
+  Expose le système via :
+
+  * une API (FastAPI)
+  * une CLI
+  * un dashboard
+
+Toutes les dépendances **pointent vers l’intérieur**, garantissant la stabilité du cœur du système.
+
+---
+
+## 📁 Structure du projet (simplifiée)
+
+```
+health_lifestyle_diabetes/
+├── pyproject.toml
+├── README.md
+├── .gitignore
+├── configs/
+│   ├── training.yaml
+│   ├── inference.yaml
+│   ├── preprocessing.yaml
+│   ├── logging.yaml
+│   └── paths.yaml
+├── tests/
+│   ├── domain/
+│   ├── application/
+│   ├── infrastructure/
+│   └── e2e/
+└── src/
+    └── health_lifestyle_diabetes/
+        ├── domain/
+        ├── application/
+        ├── infrastructure/
+        └── presentation/
+```
+
+Cette organisation permet de conserver un projet :
+
+* clair
+* testable
+* modulaire
+* prêt pour des usages industriels
+
+---
+
+## 🤖 Machine Learning & pratiques MLOps
+
+Ce projet illustre comment le Machine Learning **s’intègre naturellement dans une architecture propre**.
+
+### 🔹 Modèles de Machine Learning
+
+Les modèles utilisés sont principalement des **modèles de boosting**, particulièrement adaptés aux données tabulaires :
+
+* Gradient Boosting
+* XGBoost
+* CatBoost
+
+Ces modèles sont entièrement encapsulés dans la couche *infrastructure*, ce qui les rend **facilement interchangeables** sans impacter le reste du système.
+
+---
+
+### 🔹 Suivi des expérimentations
+
+* **MLflow** est utilisé pour :
+
+  * le suivi des expériences
+  * l’enregistrement des métriques
+  * la gestion des versions de modèles
+
+Cela permet d’illustrer concrètement les notions de **traçabilité** et de **reproductibilité**.
+
+---
+
+### 🔹 Configuration orientée métier
+
+* Les paramètres sont définis via des fichiers **YAML**
+* Aucun hyperparamètre n’est codé en dur
+* Les expérimentations sont reproductibles et contrôlées
+
+---
+
+### 🔹 CI/CD et qualité du code
+
+* Des pipelines **GitHub Actions** sont mis en place pour :
+
+  * exécuter les tests
+  * vérifier la qualité du code
+  * valider la structure du projet
+
+Cela montre comment appliquer des pratiques DevOps à des projets de Data Science.
+
+---
+
+### 🔹 Inférence via API
+
+* **FastAPI** est utilisé pour exposer les prédictions
+* L’API est totalement découplée de la logique ML
+* Cette approche illustre les bonnes pratiques de déploiement de modèles en production
+
+---
+
+## 🧪 Technologies utilisées
+
+### Stack principale
+
+* **Python**
+* **Poetry** (gestion des dépendances et du packaging)
+
+### Data Science & Machine Learning
+
+* Pandas
+* NumPy
+* Scikit-learn
+* XGBoost
+* CatBoost
+
+### MLOps & ingénierie
+
+* MLflow
+* FastAPI
+* GitHub Actions (CI/CD)
+* Configuration YAML
+* Logging structuré et gestion des erreurs
+
+---
+
+## 🎓 Objectif pédagogique du projet
+
+Ce dépôt a avant tout une **vocation pédagogique**.
+
+Il vise à montrer :
+
+* comment appliquer la **Clean Architecture à la Data Science**
+* comment dépasser une approche uniquement basée sur des notebooks
+* comment structurer un projet ML pour le long terme
+* comment raisonner en **Machine Learning Engineer**, et non uniquement en data scientist expérimental
+
+Ce projet n’est pas pensé comme un package prêt à l’emploi, mais comme une **référence de bonnes pratiques**.
+
+---
+
+## 👤 Auteur
+
+**Rostand Surel**
+📧 [rostandsurel@yahoo.com](mailto:rostandsurel@yahoo.com)
+
+---
+
+## ⭐ Note finale
+
+Ce projet reflète ma vision des projets de Machine Learning :
+
+* une architecture claire et robuste
+* une séparation stricte des responsabilités
+* des workflows reproductibles
+* une approche orientée production
+
+Il constitue une **base pédagogique** pour comprendre comment concevoir des projets de Data Science modernes et maintenables en appliquant la Clean Architecture.
 
 ---

@@ -1,39 +1,46 @@
-# src/health_lifestyle_diabetes/domain/ports/dataset_repository.py
+"""
+Port (interface) pour les repositories de datasets.
+
+Objectif :
+----------
+Définir ce que le domaine attend d'un service de chargement/sauvegarde
+de datasets, sans imposer la technologie (CSV, Parquet, SQL, S3…).
+
+L'infrastructure fournira une implémentation concrète :
+- CSVDatasetRepository
+- SQLDatasetRepository
+- etc.
+"""
 
 from pathlib import Path
-from typing import Protocol
-
-from pandas import DataFrame
+from typing import Any, Protocol
 
 
 class DatasetRepositoryPort(Protocol):
     """
-    Port (interface) décrivant ce que le domaine attend d'un repository
-    de chargement de datasets.
-
-    Toute implémentation (CSV, Parquet, SQL, S3, FeatureStore, etc.)
-    doit respecter ce contrat.
+    Interface d'un repository de datasets.
     """
 
-    def load_csv(self) -> DataFrame:
+    def load_dataset(self) -> Any:
         """
-        Charge un dataset brut depuis une source donnée.
+        Charge un dataset complet depuis une source (fichier, base, etc.).
 
-        Returns
-        -------
-        DataFrame
-            Le dataset sous forme de DataFrame.
+        Retour
+        ------
+        Any
+            Représentation tabulaire du dataset (ex: DataFrame côté infra).
         """
         ...
 
-    def save_csv(self, data: DataFrame, path: Path) -> None:
+    def save_dataset(self, data: Any, path: Path) -> None:
         """
-        Sauvegarde un dataset sous forme de DataFrame vers une destination donnée.
-        Parameters
+        Sauvegarde un dataset vers une destination (fichier, répertoire, etc.).
+
+        Paramètres
         ----------
-        data : DataFrame
-            Le dataset à sauvegarder.
+        data : Any
+            Dataset dans le format manipulé par l'infrastructure.
         path : Path
-            Le chemin de destination où sauvegarder le dataset.
+            Chemin de sauvegarde cible.
         """
         ...

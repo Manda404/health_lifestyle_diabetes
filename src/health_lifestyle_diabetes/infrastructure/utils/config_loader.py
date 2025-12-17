@@ -18,7 +18,7 @@ import yaml
 from .exceptions import ConfigLoadingError
 
 
-class ConfigLoader:
+class YamlConfigLoader:
     """
     Classe statique responsable du chargement et de la validation des fichiers YAML.
     """
