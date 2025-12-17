@@ -3314,3 +3314,191 @@
 2025-12-17 05:31:41 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Détection automatique des variables catégorielles : ['cat_feature']
 2025-12-17 05:31:41 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Démarrage de l'entraînement CatBoost.
 2025-12-17 05:31:42 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Entraînement CatBoost terminé.
+2025-12-17 13:22:44 | INFO     | csv.datasetrepository | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/Clean-Architecture-MLops/health_lifestyle_diabetes/data/raw/diabetes_health_indicators.csv
+2025-12-17 13:22:44 | INFO     | csv.datasetrepository | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-17 13:23:13 | INFO     | eda.Analyse Summarize | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Résumé détaillé du dataset en cours d'analyse...
+2025-12-17 13:23:13 | INFO     | eda.Analyse Summarize | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Résumé terminé : 31 colonnes, 97297 lignes.
+2025-12-17 13:23:47 | INFO     | eda.Analyse Summarize | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Résumé détaillé du dataset en cours d'analyse...
+2025-12-17 13:23:47 | INFO     | eda.Analyse Summarize | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Résumé terminé : 31 colonnes, 97297 lignes.
+2025-12-17 13:24:01 | INFO     | eda.Analyse Summarize | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Résumé détaillé du dataset en cours d'analyse...
+2025-12-17 13:24:01 | INFO     | eda.Analyse Summarize | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Résumé terminé : 31 colonnes, 97297 lignes.
+2025-12-17 13:24:14 | INFO     | eda.Analyse Summarize | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Résumé détaillé du dataset en cours d'analyse...
+2025-12-17 13:24:15 | INFO     | eda.Analyse Summarize | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Résumé terminé : 31 colonnes, 97297 lignes.
+2025-12-17 15:59:39 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Entraînement CatBoost | train_shape=(400, 11) | valid_shape=(100, 11)
+2025-12-17 15:59:39 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Détection automatique des variables catégorielles : ['cat_feature']
+2025-12-17 15:59:39 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Démarrage de l'entraînement CatBoost.
+2025-12-17 15:59:40 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Entraînement CatBoost terminé.
+2025-12-17 16:05:17 | INFO     | csv.datasetrepository | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/Clean-Architecture-MLops/health_lifestyle_diabetes/data/raw/diabetes_health_indicators.csv
+2025-12-17 16:05:18 | INFO     | csv.datasetrepository | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-17 16:05:30 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Starting dataset split
+2025-12-17 16:05:30 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Dataset split completed
+2025-12-17 16:05:30 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Train dataset -> rows=77837, columns=31
+2025-12-17 16:05:30 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Test dataset  -> rows=19460, columns=31
+2025-12-17 16:05:40 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Starting dataset split
+2025-12-17 16:05:40 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Dataset split completed
+2025-12-17 16:05:40 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Train dataset -> rows=77837, columns=31
+2025-12-17 16:05:40 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Test dataset  -> rows=19460, columns=31
+2025-12-17 16:05:50 | INFO     | fe.FeatureEngineeringPipeline | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Démarrage du pipeline complet de Feature Engineering...
+2025-12-17 16:05:50 | INFO     | fe.LeakageExclusion | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Suppression des colonnes à risque de leakage : ['diabetes_risk_score', 'diabetes_stage']
+2025-12-17 16:05:50 | INFO     | fe.base_preprocessing | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Nettoyage des variables catégorielles...
+2025-12-17 16:05:50 | INFO     | fe.base_preprocessing | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Libellés uniformisés avec succès.
+2025-12-17 16:05:50 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des variables démographiques...
+2025-12-17 16:05:50 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Utilisation du découpage d'âge en 3 catégories.
+2025-12-17 16:05:50 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Variables démographiques complétées.
+2025-12-17 16:05:50 | INFO     | fe.MedicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Application des transformations médicales...
+2025-12-17 16:05:50 | INFO     | fe.MedicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Transformations médicales complétées.
+2025-12-17 16:05:50 | INFO     | fe.ClinicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Calcul des ratios et interactions cliniques...
+2025-12-17 16:05:50 | INFO     | fe.ClinicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Variables cliniques ajoutées avec succès.
+2025-12-17 16:05:50 | INFO     | fe.MetabolicFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des features métaboliques avancées...
+2025-12-17 16:05:50 | INFO     | fe.MetabolicFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Features métaboliques avancées générées.
+2025-12-17 16:05:50 | INFO     | fe.BehavioralFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des features comportementales avancées...
+2025-12-17 16:05:50 | INFO     | fe.BehavioralFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Features comportementales avancées générées.
+2025-12-17 16:05:50 | INFO     | fe.LifestyleFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Application des transformations lifestyle...
+2025-12-17 16:05:51 | INFO     | fe.LifestyleFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Transformations lifestyle complétées.
+2025-12-17 16:05:51 | INFO     | fe.FeatureEngineeringPipeline | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Pipeline exécuté avec succès. Nombre total de colonnes : 52
+2025-12-17 16:05:51 | INFO     | fe.FeatureEngineeringPipeline | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Démarrage du pipeline complet de Feature Engineering...
+2025-12-17 16:05:51 | INFO     | fe.LeakageExclusion | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Suppression des colonnes à risque de leakage : ['diabetes_risk_score', 'diabetes_stage']
+2025-12-17 16:05:51 | INFO     | fe.base_preprocessing | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Nettoyage des variables catégorielles...
+2025-12-17 16:05:51 | INFO     | fe.base_preprocessing | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Libellés uniformisés avec succès.
+2025-12-17 16:05:51 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des variables démographiques...
+2025-12-17 16:05:51 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Utilisation du découpage d'âge en 3 catégories.
+2025-12-17 16:05:51 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Variables démographiques complétées.
+2025-12-17 16:05:51 | INFO     | fe.MedicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Application des transformations médicales...
+2025-12-17 16:05:51 | INFO     | fe.MedicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Transformations médicales complétées.
+2025-12-17 16:05:51 | INFO     | fe.ClinicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Calcul des ratios et interactions cliniques...
+2025-12-17 16:05:51 | INFO     | fe.ClinicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Variables cliniques ajoutées avec succès.
+2025-12-17 16:05:51 | INFO     | fe.MetabolicFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des features métaboliques avancées...
+2025-12-17 16:05:51 | INFO     | fe.MetabolicFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Features métaboliques avancées générées.
+2025-12-17 16:05:51 | INFO     | fe.BehavioralFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des features comportementales avancées...
+2025-12-17 16:05:51 | INFO     | fe.BehavioralFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Features comportementales avancées générées.
+2025-12-17 16:05:51 | INFO     | fe.LifestyleFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Application des transformations lifestyle...
+2025-12-17 16:05:51 | INFO     | fe.LifestyleFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Transformations lifestyle complétées.
+2025-12-17 16:05:51 | INFO     | fe.FeatureEngineeringPipeline | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Pipeline exécuté avec succès. Nombre total de colonnes : 52
+2025-12-17 16:06:15 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Starting dataset split
+2025-12-17 16:06:15 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Dataset split completed
+2025-12-17 16:06:15 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Train dataset -> rows=62269, columns=52
+2025-12-17 16:06:15 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Test dataset  -> rows=15568, columns=52
+2025-12-17 16:13:49 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Starting dataset split
+2025-12-17 16:13:49 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Dataset split completed
+2025-12-17 16:13:49 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Train dataset -> rows=62269, columns=52
+2025-12-17 16:13:49 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Test dataset  -> rows=15568, columns=52
+2025-12-17 16:14:30 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Entraînement CatBoost | train_shape=(62269, 51) | valid_shape=(15568, 51)
+2025-12-17 16:14:30 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Détection automatique des variables catégorielles : ['gender', 'ethnicity', 'education_level', 'income_level', 'employment_status', 'smoking_status', 'age_group', 'glucose_status', 'hba1c_category', 'bmi_category', 'bp_category']
+2025-12-17 16:14:30 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Démarrage de l'entraînement CatBoost.
+2025-12-17 16:14:49 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Entraînement CatBoost terminé.
+2025-12-17 16:15:49 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Entraînement CatBoost | train_shape=(62269, 51) | valid_shape=(15568, 51)
+2025-12-17 16:15:49 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Détection automatique des variables catégorielles : ['gender', 'ethnicity', 'education_level', 'income_level', 'employment_status', 'smoking_status', 'age_group', 'glucose_status', 'hba1c_category', 'bmi_category', 'bp_category']
+2025-12-17 16:15:49 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Démarrage de l'entraînement CatBoost.
+2025-12-17 16:15:51 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Entraînement CatBoost terminé.
+2025-12-17 16:16:16 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Entraînement CatBoost | train_shape=(62269, 51) | valid_shape=(15568, 51)
+2025-12-17 16:16:16 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Détection automatique des variables catégorielles : ['gender', 'ethnicity', 'education_level', 'income_level', 'employment_status', 'smoking_status', 'age_group', 'glucose_status', 'hba1c_category', 'bmi_category', 'bp_category']
+2025-12-17 16:16:16 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Démarrage de l'entraînement CatBoost.
+2025-12-17 16:16:35 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Entraînement CatBoost terminé.
+2025-12-17 16:26:41 | INFO     | csv.datasetrepository | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/Clean-Architecture-MLops/health_lifestyle_diabetes/data/raw/diabetes_health_indicators.csv
+2025-12-17 16:26:41 | INFO     | csv.datasetrepository | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-17 16:26:41 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Starting dataset split
+2025-12-17 16:26:41 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Dataset split completed
+2025-12-17 16:26:41 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Train dataset -> rows=77837, columns=31
+2025-12-17 16:26:41 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Test dataset  -> rows=19460, columns=31
+2025-12-17 16:26:41 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Starting dataset split
+2025-12-17 16:26:41 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Dataset split completed
+2025-12-17 16:26:41 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Train dataset -> rows=77837, columns=31
+2025-12-17 16:26:41 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Test dataset  -> rows=19460, columns=31
+2025-12-17 16:26:41 | INFO     | fe.FeatureEngineeringPipeline | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Démarrage du pipeline complet de Feature Engineering...
+2025-12-17 16:26:41 | INFO     | fe.LeakageExclusion | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Suppression des colonnes à risque de leakage : ['diabetes_risk_score', 'diabetes_stage']
+2025-12-17 16:26:41 | INFO     | fe.base_preprocessing | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Nettoyage des variables catégorielles...
+2025-12-17 16:26:41 | INFO     | fe.base_preprocessing | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Libellés uniformisés avec succès.
+2025-12-17 16:26:41 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des variables démographiques...
+2025-12-17 16:26:41 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Utilisation du découpage d'âge en 3 catégories.
+2025-12-17 16:26:41 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Variables démographiques complétées.
+2025-12-17 16:26:41 | INFO     | fe.MedicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Application des transformations médicales...
+2025-12-17 16:26:41 | INFO     | fe.MedicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Transformations médicales complétées.
+2025-12-17 16:26:41 | INFO     | fe.ClinicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Calcul des ratios et interactions cliniques...
+2025-12-17 16:26:41 | INFO     | fe.ClinicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Variables cliniques ajoutées avec succès.
+2025-12-17 16:26:41 | INFO     | fe.MetabolicFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des features métaboliques avancées...
+2025-12-17 16:26:41 | INFO     | fe.MetabolicFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Features métaboliques avancées générées.
+2025-12-17 16:26:42 | INFO     | fe.BehavioralFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des features comportementales avancées...
+2025-12-17 16:26:42 | INFO     | fe.BehavioralFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Features comportementales avancées générées.
+2025-12-17 16:26:42 | INFO     | fe.LifestyleFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Application des transformations lifestyle...
+2025-12-17 16:26:42 | INFO     | fe.LifestyleFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Transformations lifestyle complétées.
+2025-12-17 16:26:42 | INFO     | fe.FeatureEngineeringPipeline | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Pipeline exécuté avec succès. Nombre total de colonnes : 52
+2025-12-17 16:26:42 | INFO     | fe.FeatureEngineeringPipeline | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Démarrage du pipeline complet de Feature Engineering...
+2025-12-17 16:26:42 | INFO     | fe.LeakageExclusion | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Suppression des colonnes à risque de leakage : ['diabetes_risk_score', 'diabetes_stage']
+2025-12-17 16:26:42 | INFO     | fe.base_preprocessing | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Nettoyage des variables catégorielles...
+2025-12-17 16:26:42 | INFO     | fe.base_preprocessing | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Libellés uniformisés avec succès.
+2025-12-17 16:26:42 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des variables démographiques...
+2025-12-17 16:26:42 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Utilisation du découpage d'âge en 3 catégories.
+2025-12-17 16:26:42 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Variables démographiques complétées.
+2025-12-17 16:26:42 | INFO     | fe.MedicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Application des transformations médicales...
+2025-12-17 16:26:42 | INFO     | fe.MedicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Transformations médicales complétées.
+2025-12-17 16:26:42 | INFO     | fe.ClinicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Calcul des ratios et interactions cliniques...
+2025-12-17 16:26:42 | INFO     | fe.ClinicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Variables cliniques ajoutées avec succès.
+2025-12-17 16:26:42 | INFO     | fe.MetabolicFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des features métaboliques avancées...
+2025-12-17 16:26:42 | INFO     | fe.MetabolicFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Features métaboliques avancées générées.
+2025-12-17 16:26:42 | INFO     | fe.BehavioralFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des features comportementales avancées...
+2025-12-17 16:26:42 | INFO     | fe.BehavioralFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Features comportementales avancées générées.
+2025-12-17 16:26:42 | INFO     | fe.LifestyleFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Application des transformations lifestyle...
+2025-12-17 16:26:42 | INFO     | fe.LifestyleFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Transformations lifestyle complétées.
+2025-12-17 16:26:42 | INFO     | fe.FeatureEngineeringPipeline | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Pipeline exécuté avec succès. Nombre total de colonnes : 52
+2025-12-17 16:26:42 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Starting dataset split
+2025-12-17 16:26:42 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Dataset split completed
+2025-12-17 16:26:42 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Train dataset -> rows=62269, columns=52
+2025-12-17 16:26:42 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Test dataset  -> rows=15568, columns=52
+2025-12-17 16:26:43 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Entraînement CatBoost | train_shape=(62269, 51) | valid_shape=(15568, 51)
+2025-12-17 16:26:43 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Détection automatique des variables catégorielles : ['gender', 'ethnicity', 'education_level', 'income_level', 'employment_status', 'smoking_status', 'age_group', 'glucose_status', 'hba1c_category', 'bmi_category', 'bp_category']
+2025-12-17 16:26:43 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Démarrage de l'entraînement CatBoost.
+2025-12-17 16:27:04 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Entraînement CatBoost terminé.
+2025-12-17 16:27:28 | INFO     | csv.datasetrepository | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Chargement du dataset depuis : /Users/surelmanda/Downloads/ml-projects/Clean-Architecture-MLops/health_lifestyle_diabetes/data/raw/diabetes_health_indicators.csv
+2025-12-17 16:27:28 | INFO     | csv.datasetrepository | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Dataset chargé avec succès (97297 lignes, 31 colonnes).
+2025-12-17 16:27:28 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Starting dataset split
+2025-12-17 16:27:28 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Dataset split completed
+2025-12-17 16:27:28 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Train dataset -> rows=77837, columns=31
+2025-12-17 16:27:28 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Test dataset  -> rows=19460, columns=31
+2025-12-17 16:27:28 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Starting dataset split
+2025-12-17 16:27:28 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Dataset split completed
+2025-12-17 16:27:28 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Train dataset -> rows=77837, columns=31
+2025-12-17 16:27:28 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Test dataset  -> rows=19460, columns=31
+2025-12-17 16:27:28 | INFO     | fe.FeatureEngineeringPipeline | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Démarrage du pipeline complet de Feature Engineering...
+2025-12-17 16:27:28 | INFO     | fe.LeakageExclusion | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Suppression des colonnes à risque de leakage : ['diabetes_stage', 'diabetes_risk_score']
+2025-12-17 16:27:28 | INFO     | fe.base_preprocessing | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Nettoyage des variables catégorielles...
+2025-12-17 16:27:28 | INFO     | fe.base_preprocessing | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Libellés uniformisés avec succès.
+2025-12-17 16:27:28 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des variables démographiques...
+2025-12-17 16:27:28 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Utilisation du découpage d'âge en 3 catégories.
+2025-12-17 16:27:28 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Variables démographiques complétées.
+2025-12-17 16:27:28 | INFO     | fe.MedicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Application des transformations médicales...
+2025-12-17 16:27:28 | INFO     | fe.MedicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Transformations médicales complétées.
+2025-12-17 16:27:28 | INFO     | fe.ClinicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Calcul des ratios et interactions cliniques...
+2025-12-17 16:27:28 | INFO     | fe.ClinicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Variables cliniques ajoutées avec succès.
+2025-12-17 16:27:28 | INFO     | fe.MetabolicFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des features métaboliques avancées...
+2025-12-17 16:27:28 | INFO     | fe.MetabolicFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Features métaboliques avancées générées.
+2025-12-17 16:27:28 | INFO     | fe.BehavioralFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des features comportementales avancées...
+2025-12-17 16:27:28 | INFO     | fe.BehavioralFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Features comportementales avancées générées.
+2025-12-17 16:27:28 | INFO     | fe.LifestyleFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Application des transformations lifestyle...
+2025-12-17 16:27:29 | INFO     | fe.LifestyleFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Transformations lifestyle complétées.
+2025-12-17 16:27:29 | INFO     | fe.FeatureEngineeringPipeline | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Pipeline exécuté avec succès. Nombre total de colonnes : 52
+2025-12-17 16:27:29 | INFO     | fe.FeatureEngineeringPipeline | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Démarrage du pipeline complet de Feature Engineering...
+2025-12-17 16:27:29 | INFO     | fe.LeakageExclusion | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Suppression des colonnes à risque de leakage : ['diabetes_stage', 'diabetes_risk_score']
+2025-12-17 16:27:29 | INFO     | fe.base_preprocessing | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Nettoyage des variables catégorielles...
+2025-12-17 16:27:29 | INFO     | fe.base_preprocessing | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Libellés uniformisés avec succès.
+2025-12-17 16:27:29 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des variables démographiques...
+2025-12-17 16:27:29 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Utilisation du découpage d'âge en 3 catégories.
+2025-12-17 16:27:29 | INFO     | fe.DemographicsFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Variables démographiques complétées.
+2025-12-17 16:27:29 | INFO     | fe.MedicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Application des transformations médicales...
+2025-12-17 16:27:29 | INFO     | fe.MedicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Transformations médicales complétées.
+2025-12-17 16:27:29 | INFO     | fe.ClinicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Calcul des ratios et interactions cliniques...
+2025-12-17 16:27:29 | INFO     | fe.ClinicalFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Variables cliniques ajoutées avec succès.
+2025-12-17 16:27:29 | INFO     | fe.MetabolicFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des features métaboliques avancées...
+2025-12-17 16:27:29 | INFO     | fe.MetabolicFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Features métaboliques avancées générées.
+2025-12-17 16:27:29 | INFO     | fe.BehavioralFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Création des features comportementales avancées...
+2025-12-17 16:27:29 | INFO     | fe.BehavioralFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Features comportementales avancées générées.
+2025-12-17 16:27:29 | INFO     | fe.LifestyleFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Application des transformations lifestyle...
+2025-12-17 16:27:29 | INFO     | fe.LifestyleFeatureEngineer | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Transformations lifestyle complétées.
+2025-12-17 16:27:29 | INFO     | fe.FeatureEngineeringPipeline | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Pipeline exécuté avec succès. Nombre total de colonnes : 52
+2025-12-17 16:27:29 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Starting dataset split
+2025-12-17 16:27:29 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Dataset split completed
+2025-12-17 16:27:29 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Train dataset -> rows=62269, columns=52
+2025-12-17 16:27:29 | INFO     | dataset_split.sklearn | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Test dataset  -> rows=15568, columns=52
+2025-12-17 16:27:29 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Entraînement CatBoost | train_shape=(62269, 51) | valid_shape=(15568, 51)
+2025-12-17 16:27:29 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Détection automatique des variables catégorielles : ['gender', 'ethnicity', 'education_level', 'income_level', 'employment_status', 'smoking_status', 'age_group', 'glucose_status', 'hba1c_category', 'bmi_category', 'bp_category']
+2025-12-17 16:27:29 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Démarrage de l'entraînement CatBoost.
+2025-12-17 16:27:52 | INFO     | boost.catboost | health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter:info:28 - Entraînement CatBoost terminé.

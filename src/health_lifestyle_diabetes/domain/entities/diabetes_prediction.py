@@ -25,6 +25,7 @@ Cette entité encapsule le résultat interprété côté domaine :
 """
 
 from dataclasses import dataclass
+from typing import Optional
 
 
 @dataclass(frozen=True)
@@ -42,5 +43,7 @@ class DiabetesPrediction:
 
     probability: float
     predicted_label: int
+    tag_label: str
     risk_level: str
     threshold_used: float
+    explanation: Optional[str] = None

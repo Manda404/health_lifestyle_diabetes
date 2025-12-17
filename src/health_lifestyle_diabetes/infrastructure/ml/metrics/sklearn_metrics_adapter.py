@@ -1,8 +1,9 @@
 # src/health_lifestyle_diabetes/infrastructure/metrics/sklearn_metrics_adapter.py
 
 from typing import Dict, Sequence
+from numpy import array
+from health_lifestyle_diabetes.domain.ports.metrics_port import MetricsPort
 
-import numpy as np
 from sklearn.metrics import (
     accuracy_score,
     average_precision_score,
@@ -12,9 +13,8 @@ from sklearn.metrics import (
     precision_score,
     recall_score,
     roc_auc_score,
+    confusion_matrix,
 )
-
-from health_lifestyle_diabetes.domain.ports.metrics_port import MetricsPort
 
 
 class SklearnMetricsAdapter(MetricsPort):
@@ -60,6 +60,7 @@ class SklearnMetricsAdapter(MetricsPort):
                 "mcc": 0.7000,
                 "recall": 0.7800,
                 "precision": 0.9100,
+                etc...
             }
 
         Raises:
@@ -68,9 +69,9 @@ class SklearnMetricsAdapter(MetricsPort):
         """
 
         # 1. Conversion des formats (séquences Python vers tableaux Numpy)
-        y_true_arr = np.array(y_true)
-        y_pred_arr = np.array(y_pred)
-        y_proba_arr = np.array(y_proba)
+        y_true_arr = array(y_true)
+        y_pred_arr = array(y_pred)
+        y_proba_arr = array(y_proba)
 
         # 2. Calcul des métriques (Métriques basées sur y_pred)
         accuracy = accuracy_score(y_true_arr, y_pred_arr)
@@ -86,7 +87,12 @@ class SklearnMetricsAdapter(MetricsPort):
         auc_roc = roc_auc_score(y_true_arr, y_proba_arr)
         auc_pr = average_precision_score(y_true_arr, y_proba_arr)
 
-        # 4. Formatage et Retour (Rapport complet)
+        # 4. Matrice de confusion et taux
+        tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()
+        fpr = fp / (fp + tn) if (fp + tn) > 0 else 0.0
+        fnr = fn / (fn + tp) if (fn + tp) > 0 else 0.0
+
+        # 5. Formatage et Retour (Rapport complet)
         return {
             "accuracy": round(accuracy, 4),
             "precision": round(precision, 4),
@@ -94,6 +100,8 @@ class SklearnMetricsAdapter(MetricsPort):
             "f1": round(f1, 4),
             "auc_roc": round(auc_roc, 4),
             "auc_pr": round(auc_pr, 4),
+            "fpr": round(fpr, 4),
+            "fnr": round(fnr, 4),
             "kappa": round(kappa, 4),
             "mcc": round(mcc, 4),
         }

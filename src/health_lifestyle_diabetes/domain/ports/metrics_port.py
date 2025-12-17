@@ -59,6 +59,7 @@ class MetricsPort(Protocol):
                 "kappa": 0.61,
                 "fnr": 0.12,
                 "fpr": 0.05,
+                etc,
                 ...
             }
 

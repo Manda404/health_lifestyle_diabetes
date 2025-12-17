@@ -1,3 +1,5 @@
+# src/health_lifestyle_diabetes/application/dto/prediction_request_dto.py
+
 from dataclasses import dataclass
 
 
@@ -16,37 +18,57 @@ class PredictionRequestDTO:
     - utilisé uniquement par la couche application.
     """
 
+    """
+    DTO représentant la requête de prédiction patient.
+
+    Ce DTO encapsule strictement les données reçues depuis
+    l'extérieur (API, batch, UI) dans un format stable et typé.
+    Aucune logique métier n'est autorisée ici.
+    """
+
+    # --- Démographie ---
     age: int
     gender: str
     ethnicity: str
     education_level: str
-    income_level: str
     employment_status: str
-    smoking_status: str
+    income_level: str
 
+    # --- Mode de vie ---
+    smoking_status: str
     alcohol_consumption_per_week: int
     physical_activity_minutes_per_week: int
     diet_score: float
     sleep_hours_per_day: float
     screen_time_hours_per_day: float
 
+    # --- Antécédents médicaux ---
     family_history_diabetes: int
     hypertension_history: int
     cardiovascular_history: int
 
+    # --- Mesures corporelles ---
     bmi: float
+    waist_to_hip_ratio: float
+
+    # --- Signes vitaux ---
     systolic_bp: int
     diastolic_bp: int
     heart_rate: int
 
+    # --- Profil lipidique ---
     cholesterol_total: int
-    hdl_cholesterol: int
     ldl_cholesterol: int
+    hdl_cholesterol: int
     triglycerides: int
 
+    # --- Glycémie & diabète ---
     glucose_fasting: int
     glucose_postprandial: int
-    insulin_level: float
     hba1c: float
+    insulin_level: float
+    diabetes_risk_score: float
+    diabetes_stage: str
 
-    waist_to_hip_ratio: float
+    # --- Variable observée (si présente côté API) ---
+    diagnosed_diabetes: int
