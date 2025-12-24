@@ -60,6 +60,13 @@ Ce projet démontre **comment structurer un système de Machine Learning de mani
 
 ## 🏗️ Architecture du projet
 
+🧱 Vue d'ensemble de la Clean Architecture
+￼
+![Schéma de la Clean Architecture](note/clean_architecture.png)
+
+Ce schéma illustre comment les principes de la Clean Architecture sont appliqués pour structurer un système de Machine Learning robuste et maintenable.
+
+🧠 Architecture logique (simplifiée)
 ```
 presentation  →  application  →  domain
         ↑                ↑
