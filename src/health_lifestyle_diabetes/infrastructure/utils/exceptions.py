@@ -1,24 +1,33 @@
 """
 src/health_lifestyle_diabetes/exceptions.py
--------------------------------------------
 
-Définition d'exceptions personnalisées utilisées dans l'application.
+Exceptions personnalisées de l'application.
 
-Ces exceptions servent à :
+Objectifs :
+-----------
 1. Centraliser la gestion des erreurs.
-2. Fournir des erreurs métier (Domaine) ou techniques (Infrastructure) claires.
-3. Maintenir l'indépendance des couches (respect de la Clean Architecture).
+2. Séparer clairement les erreurs techniques (Infrastructure)
+   des erreurs métier (Domaine).
+3. Garantir l'indépendance des couches (Clean Architecture).
+4. Fournir des messages d'erreur explicites, traçables et maintenables.
+
+Toutes les exceptions de l'application doivent hériter de `BaseAppError`.
 """
 
 # ============================================================
-# ===============   1. Exceptions Racines (Base)   ===========
+# ===============   1. Exception Racine (Base)   ==============
 # ============================================================
 
 
 class BaseAppError(Exception):
     """
-    Exception racine pour toutes les erreurs personnalisées de l'application.
-    Toutes les autres exceptions doivent hériter de celle-ci.
+    Exception racine de l'application.
+
+    Toutes les exceptions personnalisées doivent hériter de cette classe.
+    Elle permet :
+    - un catch global cohérent
+    - un logging centralisé
+    - une abstraction propre des erreurs
     """
 
     pass
@@ -27,46 +36,72 @@ class BaseAppError(Exception):
 # ============================================================
 # ===============   2. Exceptions Infrastructure   ============
 # ============================================================
+# Responsabilité : technique uniquement (I/O, fichiers, config)
+# Aucune règle métier ne doit apparaître ici.
+# ============================================================
+
+# ----------------------------
+# Configuration & Logging
+# ----------------------------
 
 
 class ConfigLoadingError(BaseAppError):
-    """Erreur liée au chargement ou au parsing d'un fichier de configuration (e.g., YAML, .env)."""
+    """
+    Erreur lors du chargement ou du parsing d'une configuration
+    (YAML, JSON, .env, etc.).
+    """
 
     pass
 
 
 class LoggerInitializationError(BaseAppError):
-    """Erreur survenue lors de l'initialisation du système de logging."""
+    """
+    Erreur lors de l'initialisation du système de logging.
+    """
 
     pass
 
 
-# --- Sous-catégorie: Data Access (Repository) ---
+# ----------------------------
+# Accès aux données (Dataset)
+# ----------------------------
 
 
 class DatasetLoadingError(BaseAppError):
-    """Erreur lors du chargement d'un dataset (fichier manquant, corrompu, format incorrect)."""
+    """
+    Erreur lors du chargement d'un dataset.
+    (fichier manquant, corrompu ou format invalide)
+    """
 
     pass
 
 
 class DatasetSavingError(BaseAppError):
-    """Erreur lors de la sauvegarde d'un dataset sur disque."""
+    """
+    Erreur lors de la sauvegarde d'un dataset sur disque.
+    """
 
     pass
 
 
-# --- Sous-catégorie: Modèles ML (Persistence) ---
+# ----------------------------
+# Persistance des modèles ML
+# ----------------------------
 
 
 class ModelLoadingError(BaseAppError):
-    """Erreur lors du chargement d'un modèle ML (fichier manquant, incompatible)."""
+    """
+    Erreur lors du chargement d'un modèle ML.
+    (fichier manquant, version incompatible, désérialisation impossible)
+    """
 
     pass
 
 
 class ModelSavingError(BaseAppError):
-    """Erreur lors de la sauvegarde d'un modèle ML."""
+    """
+    Erreur lors de la sauvegarde d'un modèle ML.
+    """
 
     pass
 
@@ -74,12 +109,19 @@ class ModelSavingError(BaseAppError):
 # ============================================================
 # ===============   3. Exceptions Domaine & Métier   ==========
 # ============================================================
+# Responsabilité : règles métier, logique ML, cohérence fonctionnelle
+# Indépendantes de toute technologie.
+# ============================================================
+
+# ----------------------------
+# Validation des données
+# ----------------------------
 
 
 class DatasetValidationError(BaseAppError):
     """
-    Erreur lorsqu'un dataset de training/testing ne respecte pas un schéma attendu.
-    (Applicable lors du training ou de l'analyse des données brutes).
+    Erreur lorsque les données d'entraînement ou de test
+    ne respectent pas le schéma attendu.
     """
 
     pass
@@ -87,53 +129,83 @@ class DatasetValidationError(BaseAppError):
 
 class FeatureValidationError(BaseAppError):
     """
-    Erreur levée en cas de non-conformité des features lors de l'INPUT de PRÉDICTION.
-    (e.g., âge hors bornes, colonne manquante).
+    Erreur de validation des features en entrée de prédiction.
+    (colonne manquante, valeur hors bornes, type invalide)
     """
+
+    pass
+
+
+# ----------------------------
+# Cycle de vie du modèle ML
+# ----------------------------
 
 
 class ModelTrainingError(BaseAppError):
-    """Erreur survenue pendant l'entraînement du modèle (e.g., convergence impossible)."""
+    """
+    Erreur survenue pendant l'entraînement du modèle.
+    (convergence impossible, données incohérentes, échec d'optimisation)
+    """
 
     pass
 
 
 class ModelPredictionError(BaseAppError):
-    """Erreur survenue lors de l'appel à la prédiction (e.g., données mal formées après FE)."""
+    """
+    Erreur lors de l'exécution d'une prédiction.
+    (features mal formées, pipeline cassé, output invalide)
+    """
 
     pass
 
 
+# ----------------------------
+# Métier Santé / Lifestyle
+# ----------------------------
+
+
 class InvalidPatientProfileError(BaseAppError):
-    """Erreur métier : les données d'un profil patient sont invalides ou incomplètes (règle métier abstraite)."""
+    """
+    Erreur métier : le profil patient est invalide ou incomplet
+    au regard des règles métier (âge, IMC, données critiques manquantes).
+    """
 
     pass
 
 
 class FeatureEngineeringError(BaseAppError):
-    """Erreur métier lors de la création ou de la transformation des features."""
+    """
+    Erreur métier lors de la création ou transformation des features.
+    (logique métier violée, calcul invalide)
+    """
 
     pass
 
 
 class PredictionServiceError(BaseAppError):
-    """Erreur métier lors de l'exécution du service final de prédiction."""
+    """
+    Erreur métier lors de l'exécution du service de prédiction final.
+    (enchaînement de use cases incorrect, dépendances manquantes)
+    """
 
     pass
 
 
 # ============================================================
-# ===============   Exportation (Best Practice)   ============
+# ===============   4. Export Public (Best Practice)   ========
 # ============================================================
 
 __all__ = [
+    # Base
     "BaseAppError",
+    # Infrastructure
     "ConfigLoadingError",
     "LoggerInitializationError",
     "DatasetLoadingError",
     "DatasetSavingError",
     "ModelLoadingError",
     "ModelSavingError",
+    # Domaine & Métier
     "DatasetValidationError",
     "FeatureValidationError",
     "ModelTrainingError",
