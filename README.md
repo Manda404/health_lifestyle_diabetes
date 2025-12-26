@@ -1,273 +1,230 @@
-
----
-
 # ⚕️ Health & Lifestyle Diabetes Prediction
 
 **Un projet Machine Learning pédagogique basé sur la Clean Architecture et les bonnes pratiques MLOps**
 
----
-
-## 📌 Présentation du projet
-
-Ce projet est un **système de Machine Learning dédié à la prédiction du diabète**, construit avec une forte orientation **Clean Architecture appliquée aux projets de Data Science**.
-
-L’objectif de ce dépôt **n’est pas** de proposer un simple projet de modélisation ou un notebook expérimental, mais de montrer **comment concevoir, structurer et organiser un projet de Machine Learning de manière professionnelle**, en respectant des principes d’architecture logicielle utilisés en entreprise.
-
-Le projet s’appuie sur un jeu de données **santé & mode de vie**, mais la **véritable valeur ajoutée** réside dans la **structure du code**, la **séparation des responsabilités**, et la **vision MLOps** adoptée tout au long du projet.
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
+[![Poetry](https://img.shields.io/badge/Poetry-Dependency%20Management-blue)](https://python-poetry.org/)
+[![MLflow](https://img.shields.io/badge/MLflow-Experiment%20Tracking-blue)](https://mlflow.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-API%20Framework-green)](https://fastapi.tiangolo.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
-## 🎯 Objectifs pédagogiques
+## 📋 Présentation
 
-Les objectifs principaux de ce projet sont les suivants :
+Ce projet démontre **comment structurer un système de Machine Learning de manière professionnelle** en appliquant les principes de la Clean Architecture aux projets de Data Science.
 
-* ✅ Appliquer les **principes de la Clean Architecture** à un projet de Data Science
-* ✅ Montrer comment structurer un projet ML de manière claire et maintenable
-* ✅ Séparer proprement :
+**Dataset** : [Health & Lifestyle Data for Diabetes Prediction](https://www.kaggle.com/datasets/alamshihab075/health-and-lifestyle-data-for-diabetes-prediction)
 
-  * la logique métier
-  * la logique Machine Learning
-  * les aspects techniques et d’infrastructure
-* ✅ Illustrer un **workflow de Machine Learning Engineer** proche des standards industriels
-* ✅ Mettre en œuvre les **bonnes pratiques MLOps** (CI/CD, tracking, configuration, API)
+**Objectif** : Prédiction du diabète (classification binaire, multi-classes, estimation de risque) à partir de données de santé et de mode de vie.
 
-D’un point de vue modélisation, le projet traite :
-
-* la **classification binaire** (diabète / non-diabète)
-* la **classification multi-classes** (stades du diabète)
-* l’**estimation de risque** à partir d’indicateurs de santé et de mode de vie
+**Valeur ajoutée** : Architecture logicielle robuste, séparation claire des responsabilités, workflow MLOps complet, code maintenable et testable.
 
 ---
 
-## 🏗️ Approche architecturale
+## 🎯 Ce que j'ai réalisé
 
-Ce projet est structuré selon les principes de la **Clean Architecture**, adaptés aux **projets de Data Science et de Machine Learning**.
+### Architecture & Design
+- Application de la **Clean Architecture** à un projet de Data Science complet
+- Séparation stricte en 4 couches : Domain, Application, Infrastructure, Presentation
+- Inversion des dépendances pour un code découplé et évolutif
+- Structure modulaire permettant de changer facilement de modèle ou de source de données
 
-L’idée centrale est de **séparer clairement ce que fait le système** de **la manière dont il est implémenté**, afin de construire un code :
+### Pipeline Machine Learning
+- Implémentation de modèles de boosting (Gradient Boosting, XGBoost, CatBoost)
+- Feature engineering avec pipeline de preprocessing modulaire
+- Training pipeline avec validation croisée et early stopping
+- Évaluation multi-métriques (accuracy, precision, recall, F1-score, ROC-AUC)
 
-* plus lisible
-* plus testable
-* plus évolutif
-* plus proche des exigences de la production
+### Pratiques MLOps
 
-### Pourquoi appliquer la Clean Architecture en Data Science ?
+**Tracking & Reproductibilité**
+- Tracking complet des expériences avec MLflow
+- Versioning automatique des modèles et artifacts
+- Configuration externalisée en YAML (aucun paramètre codé en dur)
+- Gestion des random seeds pour garantir la reproductibilité
 
-Dans de nombreux projets ML, on observe rapidement les problèmes suivants :
+**Infrastructure & Production**
+- API REST avec FastAPI (documentation OpenAPI automatique)
+- Validation des données d'entrée avec Pydantic
+- Gestion robuste des erreurs et logging structuré
+- Interface CLI pour l'entraînement et l'évaluation
 
-* les notebooks deviennent difficiles à maintenir
-* le chargement des données, le preprocessing, les modèles et les API sont mélangés
-* changer de modèle ou de source de données casse une grande partie du code
-
-La Clean Architecture permet d’éviter ces écueils en imposant :
-
-* une **séparation forte des responsabilités**
-* une **inversion des dépendances**
-* une distinction claire entre :
-
-  * le cœur métier
-  * les cas d’usage
-  * l’infrastructure technique
-  * les interfaces d’exposition
+**Qualité & Tests**
+- Suite de tests complète (unit, integration, e2e)
+- CI/CD avec GitHub Actions (tests automatisés, linting, formatting)
+- Code coverage et analyse statique
+- Type hints et validation mypy
 
 ---
 
-### 🧱 Vue d’ensemble de la Clean Architecture
+## 🏗️ Architecture du projet
 
-👉 **C’est ici que tu peux insérer l’image de la Clean Architecture** :
-
-
+🧱 Vue d'ensemble de la Clean Architecture
+￼
 ![Schéma de la Clean Architecture](note/clean_architecture.png)
 
+Ce schéma illustre comment les principes de la Clean Architecture sont appliqués pour structurer un système de Machine Learning robuste et maintenable.
 
-> Ce schéma illustre comment les principes de la Clean Architecture sont appliqués pour structurer un système de Machine Learning.
-
----
-
-### 🧠 Architecture logique (simplifiée)
-
+🧠 Architecture logique (simplifiée)
 ```
 presentation  →  application  →  domain
         ↑                ↑
         └──── infrastructure ─┘
 ```
 
-Chaque couche a un rôle bien défini :
+**Domain** : Entités métier, interfaces, règles business (indépendant de toute technologie)
 
-* **Domain**
-  Contient les concepts métier et les interfaces.
-  Cette couche ne dépend d’aucune technologie (pas de pandas, pas de modèles ML).
+**Application** : Cas d'usage (TrainingUseCase, PredictionUseCase, EvaluationUseCase)
 
-* **Application**
-  Définit les cas d’usage : entraînement, évaluation, prédiction.
-  Elle orchestre le workflow sans connaître les détails techniques.
+**Infrastructure** : Implémentations concrètes (data loaders, modèles ML, preprocessing, tracking MLflow)
 
-* **Infrastructure**
-  Contient les implémentations concrètes :
+**Presentation** : Interfaces d'exposition (API REST, CLI, dashboard)
 
-  * chargement des données
-  * preprocessing
-  * modèles de Machine Learning
-  * tracking des expériences
-  * outils techniques
-
-* **Presentation**
-  Expose le système via :
-
-  * une API (FastAPI)
-  * une CLI
-  * un dashboard
-
-Toutes les dépendances **pointent vers l’intérieur**, garantissant la stabilité du cœur du système.
+Cette architecture garantit que le cœur métier reste stable même si l'infrastructure technique change.
 
 ---
 
-## 📁 Structure du projet (simplifiée)
+## 📁 Structure du code
 
 ```
 health_lifestyle_diabetes/
-├── pyproject.toml
-├── README.md
-├── .gitignore
 ├── configs/
-│   ├── training.yaml
-│   ├── inference.yaml
-│   ├── preprocessing.yaml
-│   ├── logging.yaml
-│   └── paths.yaml
+│   ├── training.yaml          # Hyperparamètres et configuration d'entraînement
+│   ├── inference.yaml         # Configuration pour l'inférence
+│   ├── preprocessing.yaml     # Pipeline de feature engineering
+│   └── paths.yaml             # Chemins des données et modèles
 ├── tests/
-│   ├── domain/
-│   ├── application/
-│   ├── infrastructure/
-│   └── e2e/
-└── src/
-    └── health_lifestyle_diabetes/
-        ├── domain/
-        ├── application/
-        ├── infrastructure/
-        └── presentation/
+│   ├── domain/                # Tests de la logique métier
+│   ├── application/           # Tests des cas d'usage
+│   ├── infrastructure/        # Tests des implémentations
+│   └── e2e/                   # Tests end-to-end
+└── src/health_lifestyle_diabetes/
+    ├── domain/
+    │   ├── entities/          # Modèles de données métier
+    │   ├── repositories/      # Interfaces abstraites
+    │   └── services/          # Services métier
+    ├── application/
+    │   └── use_cases/         # Training, Prediction, Evaluation
+    ├── infrastructure/
+    │   ├── data/              # Data loaders et persistance
+    │   ├── models/            # Wrappers des modèles ML
+    │   ├── preprocessing/     # Feature engineering
+    │   └── tracking/          # MLflow integration
+    └── presentation/
+        ├── api/               # FastAPI endpoints
+        └── cli/               # Command Line Interface
 ```
 
-Cette organisation permet de conserver un projet :
+---
 
-* clair
-* testable
-* modulaire
-* prêt pour des usages industriels
+## 🛠️ Stack technique
+
+### Core ML
+- **Pandas, NumPy** : Manipulation et calcul sur données tabulaires
+- **Scikit-learn** : Preprocessing, pipelines, métriques
+- **XGBoost, CatBoost** : Modèles de boosting optimisés
+
+### MLOps & Engineering
+- **MLflow** : Tracking d'expériences, versioning de modèles, registry
+- **FastAPI** : API REST moderne et performante
+- **Pydantic** : Validation de données et serialization
+- **Poetry** : Gestion des dépendances et packaging
+
+### DevOps & Qualité
+- **GitHub Actions** : CI/CD automatisé
+- **pytest** : Framework de tests complet
+- **ruff** : Linting rapide et moderne
+- **black** : Formatage automatique du code
+- **mypy** : Vérification statique des types
+
+### Configuration & Logging
+- **YAML** : Configuration déclarative externalisée
+- **Python logging** : Logging structuré avec rotation
 
 ---
 
-## 🤖 Machine Learning & pratiques MLOps
+## 🚀 Utilisation
 
-Ce projet illustre comment le Machine Learning **s’intègre naturellement dans une architecture propre**.
+### Installation
 
-### 🔹 Modèles de Machine Learning
+```bash
+# Cloner le repository
+git clone https://github.com/votre-username/health-lifestyle-diabetes.git
+cd health-lifestyle-diabetes
 
-Les modèles utilisés sont principalement des **modèles de boosting**, particulièrement adaptés aux données tabulaires :
+# Installer les dépendances avec Poetry
+poetry install
+poetry shell
+```
 
-* Gradient Boosting
-* XGBoost
-* CatBoost
+### Entraînement
 
-Ces modèles sont entièrement encapsulés dans la couche *infrastructure*, ce qui les rend **facilement interchangeables** sans impacter le reste du système.
+```bash
+# Entraîner un modèle avec tracking MLflow
+poetry run python -m health_lifestyle_diabetes.presentation.cli train --config configs/training.yaml
 
----
+# Voir les résultats dans MLflow UI
+mlflow ui
+```
 
-### 🔹 Suivi des expérimentations
+### Inférence via API
 
-* **MLflow** est utilisé pour :
+```bash
+# Lancer l'API FastAPI
+poetry run uvicorn health_lifestyle_diabetes.presentation.api.main:app --reload
 
-  * le suivi des expériences
-  * l’enregistrement des métriques
-  * la gestion des versions de modèles
+# Documentation interactive disponible sur http://localhost:8000/docs
+```
 
-Cela permet d’illustrer concrètement les notions de **traçabilité** et de **reproductibilité**.
+### Tests et qualité
 
----
+```bash
+# Exécuter la suite de tests
+poetry run pytest
 
-### 🔹 Configuration orientée métier
-
-* Les paramètres sont définis via des fichiers **YAML**
-* Aucun hyperparamètre n’est codé en dur
-* Les expérimentations sont reproductibles et contrôlées
-
----
-
-### 🔹 CI/CD et qualité du code
-
-* Des pipelines **GitHub Actions** sont mis en place pour :
-
-  * exécuter les tests
-  * vérifier la qualité du code
-  * valider la structure du projet
-
-Cela montre comment appliquer des pratiques DevOps à des projets de Data Science.
-
----
-
-### 🔹 Inférence via API
-
-* **FastAPI** est utilisé pour exposer les prédictions
-* L’API est totalement découplée de la logique ML
-* Cette approche illustre les bonnes pratiques de déploiement de modèles en production
+# Vérifier le code
+poetry run ruff check .
+poetry run black --check .
+poetry run mypy src/
+```
 
 ---
 
-## 🧪 Technologies utilisées
+## 💡 Pourquoi ce projet est différent
 
-### Stack principale
+**Pas un simple notebook Jupyter**
+Ce projet montre comment structurer du code ML pour la production, avec une architecture qui facilite la maintenance, les tests et l'évolution.
 
-* **Python**
-* **Poetry** (gestion des dépendances et du packaging)
+**Séparation claire des responsabilités**
+Chaque composant a un rôle précis. Changer de modèle, de source de données ou d'API n'impacte qu'une seule couche.
 
-### Data Science & Machine Learning
+**MLOps par défaut**
+Le tracking, le versioning, la reproductibilité et la qualité du code ne sont pas des ajouts après coup, mais intégrés dès la conception.
 
-* Pandas
-* NumPy
-* Scikit-learn
-* XGBoost
-* CatBoost
-
-### MLOps & ingénierie
-
-* MLflow
-* FastAPI
-* GitHub Actions (CI/CD)
-* Configuration YAML
-* Logging structuré et gestion des erreurs
+**Testable et évolutif**
+L'architecture permet d'écrire des tests à tous les niveaux et de faire évoluer le système sans tout casser.
 
 ---
 
-## 🎓 Objectif pédagogique du projet
+## 🎓 Compétences démontrées
 
-Ce dépôt a avant tout une **vocation pédagogique**.
-
-Il vise à montrer :
-
-* comment appliquer la **Clean Architecture à la Data Science**
-* comment dépasser une approche uniquement basée sur des notebooks
-* comment structurer un projet ML pour le long terme
-* comment raisonner en **Machine Learning Engineer**, et non uniquement en data scientist expérimental
-
-Ce projet n’est pas pensé comme un package prêt à l’emploi, mais comme une **référence de bonnes pratiques**.
+- Application de principes d'architecture logicielle à la Data Science
+- Mise en place d'un workflow MLOps complet (tracking, versioning, CI/CD)
+- Design de code découplé, testable et maintenable
+- Exposition de modèles ML via API REST professionnelle
+- Configuration externalisée et gestion de la reproductibilité
+- Pratiques DevOps appliquées au Machine Learning
 
 ---
 
 ## 👤 Auteur
 
-**Rostand Surel**
+**Rostand Surel**  
 📧 [rostandsurel@yahoo.com](mailto:rostandsurel@yahoo.com)
 
 ---
 
-## ⭐ Note finale
+## 📄 Licence
 
-Ce projet reflète ma vision des projets de Machine Learning :
-
-* une architecture claire et robuste
-* une séparation stricte des responsabilités
-* des workflows reproductibles
-* une approche orientée production
-
-Il constitue une **base pédagogique** pour comprendre comment concevoir des projets de Data Science modernes et maintenables en appliquant la Clean Architecture.
-
----
+Ce projet est sous licence MIT.

@@ -1,92 +1,62 @@
-"""
-experiment_tracking_service.py
-==============================
+# application/services/experiment_tracking_service.py
 
-Service APPLICATIF pour le tracking d’expériences ML.
-
-RÔLE ARCHITECTURAL
-------------------
-- Centralise la logique transversale de tracking.
-- Ne contient AUCUNE dépendance vers MLflow.
-- Appelle uniquement le ExperimentTrackingPort.
-
-Ce service est utilisé par les use cases (train, evaluate, etc.).
-"""
-
-from typing import Mapping, Any
+from typing import Any, Mapping
 
 from health_lifestyle_diabetes.domain.ports.experiment_tracking_port import (
     ExperimentTrackingPort,
 )
-from health_lifestyle_diabetes.infrastructure.logging.loguru_logger_adapter import (
-    LoguruLoggerAdapter,
-)
+from health_lifestyle_diabetes.domain.ports.logger_port import LoggerPort
 
 
 class ExperimentTrackingService:
     """
-    Service applicatif de tracking d’expériences ML.
+    Service applicatif orchestrant le tracking d'expériences ML.
 
-    Il standardise :
-    - le nom des expériences
-    - le cycle start / log / end
+    - Utilisé par les cas d'usage (entraînement, évaluation, etc.)
+    - Ne dépend d'aucune technologie (pas de MLflow ici)
+    - Pilote le cycle complet : start → log → end
     """
 
-    def __init__(self, tracker: ExperimentTrackingPort):
+    def __init__(self, tracker: ExperimentTrackingPort, logger: LoggerPort):
         self.tracker = tracker
-        self.logger = LoguruLoggerAdapter("application.experiment_tracking")
+        self.logger = logger
+        self.logger.info("ExperimentTrackingService initialisé.")
 
-    def start_experiment(self, *, experiment_name: str, run_name: str):
-        """
-        Initialise une expérience et démarre une run proprement.
-        Si une run est déjà active, elle est fermée avant.
-        """
+    # -----------------------------------------
+    # Cycle de vie des expériences
+    # -----------------------------------------
+    def start_experiment(self, *, experiment_name: str, run_name: str) -> None:
+        """Démarre une nouvelle expérience et une run associée."""
         self.logger.info(
-            f"Starting experiment '{experiment_name}' with run '{run_name}'"
+            f"Initialisation de l'expérience '{experiment_name}' (run='{run_name}')"
         )
 
-        self.tracker.end_run()
+        self.tracker.end_run()  # sécurité (si run précédente ouverte)
         self.tracker.setup_experiment(experiment_name)
         self.tracker.start_run(run_name)
 
-    def log_training_context(self, *, model_name: str, params: Mapping[str, Any]):
-        """
-        Logger les informations liées à l’entraînement.
-        """
-        self.logger.debug(
-            f"Logging training context for model '{model_name}'"
-        )
+    # -----------------------------------------
+    # Logging contextuel
+    # -----------------------------------------
+    def log_training_context(self, *, model_name: str, params: Mapping[str, Any]) -> None:
+        """Log des informations relatives à l'entraînement."""
+        self.logger.debug(f"Enregistrement du contexte d'entraînement pour {model_name}")
+        self.tracker.log_params({"model": model_name, **params})
 
-        self.tracker.log_params(
-            {
-                "model_name": model_name,
-                **params,
-            }
-        )
-
-    def log_evaluation(self, metrics: Mapping[str, float]):
-        """
-        Logger les métriques d’évaluation.
-        """
-        self.logger.debug(
-            f"Logging evaluation metrics: {list(metrics.keys())}"
-        )
-
+    def log_evaluation(self, metrics: Mapping[str, float]) -> None:
+        """Log des métriques d'évaluation."""
+        self.logger.info(f"Métriques d'évaluation : {metrics}")
         self.tracker.log_metrics(metrics)
 
-    def log_artifact(self, path: str):
-        """
-        Logger un artefact produit par le modèle.
-        """
-        self.logger.debug(
-            f"Logging artifact at path: {path}"
-        )
-
+    def log_artifact(self, path: str) -> None:
+        """Log d'un artefact produit par le modèle (fichier)."""
+        self.logger.debug(f"Enregistrement d'un artefact : {path}")
         self.tracker.log_artifact(path)
 
-    def close(self):
-        """
-        Fermer proprement la run.
-        """
-        self.logger.info("Closing experiment run")
+    # -----------------------------------------
+    # Fermeture de la session
+    # -----------------------------------------
+    def close(self) -> None:
+        """Fin de l'expérience en cours."""
+        self.logger.info("Fermeture de l'expérience.")
         self.tracker.end_run()

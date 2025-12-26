@@ -1,5 +1,5 @@
 # ======================================================
-# 📦 PROJECT METADATA (Poetry)
+# PROJECT METADATA (Poetry)
 # ======================================================
 [tool.poetry]
 name = "health-lifestyle-diabetes"
@@ -8,21 +8,21 @@ description = "Clean Architecture project for diabetes prediction using health &
 authors = ["Manda Surel <s239150.eps@gmail.com>"]
 readme = "README.md"
 
-# Déclare explicitement que le code source est dans /src
+# Declare explicitly that source code lives in /src
 packages = [
     { include = "health_lifestyle_diabetes", from = "src" },
 ]
 
 # ======================================================
-# 🐍 RUNTIME DEPENDENCIES (Production)
+# RUNTIME DEPENDENCIES (Production)
 # ======================================================
 [tool.poetry.dependencies]
 
-# Version Python supportée
+# Supported Python version
 python = "^3.10"
 
 # ------------------------------------------------------
-# 📊 Scientific computing & data manipulation
+# Scientific computing & data manipulation
 # ------------------------------------------------------
 numpy = "^1.26.0"
 pandas = "^2.2.0"
@@ -31,57 +31,57 @@ pandas = "^2.2.0"
 scikit-learn = "^1.4.0"
 
 # ------------------------------------------------------
-# 🤖 Machine Learning models
+# Machine Learning models
 # ------------------------------------------------------
 xgboost = "^2.0.0"
 catboost = "^1.2.0"
+lightgbm = "^4.3.0"
+# ------------------------------------------------------
+# Configuration & validation
+# ------------------------------------------------------
+pyyaml = "^6.0.0"     # YAML file loading
+pydantic = "^2.7.0"   # Strong typing & validation (configs / DTOs)
 
 # ------------------------------------------------------
-# ⚙️ Configuration & validation
-# ------------------------------------------------------
-pyyaml = "^6.0.0"     # Chargement de fichiers YAML
-pydantic = "^2.7.0"   # Validation & typage fort des configs / DTO
-
-# ------------------------------------------------------
-# 🌐 API & CLI
+# API & CLI
 # ------------------------------------------------------
 fastapi = "^0.111.0"
 uvicorn = { extras = ["standard"], version = "^0.30.0" }
 click = "^8.1.0"
 
 # ------------------------------------------------------
-# 📈 UI & dashboards
+# UI & dashboards
 # ------------------------------------------------------
 streamlit = "^1.37.0"
 
 # ------------------------------------------------------
-# 🪵 Logging
+# Logging
 # ------------------------------------------------------
 loguru = "^0.7.0"
 
 # ------------------------------------------------------
-# 🧪 Experiment tracking & hyperparameter tuning
+# Experiment tracking & hyperparameter tuning
 # ------------------------------------------------------
 mlflow = "^3.7.0"
 optuna = "^4.6.0"
 
 # ------------------------------------------------------
-# 📊 Visualization
+# Visualization
 # ------------------------------------------------------
 seaborn = "^0.13.2"
 kaleido = "^1.2.0"    # Export Plotly figures (PNG / PDF)
 
 # ------------------------------------------------------
-# 📓 Notebook support
+# Notebook support
 # ------------------------------------------------------
 nbformat = "^5.10.4"
 
 # ======================================================
-# 🛠️ DEVELOPMENT DEPENDENCIES (Dev only)
+# DEVELOPMENT DEPENDENCIES (Dev only)
 # ======================================================
 [tool.poetry.group.dev.dependencies]
 
-# Tests
+# Testing
 pytest = "^8.0.0"
 
 # Formatting & linting
@@ -96,28 +96,28 @@ mypy = "^1.10.0"
 taskipy = "^1.14.1"
 
 # ======================================================
-# 🎨 ISORT CONFIGURATION
+# ISORT CONFIGURATION
 # ======================================================
 [tool.isort]
-profile = "black"                        # Compatibilité Black
+profile = "black"
 line_length = 88
 known_first_party = ["health_lifestyle_diabetes"]
 
 # ======================================================
-# 🎨 BLACK CONFIGURATION
+# BLACK CONFIGURATION
 # ======================================================
 [tool.black]
 line-length = 88
 target-version = ["py310"]
 
 # ======================================================
-# 🧹 RUFF CONFIGURATION
+# RUFF CONFIGURATION
 # ======================================================
 [tool.ruff]
 line-length = 88
 target-version = "py310"
 
-# Nouvelle syntaxe recommandée (future-proof)
+# Recommended modern syntax
 [tool.ruff.lint]
 select = [
     "E",  # Errors (PEP8)
@@ -130,45 +130,45 @@ ignore = [
 ]
 
 # ======================================================
-# 🧠 MYPY CONFIGURATION
+# MYPY CONFIGURATION
 # ======================================================
 [tool.mypy]
 python_version = "3.10"
-strict = true                 # Typage strict (niveau entreprise)
+strict = true
 warn_unused_configs = true
-ignore_missing_imports = true # Pratique pour libs externes ML
+ignore_missing_imports = true  # Practical for external ML libs
 
 # ======================================================
-# 🚀 POETRY SCRIPTS (CLI shortcuts)
+# POETRY SCRIPTS (CLI shortcuts)
 # ======================================================
 [tool.poetry.scripts]
 format = "black:main"
 
 # ======================================================
-# 🧰 TASKIPY – AUTOMATION COMMANDS
+# TASKIPY – AUTOMATION COMMANDS
 # ======================================================
 [tool.taskipy.tasks]
 
-# Trie les imports
+# Sort imports
 sort = "isort ."
 
-# Formatage du code
+# Format code
 format = "black ."
 
-# Lint (sans modification)
+# Lint (no modification)
 lint = "ruff check ."
 
-# Auto-fix global (recommandé)
+# Global auto-fix (recommended)
 fix = "ruff check . --fix && task sort && task format"
 
-# Typage statique
+# Static typing
 typecheck = "mypy src/"
 
-# Pipeline qualité complet
+# Full quality pipeline
 quality = "task fix && task lint && task typecheck"
 
 # ======================================================
-# 🏗️ BUILD SYSTEM
+# BUILD SYSTEM
 # ======================================================
 [build-system]
 requires = ["poetry-core"]

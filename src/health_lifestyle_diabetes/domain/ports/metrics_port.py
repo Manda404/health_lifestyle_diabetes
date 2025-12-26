@@ -1,25 +1,9 @@
-"""
-Port (interface) abstrait pour le calcul des métriques d'évaluation.
-
-Objectif :
-----------
-Découpler complètement :
-- la logique métier (domain)
-- des outils techniques (sklearn, numpy, torch, etc.)
-
-Ainsi, l'infrastructure pourra implémenter cette interface avec sklearn
-ou toute autre librairie sans impacter le domaine.
-
-Ce port est utilisé par :
-- EvaluationService (qui orchestre l'évaluation)
-"""
-
 from typing import Dict, Protocol, Sequence
 
 
 class MetricsPort(Protocol):
     """
-    Interface définissant un service capable de calculer des métriques
+    Interface (ou Port) définissant un service capable de calculer des métriques
     de classification à partir de y_true, y_pred et y_proba.
 
     L'infrastructure doit fournir une implémentation (ex: SklearnMetricsAdapter).

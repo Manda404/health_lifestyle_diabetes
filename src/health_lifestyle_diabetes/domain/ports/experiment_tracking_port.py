@@ -1,34 +1,7 @@
 """
 experiment_tracking_port.py
-===========================
-
-Ce fichier définit le PORT de tracking d’expériences ML.
-
-📌 Rôle dans la Clean Architecture
----------------------------------
-- Le domaine exprime ici un BESOIN, pas une implémentation.
-- Il dit : "je veux pouvoir tracer des expériences, des paramètres,
-  des métriques et des artefacts".
-- Il ne sait PAS comment c’est fait (MLflow, autre outil, etc.).
-
-Ce port sera implémenté dans la couche Infrastructure
-(ex: via MLflow, WandB, ou autre).
-"""
-"""
-experiment_tracking_port.py
-===========================
-
-📌 RÔLE :
----------
-Définir le CONTRAT de tracking d’expériences ML attendu par le domaine.
-
-📌 PRINCIPES CLEAN ARCHITECTURE :
---------------------------------
-- Le domaine exprime un BESOIN.
-- Il ne connaît AUCUNE technologie (MLflow, WandB, etc.).
-- Toute implémentation devra respecter ce contrat.
-
-👉 Ce port est implémenté par l’infrastructure.
+================================================
+Port (contrat) pour le tracking d’expériences ML.
 """
 from typing import Any, Mapping, Protocol
 
