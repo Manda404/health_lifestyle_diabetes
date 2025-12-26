@@ -191,6 +191,32 @@ class PredictionServiceError(BaseAppError):
     pass
 
 
+
+# ----------------------------
+# MLflow & Tracking d'expériences
+# ----------------------------
+class MLflowConfigurationError(BaseAppError):
+    """Erreur liée à une mauvaise configuration MLflow."""
+    pass
+
+class MLflowSetupError(BaseAppError):
+    """
+    Erreur survenue lors de l'initialisation ou de la connexion à MLflow
+    (DB corrompue, migration Alembic invalide, backend indisponible, etc.).
+    """
+    pass
+
+
+class ExtractorMetricsError(BaseAppError):
+    """
+    Erreur survenue lors de l'initialisation ou de la connexion à MLflow
+    (DB corrompue, migration Alembic invalide, backend indisponible, etc.).
+    """
+    pass
+
+
+
+
 # ============================================================
 # ===============   4. Export Public (Best Practice)   ========
 # ============================================================
@@ -213,4 +239,7 @@ __all__ = [
     "InvalidPatientProfileError",
     "FeatureEngineeringError",
     "PredictionServiceError",
+    # MLflow
+    "MLflowConfigurationError",
+    "MLflowSetupError",
 ]

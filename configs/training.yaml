@@ -1,0 +1,34 @@
+experiment:
+  name: health_lifestyle_diabetes
+
+# ---------------------------------------------------------
+# SECTION MODEL — CHOIX DU MODELE ACTIVE
+# ---------------------------------------------------------
+# Choisis : xgboost | catboost | lightgbm
+model:
+  name: xgboost   # <--- change ici selon le modèle à utiliser
+
+  params:
+    # ----- XGBoost -----
+    xgboost:
+      n_estimators: 300
+      max_depth: 6
+      learning_rate: 0.05
+      subsample: 0.8
+      eval_metric: logloss
+      use_label_encoder: false
+
+    # ----- CatBoost -----
+    catboost:
+      iterations: 300
+      learning_rate: 0.05
+      depth: 6
+      loss_function: Logloss
+      eval_metric: AUC
+
+    # ----- LightGBM -----
+    lightgbm:
+      n_estimators: 300
+      learning_rate: 0.05
+      num_leaves: 31
+      objective: binary

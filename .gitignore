@@ -38,3 +38,4 @@ reports
 logs
 .mypy_cache
 .ruff_cache
+notebook/catboost_info
