@@ -215,6 +215,33 @@ class ExtractorMetricsError(BaseAppError):
     pass
 
 
+class StreamingDataError(BaseAppError):
+    """
+    Erreur lors du streaming des données.
+    """
+    pass
+
+
+class XGBoostTrainingError(BaseAppError):
+    """
+    Erreur spécifique à l'entraînement du modèle XGBoost.
+    """
+    pass
+
+
+class CatBoostTrainingError(BaseAppError):
+    """
+    Erreur spécifique à l'entraînement du modèle CatBoost.
+    """
+    pass
+
+
+class LightGBMTrainingError(BaseAppError):
+    """
+    Erreur spécifique à l'entraînement du modèle LightGBM.
+    """
+    pass
+
 
 
 # ============================================================
@@ -242,4 +269,9 @@ __all__ = [
     # MLflow
     "MLflowConfigurationError",
     "MLflowSetupError",
+    "ExtractorMetricsError",
+    "StreamingDataError",
+    "XGBoostTrainingError",
+    "CatBoostTrainingError",
+    "LightGBMTrainingError",
 ]
