@@ -1,22 +1,20 @@
 # src/health_lifestyle_diabetes/infrastructure/data_sources/csv_dataset_repository.py
 from pathlib import Path
-
 from typing import Optional
-
-from pandas import DataFrame, read_csv
 
 from health_lifestyle_diabetes.domain.ports.dataset_repository_port import (
     DatasetRepositoryPort,
 )
 from health_lifestyle_diabetes.domain.ports.logger_port import LoggerPort
-from health_lifestyle_diabetes.infrastructure.utils.config_loader import YamlConfigLoader
-
+from health_lifestyle_diabetes.infrastructure.utils.config_loader import (
+    YamlConfigLoader,
+)
 from health_lifestyle_diabetes.infrastructure.utils.exceptions import (
     DatasetLoadingError,
     DatasetSavingError,
 )
-
 from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
+from pandas import DataFrame, read_csv
 
 # Détermine la racine du projet.
 root = get_repository_root()
@@ -24,7 +22,7 @@ root = get_repository_root()
 # Charge le fichier de configuration 'paths.yaml' pour connaître les emplacements des données.
 paths = YamlConfigLoader.load_config(root / "configs/paths.yaml")
 raw_path = paths["data"]["input"]["raw_dataset"]
-  
+
 # Extrait le chemin relatif du dataset brut.
 INPUT_DATA_PATH = root / raw_path  # Construit le chemin complet du fichier CSV.
 
