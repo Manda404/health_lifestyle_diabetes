@@ -6,16 +6,21 @@ from health_lifestyle_diabetes.domain.entities.decision_threshold_policy import 
 from health_lifestyle_diabetes.domain.entities.metrics import EvaluationResults
 from health_lifestyle_diabetes.domain.ports.metrics_port import MetricsPort
 from health_lifestyle_diabetes.domain.services.threshold_service import ThresholdService
+from health_lifestyle_diabetes.domain.ports.metrics_plotter_port import (
+    MetricsPlotterPort,
+)
 
+from typing import Optional, Dict
 
 class EvaluationService:
     """
     Service applicatif orchestrant l'évaluation d'un modèle.
     """
 
-    def __init__(self, metrics_adapter: MetricsPort):
+    def __init__(self, metrics_adapter: MetricsPort, decision_threshold: DecisionThresholdPolicy, plotter: MetricsPlotterPort):
         self.metrics_adapter = metrics_adapter
-        self.decision_threshold: DecisionThresholdPolicy
+        self.decision_threshold = decision_threshold
+        self.metrics_plotter = plotter
 
 
     def evaluate(
@@ -40,3 +45,15 @@ class EvaluationService:
                 mcc=metrics.get("mcc"),
                 extra_metrics=metrics,
     )
+
+    def plotter(self,
+                metrics: Dict[str, float],
+                *,
+                title: str,
+                selected_metrics: Optional[Sequence[str]] = None,
+                ) -> None:
+        self.metrics_plotter.plot_metrics(
+            metrics=metrics,
+            title=title,
+            selected_metrics=selected_metrics,
+            )

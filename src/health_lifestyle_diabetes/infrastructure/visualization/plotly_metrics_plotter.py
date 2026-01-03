@@ -19,7 +19,7 @@ class PlotlyMetricsPlotter(MetricsPlotterPort):
 
     DEFAULT_METRICS = ("accuracy", "precision", "recall", "f1", "auc_roc")
 
-    def __init__(self, logger: LoggerPort, width: int = 900, height: int = 500,):
+    def __init__(self, logger: LoggerPort, width: int = 1800, height: int = 600,):
         self.logger = logger
         self.width = width
         self.height = height

@@ -1,14 +1,9 @@
 # src/health_lifestyle_diabetes/application/use_cases/evaluate_model_uc.py
 
-from typing import Sequence, Optional
+from typing import Optional, Sequence
 
-from health_lifestyle_diabetes.domain.entities.evaluation_results import (
-    EvaluationResults,
-)
+from health_lifestyle_diabetes.domain.entities.metrics import EvaluationResults
 from health_lifestyle_diabetes.domain.ports.logger_port import LoggerPort
-from health_lifestyle_diabetes.domain.ports.metrics_plotter_port import (
-    MetricsPlotterPort,
-)
 from health_lifestyle_diabetes.domain.services.evaluation_service import (
     EvaluationService,
 )
@@ -36,11 +31,11 @@ class EvaluateModelUseCase:
         self,
         evaluation_service: EvaluationService,
         logger: LoggerPort,
-        metrics_plotter: Optional[MetricsPlotterPort] = None,
     ):
         self.evaluation_service = evaluation_service
         self.logger = logger
-        self.metrics_plotter = metrics_plotter
+
+
 
     # ------------------------------------------------------------------
     def execute(
@@ -48,7 +43,6 @@ class EvaluateModelUseCase:
         y_true: Sequence[int],
         y_proba: Sequence[float],
         *,
-        threshold: float = 0.5,
         plot_metrics: bool = False,
         selected_metrics: Optional[Sequence[str]] = None,
         plot_title: str = "Model Evaluation Metrics",
@@ -77,33 +71,59 @@ class EvaluateModelUseCase:
 
         self.logger.info("Démarrage de l'évaluation du modèle.")
 
-        # 1. Évaluation métier
+        # ------------------------------------------------------------------
+        # Sanity checks / contexte
+        # ------------------------------------------------------------------
+        self.logger.debug(
+            f"Input received | "
+            f"n_samples={len(y_true)} | "
+            f"plot_metrics={plot_metrics} | "
+            f"selected_metrics={selected_metrics}"
+        )
+
+        # ------------------------------------------------------------------
+        # Évaluation métier
+        # ------------------------------------------------------------------
+        self.logger.info("Lancement du service d'évaluation métier.")
         results = self.evaluation_service.evaluate(
             y_true=y_true,
             y_proba=y_proba,
-            threshold=threshold,
         )
 
         self.logger.info(
-            f"Évaluation terminée | "
+            "Évaluation terminée | "
             f"AUC={results.auc_roc:.4f} | "
             f"F1={results.f1:.4f} | "
-            f"Recall={results.recall:.4f}"
+            f"Recall={results.recall:.4f} | "
+            f"Precision={results.precision:.4f}"
         )
 
-        # 2. Visualisation optionnelle
-        if plot_metrics:
-            if not self.metrics_plotter:
-                self.logger.warning(
-                    "Visualisation demandée mais aucun MetricsPlotterPort injecté."
-                )
-            else:
-                self.metrics_plotter.plot_metrics(
-                    metrics=results.extra_metrics,
-                    title=plot_title,
-                    selected_metrics=selected_metrics,
-                )
+        self.logger.debug(
+            f"Métriques supplémentaires disponibles : "
+            f"{list(results.extra_metrics.keys()) if results.extra_metrics else 'Aucune'}"
+        )
 
-        self.logger.info("Use case EvaluateModelUseCase terminé.")
+        # ------------------------------------------------------------------
+        # Visualisation optionnelle
+        # ------------------------------------------------------------------
+        if plot_metrics:
+            self.logger.info(
+                "Visualisation des métriques activée | "
+                f"title='{plot_title}'"
+            )
+
+            self.evaluation_service.plotter(
+                metrics=results.extra_metrics or {},
+                title=plot_title,
+                selected_metrics=selected_metrics,
+            )
+
+            self.logger.info("Visualisation des métriques terminée.")
+        else:
+            self.logger.debug(
+                "Visualisation désactivée (plot_metrics=False)."
+            )
+
+        self.logger.info("Use case EvaluateModelUseCase terminé avec succès.")
 
         return results
