@@ -1,20 +1,23 @@
 # src/health_lifestyle_diabetes/infrastructure/ml/feature_engineering/pipeline_feature_engineering.py
 
-from pandas import DataFrame
-
 from health_lifestyle_diabetes.domain.ports.feature_engineering_port import (
     FeatureEngineeringPort,
 )
 from health_lifestyle_diabetes.domain.ports.logger_port import LoggerPort
-
 from health_lifestyle_diabetes.infrastructure.feature_engineering.base_preprocessing import (
     clean_categorical_variables,
+)
+from health_lifestyle_diabetes.infrastructure.feature_engineering.behavioral_features import (
+    BehavioralFeatureEngineer,
 )
 from health_lifestyle_diabetes.infrastructure.feature_engineering.clinical_features import (
     ClinicalFeatureEngineer,
 )
 from health_lifestyle_diabetes.infrastructure.feature_engineering.demographics_features import (
     DemographicsFeatureEngineer,
+)
+from health_lifestyle_diabetes.infrastructure.feature_engineering.exclusion import (
+    drop_leakage_columns,
 )
 from health_lifestyle_diabetes.infrastructure.feature_engineering.lifestyle_features import (
     LifestyleFeatureEngineer,
@@ -25,14 +28,11 @@ from health_lifestyle_diabetes.infrastructure.feature_engineering.medical_featur
 from health_lifestyle_diabetes.infrastructure.feature_engineering.metabolic_features import (
     MetabolicFeatureEngineer,
 )
-from health_lifestyle_diabetes.infrastructure.feature_engineering.behavioral_features import (
-    BehavioralFeatureEngineer,
+from health_lifestyle_diabetes.infrastructure.utils.config_loader import (
+    YamlConfigLoader,
 )
-from health_lifestyle_diabetes.infrastructure.feature_engineering.exclusion import (
-    drop_leakage_columns,
-)
-from health_lifestyle_diabetes.infrastructure.utils.config_loader import YamlConfigLoader
 from health_lifestyle_diabetes.infrastructure.utils.paths import get_repository_root
+from pandas import DataFrame
 
 # ---------------------------------------------------------------------
 # Configuration

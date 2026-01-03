@@ -67,7 +67,7 @@ CATEGORICAL_FEATURES += [
 ]
 
 # Colonnes à exclure lors de l'entraînement
-ID_COLUMN = "member_id"  # identifiant (corrigé)
+ID_COLUMN = "user_id"  # identifiant (corrigé)
 TARGET_COLUMN = "diagnosed_diabetes"  # cible
 
 # Liste des features ALL
