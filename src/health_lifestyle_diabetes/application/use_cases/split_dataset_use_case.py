@@ -40,15 +40,15 @@ class SplitDatasetUseCase:
 
         self.logger.info("Démarrage du split dataset...")
 
-        train_df, valid_df = self.splitter.split(df)
+        train_df, test_df = self.splitter.split(df)
 
         self.logger.info(f"Split terminé : "
-                         f"train={train_df.shape}, test={valid_df.shape}")
+                         f"train={train_df.shape}, test={test_df.shape}")
         if self.save:
             self.logger.info("Sauvegarde des datasets splittés...")
             # Implémenter la logique de sauvegarde ici si nécessaire.
             train_df.to_csv(PATHS["train"], index=False)
-            valid_df.to_csv(PATHS["test"], index=False)
+            test_df.to_csv(PATHS["test"], index=False)
             self.logger.info("Datasets sauvegardés avec succès.")
 
-        return train_df, valid_df
+        return train_df, test_df
